@@ -1,0 +1,12 @@
+D:\WorkSpace\Systime\SystimeCore\Utils\bin\Debug\Utils.dll
+D:\WorkSpace\Systime\SystimeCore\Utils\bin\Debug\Utils.pdb
+D:\WorkSpace\Systime\SystimeCore\Utils\obj\Debug\Utils.csprojAssemblyReference.cache
+D:\WorkSpace\Systime\SystimeCore\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Systime\SystimeCore\Utils\obj\Debug\Utils.dll
+D:\WorkSpace\Systime\SystimeCore\Utils\obj\Debug\Utils.pdb
+D:\Systime\SystimeCore\SystimeCore\Utils\bin\Debug\Utils.dll
+D:\Systime\SystimeCore\SystimeCore\Utils\bin\Debug\Utils.pdb
+D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.csprojAssemblyReference.cache
+D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
+D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.dll
+D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.pdb

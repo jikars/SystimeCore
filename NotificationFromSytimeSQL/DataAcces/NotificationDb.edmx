@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NotificationDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CatalogNotificationType">
+          <Key>
+            <PropertyRef Name="IdNotificationType" />
+          </Key>
+          <Property Name="IdNotificationType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NotificationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegularExpression" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" />
+          <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NotificationConditions">
+          <Key>
+            <PropertyRef Name="IdNotificationCondition" />
+          </Key>
+          <Property Name="IdNotificationCondition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNotificationEvent" Type="int" Nullable="false" />
+          <Property Name="Notify" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdateAt" Type="datetime" />
+          <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NotificationConfig">
+          <Key>
+            <PropertyRef Name="IdTypeNotification" />
+          </Key>
+          <Property Name="IdTypeNotification" Type="int" Nullable="false" />
+          <Property Name="ProvaiderNotification" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="JsonConfig" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationDestination">
+          <Key>
+            <PropertyRef Name="IdNotificationCondtion" />
+            <PropertyRef Name="IdNotificationType" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="TableKeys" />
+            <PropertyRef Name="BaseSend" />
+          </Key>
+          <Property Name="IdNotificationCondtion" Type="int" Nullable="false" />
+          <Property Name="IdNotificationType" Type="int" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TableKeys" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BaseSend" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Notify" Type="bit" Nullable="false" />
+          <Property Name="IdMessageBase" Type="int" />
+          <Property Name="MessageSpecifict" Type="nvarchar" MaxLength="500" />
+          <Property Name="TitleSpecifict" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParamsMessageBase" Type="nvarchar" MaxLength="250" />
+          <Property Name="ParamsTitleBase" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="NotificationEvents">
+          <Key>
+            <PropertyRef Name="IdNotificationEvent" />
+          </Key>
+          <Property Name="IdNotificationEvent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nortify" Type="bit" Nullable="false" />
+          <Property Name="EventUpdate" Type="bit" Nullable="false" />
+          <Property Name="EventDelete" Type="bit" Nullable="false" />
+          <Property Name="EventInsert" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NotificationLog">
+          <Key>
+            <PropertyRef Name="IdNotificationCondition" />
+            <PropertyRef Name="TaleName" />
+            <PropertyRef Name="TableKeys" />
+            <PropertyRef Name="IdTypeNotification" />
+            <PropertyRef Name="EventName" />
+            <PropertyRef Name="DateSend" />
+            <PropertyRef Name="TableEvent" />
+            <PropertyRef Name="BaseSend" />
+          </Key>
+          <Property Name="IdNotificationCondition" Type="int" Nullable="false" />
+          <Property Name="TaleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TableKeys" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdTypeNotification" Type="int" Nullable="false" />
+          <Property Name="EventName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateSend" Type="datetime" Nullable="false" />
+          <Property Name="TableEvent" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BaseSend" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="WasSend" Type="bit" Nullable="false" />
+          <Property Name="TitleMessage" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NotificationMessageBase">
+          <Key>
+            <PropertyRef Name="IdMessageBase" />
+          </Key>
+          <Property Name="IdMessageBase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageBase" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="MessageParams" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" />
+          <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+          <Property Name="TitleMessage" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TitleParams" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="NotificationQueryCondition">
+          <Key>
+            <PropertyRef Name="IdQueryCondition" />
+          </Key>
+          <Property Name="IdQueryCondition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNotificationCondition" Type="int" Nullable="false" />
+          <Property Name="QueryCondition" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParameterDimical" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationTableDestination">
+          <Key>
+            <PropertyRef Name="IdNotificationTableDestination" />
+          </Key>
+          <Property Name="IdNotificationTableDestination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableDestination" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Notification_NotificationEvents">
+          <End Role="NotificationEvents" Type="Self.NotificationEvents" Multiplicity="1" />
+          <End Role="NotificationConditions" Type="Self.NotificationConditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationEvents">
+              <PropertyRef Name="IdNotificationEvent" />
+            </Principal>
+            <Dependent Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationConfig_CatalogNotificationType">
+          <End Role="CatalogNotificationType" Type="Self.CatalogNotificationType" Multiplicity="1" />
+          <End Role="NotificationConfig" Type="Self.NotificationConfig" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CatalogNotificationType">
+              <PropertyRef Name="IdNotificationType" />
+            </Principal>
+            <Dependent Role="NotificationConfig">
+              <PropertyRef Name="IdTypeNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_CatalogNotificationType">
+          <End Role="CatalogNotificationType" Type="Self.CatalogNotificationType" Multiplicity="1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatalogNotificationType">
+              <PropertyRef Name="IdNotificationType" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_NotificationConditions">
+          <End Role="NotificationConditions" Type="Self.NotificationConditions" Multiplicity="1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationCondtion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_NotificationMessageBase">
+          <End Role="NotificationMessageBase" Type="Self.NotificationMessageBase" Multiplicity="0..1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationMessageBase">
+              <PropertyRef Name="IdMessageBase" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdMessageBase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationLog_NotificationDestination">
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="1" />
+          <End Role="NotificationLog" Type="Self.NotificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationCondtion" />
+              <PropertyRef Name="IdNotificationType" />
+              <PropertyRef Name="TableName" />
+              <PropertyRef Name="TableKeys" />
+              <PropertyRef Name="BaseSend" />
+            </Principal>
+            <Dependent Role="NotificationLog">
+              <PropertyRef Name="IdNotificationCondition" />
+              <PropertyRef Name="IdTypeNotification" />
+              <PropertyRef Name="TaleName" />
+              <PropertyRef Name="TableKeys" />
+              <PropertyRef Name="BaseSend" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationQueryCondition_NotificationConditions">
+          <End Role="NotificationConditions" Type="Self.NotificationConditions" Multiplicity="1" />
+          <End Role="NotificationQueryCondition" Type="Self.NotificationQueryCondition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Principal>
+            <Dependent Role="NotificationQueryCondition">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NotificationDbModelStoreContainer">
+          <EntitySet Name="CatalogNotificationType" EntityType="Self.CatalogNotificationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationConditions" EntityType="Self.NotificationConditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationConfig" EntityType="Self.NotificationConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationDestination" EntityType="Self.NotificationDestination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationEvents" EntityType="Self.NotificationEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationMessageBase" EntityType="Self.NotificationMessageBase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationQueryCondition" EntityType="Self.NotificationQueryCondition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationTableDestination" EntityType="Self.NotificationTableDestination" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Notification_NotificationEvents" Association="Self.FK_Notification_NotificationEvents">
+            <End Role="NotificationEvents" EntitySet="NotificationEvents" />
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationConfig_CatalogNotificationType" Association="Self.FK_NotificationConfig_CatalogNotificationType">
+            <End Role="CatalogNotificationType" EntitySet="CatalogNotificationType" />
+            <End Role="NotificationConfig" EntitySet="NotificationConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_CatalogNotificationType" Association="Self.FK_NotificationDestination_CatalogNotificationType">
+            <End Role="CatalogNotificationType" EntitySet="CatalogNotificationType" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_NotificationConditions" Association="Self.FK_NotificationDestination_NotificationConditions">
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_NotificationMessageBase" Association="Self.FK_NotificationDestination_NotificationMessageBase">
+            <End Role="NotificationMessageBase" EntitySet="NotificationMessageBase" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationLog_NotificationDestination" Association="Self.FK_NotificationLog_NotificationDestination">
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+            <End Role="NotificationLog" EntitySet="NotificationLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationQueryCondition_NotificationConditions" Association="Self.FK_NotificationQueryCondition_NotificationConditions">
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+            <End Role="NotificationQueryCondition" EntitySet="NotificationQueryCondition" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NotificationDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CatalogNotificationType">
+          <Key>
+            <PropertyRef Name="IdNotificationType" />
+          </Key>
+          <Property Name="IdNotificationType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NotificationType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NotificationConfig" Relationship="Self.FK_NotificationConfig_CatalogNotificationType" FromRole="CatalogNotificationType" ToRole="NotificationConfig" />
+          <NavigationProperty Name="NotificationDestination" Relationship="Self.FK_NotificationDestination_CatalogNotificationType" FromRole="CatalogNotificationType" ToRole="NotificationDestination" />
+          <Property Name="RegularExpression" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NotificationConditions">
+          <Key>
+            <PropertyRef Name="IdNotificationCondition" />
+          </Key>
+          <Property Name="IdNotificationCondition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNotificationEvent" Type="Int32" Nullable="false" />
+          <Property Name="Notify" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NotificationEvents" Relationship="Self.FK_Notification_NotificationEvents" FromRole="NotificationConditions" ToRole="NotificationEvents" />
+          <NavigationProperty Name="NotificationDestination" Relationship="Self.FK_NotificationDestination_NotificationConditions" FromRole="NotificationConditions" ToRole="NotificationDestination" />
+          <NavigationProperty Name="NotificationQueryCondition" Relationship="NotificationDbModel.FK_NotificationQueryCondition_NotificationConditions" FromRole="NotificationConditions" ToRole="NotificationQueryCondition" />
+        </EntityType>
+        <EntityType Name="NotificationConfig">
+          <Key>
+            <PropertyRef Name="IdTypeNotification" />
+          </Key>
+          <Property Name="IdTypeNotification" Type="Int32" Nullable="false" />
+          <Property Name="ProvaiderNotification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JsonConfig" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CatalogNotificationType" Relationship="Self.FK_NotificationConfig_CatalogNotificationType" FromRole="NotificationConfig" ToRole="CatalogNotificationType" />
+        </EntityType>
+        <EntityType Name="NotificationDestination">
+          <Key>
+            <PropertyRef Name="IdNotificationCondtion" />
+            <PropertyRef Name="IdNotificationType" />
+            <PropertyRef Name="TableName" />
+            <PropertyRef Name="TableKeys" />
+            <PropertyRef Name="BaseSend" />
+          </Key>
+          <Property Name="IdNotificationCondtion" Type="Int32" Nullable="false" />
+          <Property Name="IdNotificationType" Type="Int32" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TableKeys" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BaseSend" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Notify" Type="Boolean" Nullable="false" />
+          <Property Name="IdMessageBase" Type="Int32" />
+          <Property Name="MessageSpecifict" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TitleSpecifict" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParamsMessageBase" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ParamsTitleBase" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CatalogNotificationType" Relationship="Self.FK_NotificationDestination_CatalogNotificationType" FromRole="NotificationDestination" ToRole="CatalogNotificationType" />
+          <NavigationProperty Name="NotificationConditions" Relationship="Self.FK_NotificationDestination_NotificationConditions" FromRole="NotificationDestination" ToRole="NotificationConditions" />
+          <NavigationProperty Name="NotificationMessageBase" Relationship="Self.FK_NotificationDestination_NotificationMessageBase" FromRole="NotificationDestination" ToRole="NotificationMessageBase" />
+          <NavigationProperty Name="NotificationLog" Relationship="Self.FK_NotificationLog_NotificationDestination" FromRole="NotificationDestination" ToRole="NotificationLog" />
+        </EntityType>
+        <EntityType Name="NotificationEvents">
+          <Key>
+            <PropertyRef Name="IdNotificationEvent" />
+          </Key>
+          <Property Name="IdNotificationEvent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nortify" Type="Boolean" Nullable="false" />
+          <Property Name="EventUpdate" Type="Boolean" Nullable="false" />
+          <Property Name="EventDelete" Type="Boolean" Nullable="false" />
+          <Property Name="EventInsert" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NotificationConditions" Relationship="Self.FK_Notification_NotificationEvents" FromRole="NotificationEvents" ToRole="NotificationConditions" />
+        </EntityType>
+        <EntityType Name="NotificationLog">
+          <Key>
+            <PropertyRef Name="IdNotificationCondition" />
+            <PropertyRef Name="TaleName" />
+            <PropertyRef Name="TableKeys" />
+            <PropertyRef Name="IdTypeNotification" />
+            <PropertyRef Name="EventName" />
+            <PropertyRef Name="DateSend" />
+            <PropertyRef Name="TableEvent" />
+            <PropertyRef Name="BaseSend" />
+          </Key>
+          <Property Name="IdNotificationCondition" Type="Int32" Nullable="false" />
+          <Property Name="TaleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TableKeys" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdTypeNotification" Type="Int32" Nullable="false" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateSend" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TableEvent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BaseSend" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WasSend" Type="Boolean" Nullable="false" />
+          <Property Name="TitleMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NotificationDestination" Relationship="Self.FK_NotificationLog_NotificationDestination" FromRole="NotificationLog" ToRole="NotificationDestination" />
+        </EntityType>
+        <EntityType Name="NotificationMessageBase">
+          <Key>
+            <PropertyRef Name="IdMessageBase" />
+          </Key>
+          <Property Name="IdMessageBase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageBase" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MessageParams" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TitleMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TitleParams" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NotificationDestination" Relationship="Self.FK_NotificationDestination_NotificationMessageBase" FromRole="NotificationMessageBase" ToRole="NotificationDestination" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_NotificationConfig_CatalogNotificationType">
+          <End Role="CatalogNotificationType" Type="Self.CatalogNotificationType" Multiplicity="1" />
+          <End Role="NotificationConfig" Type="Self.NotificationConfig" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CatalogNotificationType">
+              <PropertyRef Name="IdNotificationType" />
+            </Principal>
+            <Dependent Role="NotificationConfig">
+              <PropertyRef Name="IdTypeNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_CatalogNotificationType">
+          <End Role="CatalogNotificationType" Type="Self.CatalogNotificationType" Multiplicity="1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CatalogNotificationType">
+              <PropertyRef Name="IdNotificationType" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notification_NotificationEvents">
+          <End Role="NotificationEvents" Type="Self.NotificationEvents" Multiplicity="1" />
+          <End Role="NotificationConditions" Type="Self.NotificationConditions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationEvents">
+              <PropertyRef Name="IdNotificationEvent" />
+            </Principal>
+            <Dependent Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_NotificationConditions">
+          <End Role="NotificationConditions" Type="Self.NotificationConditions" Multiplicity="1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationCondtion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationDestination_NotificationMessageBase">
+          <End Role="NotificationMessageBase" Type="Self.NotificationMessageBase" Multiplicity="0..1" />
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationMessageBase">
+              <PropertyRef Name="IdMessageBase" />
+            </Principal>
+            <Dependent Role="NotificationDestination">
+              <PropertyRef Name="IdMessageBase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationLog_NotificationDestination">
+          <End Role="NotificationDestination" Type="Self.NotificationDestination" Multiplicity="1" />
+          <End Role="NotificationLog" Type="Self.NotificationLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationDestination">
+              <PropertyRef Name="IdNotificationCondtion" />
+              <PropertyRef Name="IdNotificationType" />
+              <PropertyRef Name="TableName" />
+              <PropertyRef Name="TableKeys" />
+              <PropertyRef Name="BaseSend" />
+            </Principal>
+            <Dependent Role="NotificationLog">
+              <PropertyRef Name="IdNotificationCondition" />
+              <PropertyRef Name="IdTypeNotification" />
+              <PropertyRef Name="TaleName" />
+              <PropertyRef Name="TableKeys" />
+              <PropertyRef Name="BaseSend" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NotificationDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CatalogNotificationType" EntityType="Self.CatalogNotificationType" />
+          <EntitySet Name="NotificationConditions" EntityType="Self.NotificationConditions" />
+          <EntitySet Name="NotificationConfig" EntityType="Self.NotificationConfig" />
+          <EntitySet Name="NotificationDestination" EntityType="Self.NotificationDestination" />
+          <EntitySet Name="NotificationEvents" EntityType="Self.NotificationEvents" />
+          <EntitySet Name="NotificationLog" EntityType="Self.NotificationLog" />
+          <EntitySet Name="NotificationMessageBase" EntityType="Self.NotificationMessageBase" />
+          <AssociationSet Name="FK_NotificationConfig_CatalogNotificationType" Association="Self.FK_NotificationConfig_CatalogNotificationType">
+            <End Role="CatalogNotificationType" EntitySet="CatalogNotificationType" />
+            <End Role="NotificationConfig" EntitySet="NotificationConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_CatalogNotificationType" Association="Self.FK_NotificationDestination_CatalogNotificationType">
+            <End Role="CatalogNotificationType" EntitySet="CatalogNotificationType" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notification_NotificationEvents" Association="Self.FK_Notification_NotificationEvents">
+            <End Role="NotificationEvents" EntitySet="NotificationEvents" />
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_NotificationConditions" Association="Self.FK_NotificationDestination_NotificationConditions">
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationDestination_NotificationMessageBase" Association="Self.FK_NotificationDestination_NotificationMessageBase">
+            <End Role="NotificationMessageBase" EntitySet="NotificationMessageBase" />
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationLog_NotificationDestination" Association="Self.FK_NotificationLog_NotificationDestination">
+            <End Role="NotificationDestination" EntitySet="NotificationDestination" />
+            <End Role="NotificationLog" EntitySet="NotificationLog" />
+          </AssociationSet>
+          <EntitySet Name="NotificationQueryCondition" EntityType="NotificationDbModel.NotificationQueryCondition" />
+          <AssociationSet Name="FK_NotificationQueryCondition_NotificationConditions" Association="NotificationDbModel.FK_NotificationQueryCondition_NotificationConditions">
+            <End Role="NotificationConditions" EntitySet="NotificationConditions" />
+            <End Role="NotificationQueryCondition" EntitySet="NotificationQueryCondition" />
+          </AssociationSet>
+          <EntitySet Name="NotificationTableDestination" EntityType="NotificationDbModel.NotificationTableDestination" />
+        </EntityContainer>
+        <EntityType Name="NotificationQueryCondition">
+          <Key>
+            <PropertyRef Name="IdQueryCondition" />
+          </Key>
+          <Property Name="IdQueryCondition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNotificationCondition" Type="Int32" Nullable="false" />
+          <Property Name="QueryCondition" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParameterDimical" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="NotificationConditions" Relationship="NotificationDbModel.FK_NotificationQueryCondition_NotificationConditions" FromRole="NotificationQueryCondition" ToRole="NotificationConditions" />
+        </EntityType>
+        <Association Name="FK_NotificationQueryCondition_NotificationConditions">
+          <End Type="NotificationDbModel.NotificationConditions" Role="NotificationConditions" Multiplicity="1" />
+          <End Type="NotificationDbModel.NotificationQueryCondition" Role="NotificationQueryCondition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotificationConditions">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Principal>
+            <Dependent Role="NotificationQueryCondition">
+              <PropertyRef Name="IdNotificationCondition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="NotificationTableDestination">
+          <Key>
+            <PropertyRef Name="IdNotificationTableDestination" />
+          </Key>
+          <Property Name="IdNotificationTableDestination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TableDestination" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NotificationDbModelStoreContainer" CdmEntityContainer="NotificationDbEntities">
+          <EntitySetMapping Name="CatalogNotificationType">
+            <EntityTypeMapping TypeName="NotificationDbModel.CatalogNotificationType">
+              <MappingFragment StoreEntitySet="CatalogNotificationType">
+                <ScalarProperty Name="RegularExpression" ColumnName="RegularExpression" />
+                <ScalarProperty Name="IdNotificationType" ColumnName="IdNotificationType" />
+                <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationConditions">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationConditions">
+              <MappingFragment StoreEntitySet="NotificationConditions">
+                <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+                <ScalarProperty Name="IdNotificationEvent" ColumnName="IdNotificationEvent" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationConfig">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationConfig">
+              <MappingFragment StoreEntitySet="NotificationConfig">
+                <ScalarProperty Name="IdTypeNotification" ColumnName="IdTypeNotification" />
+                <ScalarProperty Name="ProvaiderNotification" ColumnName="ProvaiderNotification" />
+                <ScalarProperty Name="JsonConfig" ColumnName="JsonConfig" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationDestination">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationDestination">
+              <MappingFragment StoreEntitySet="NotificationDestination">
+                <ScalarProperty Name="IdNotificationCondtion" ColumnName="IdNotificationCondtion" />
+                <ScalarProperty Name="IdNotificationType" ColumnName="IdNotificationType" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="TableKeys" ColumnName="TableKeys" />
+                <ScalarProperty Name="BaseSend" ColumnName="BaseSend" />
+                <ScalarProperty Name="Notify" ColumnName="Notify" />
+                <ScalarProperty Name="IdMessageBase" ColumnName="IdMessageBase" />
+                <ScalarProperty Name="MessageSpecifict" ColumnName="MessageSpecifict" />
+                <ScalarProperty Name="TitleSpecifict" ColumnName="TitleSpecifict" />
+                <ScalarProperty Name="ParamsMessageBase" ColumnName="ParamsMessageBase" />
+                <ScalarProperty Name="ParamsTitleBase" ColumnName="ParamsTitleBase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationEvents">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationEvents">
+              <MappingFragment StoreEntitySet="NotificationEvents">
+                <ScalarProperty Name="IdNotificationEvent" ColumnName="IdNotificationEvent" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="Nortify" ColumnName="Nortify" />
+                <ScalarProperty Name="EventUpdate" ColumnName="EventUpdate" />
+                <ScalarProperty Name="EventDelete" ColumnName="EventDelete" />
+                <ScalarProperty Name="EventInsert" ColumnName="EventInsert" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationLog">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationLog">
+              <MappingFragment StoreEntitySet="NotificationLog">
+                <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+                <ScalarProperty Name="TaleName" ColumnName="TaleName" />
+                <ScalarProperty Name="TableKeys" ColumnName="TableKeys" />
+                <ScalarProperty Name="IdTypeNotification" ColumnName="IdTypeNotification" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="DateSend" ColumnName="DateSend" />
+                <ScalarProperty Name="TableEvent" ColumnName="TableEvent" />
+                <ScalarProperty Name="BaseSend" ColumnName="BaseSend" />
+                <ScalarProperty Name="WasSend" ColumnName="WasSend" />
+                <ScalarProperty Name="TitleMessage" ColumnName="TitleMessage" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationMessageBase">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationMessageBase">
+              <MappingFragment StoreEntitySet="NotificationMessageBase">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="IdMessageBase" ColumnName="IdMessageBase" />
+                <ScalarProperty Name="MessageBase" ColumnName="MessageBase" />
+                <ScalarProperty Name="MessageParams" ColumnName="MessageParams" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+                <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+                <ScalarProperty Name="TitleMessage" ColumnName="TitleMessage" />
+                <ScalarProperty Name="TitleParams" ColumnName="TitleParams" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationQueryCondition">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationQueryCondition">
+              <MappingFragment StoreEntitySet="NotificationQueryCondition">
+                <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+                <ScalarProperty Name="ParameterDimical" ColumnName="ParameterDimical" />
+                <ScalarProperty Name="QueryCondition" ColumnName="QueryCondition" />
+                <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+                <ScalarProperty Name="IdQueryCondition" ColumnName="IdQueryCondition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationTableDestination">
+            <EntityTypeMapping TypeName="NotificationDbModel.NotificationTableDestination">
+              <MappingFragment StoreEntitySet="NotificationTableDestination">
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+                <ScalarProperty Name="TableDestination" ColumnName="TableDestination" />
+                <ScalarProperty Name="IdNotificationTableDestination" ColumnName="IdNotificationTableDestination" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

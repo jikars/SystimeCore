@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46013E79-3775-45CF-AA53-E6C1A452459C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NotificationAdmin</RootNamespace>
+    <AssemblyName>NotificationAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.1.3.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.5.8.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.3.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.5.8\lib\net45\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DependencyFactory.cs" />
+    <Compile Include="Event\AddMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\AddMessage.Designer.cs">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\AddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\AddTable.Designer.cs">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\AddDestinatarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\AddDestinatarios.Designer.cs">
+      <DependentUpon>AddDestinatarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ConditionEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\ConditionEC.Designer.cs">
+      <DependentUpon>ConditionEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DeleteTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\DeleteTable.Designer.cs">
+      <DependentUpon>DeleteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\EvnetEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\EvnetEC.Designer.cs">
+      <DependentUpon>EvnetEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ItemsList\INotifyCondition.cs" />
+    <Compile Include="Event\ItemsList\INotifyParameterMessage.cs" />
+    <Compile Include="Event\ItemsList\ItemCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Event\ItemsList\ItemCondition.Designer.cs">
+      <DependentUpon>ItemCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ItemsList\ItemconditionModel.cs" />
+    <Compile Include="Event\ItemsList\ItemNotificationType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Event\ItemsList\ItemNotificationType.Designer.cs">
+      <DependentUpon>ItemNotificationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\ItemsList\ItemParamMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Event\ItemsList\ItemParamMessage.Designer.cs">
+      <DependentUpon>ItemParamMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\TestQueryCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event\TestQueryCondition.Designer.cs">
+      <DependentUpon>TestQueryCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Initial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Initial.Designer.cs">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Event\AddMessage.resx">
+      <DependentUpon>AddMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\AddTable.resx">
+      <DependentUpon>AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\AddDestinatarios.resx">
+      <DependentUpon>AddDestinatarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\ConditionEC.resx">
+      <DependentUpon>ConditionEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\DeleteTable.resx">
+      <DependentUpon>DeleteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\EvnetEC.resx">
+      <DependentUpon>EvnetEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\ItemsList\ItemCondition.resx">
+      <DependentUpon>ItemCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\ItemsList\ItemNotificationType.resx">
+      <DependentUpon>ItemNotificationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\ItemsList\ItemParamMessage.resx">
+      <DependentUpon>ItemParamMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event\TestQueryCondition.resx">
+      <DependentUpon>TestQueryCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Initial.resx">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NotificationFromSytimeSQL\NotificationFromSytimeSQL.csproj">
+      <Project>{822FFDC0-CBD8-48A2-B087-BCFEF16773CA}</Project>
+      <Name>NotificationFromSytimeSQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

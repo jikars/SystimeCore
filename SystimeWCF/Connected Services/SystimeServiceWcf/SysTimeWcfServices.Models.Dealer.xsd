@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" />
+  <xs:complexType name="ArrayOfViewPortObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewPortObject" nillable="true" type="tns:ViewPortObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewPortObject" nillable="true" type="tns:ArrayOfViewPortObject" />
+  <xs:complexType name="ViewPortObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjId" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="ObjLocation" nillable="true" type="q1:Location" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="ObjType" type="q2:ObjectType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewPortObject" nillable="true" type="tns:ViewPortObject" />
+  <xs:complexType name="ArrayOfActiveWorker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActiveWorker" nillable="true" type="tns:ActiveWorker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActiveWorker" nillable="true" type="tns:ArrayOfActiveWorker" />
+  <xs:complexType name="ActiveWorker">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="CurrentWorker" nillable="true" type="q3:Worker" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="WorkerLocation" nillable="true" type="q4:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveWorker" nillable="true" type="tns:ActiveWorker" />
+  <xs:complexType name="ArrayOfOpenedWorkOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpenedWorkOrders" nillable="true" type="tns:OpenedWorkOrders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpenedWorkOrders" nillable="true" type="tns:ArrayOfOpenedWorkOrders" />
+  <xs:complexType name="OpenedWorkOrders">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="CurrentWorkOrder" nillable="true" type="q5:WorkOrder" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="WorkOrderLocation" nillable="true" type="q6:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpenedWorkOrders" nillable="true" type="tns:OpenedWorkOrders" />
+  <xs:complexType name="Notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+</xs:schema>

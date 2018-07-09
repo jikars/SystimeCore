@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SystimedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CatalogOperationsByDealer">
+    <Key>
+      <PropertyRef Name="IdOperationByDealer" />
+    </Key>
+    <Property Name="IdOperationByDealer" Type="Int32" Nullable="false" />
+    <Property Name="IdOperation" Type="Int32" Nullable="false" />
+    <Property Name="IdDealerShop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdNextOperationByDealer" Type="Int32" />
+    <Property Name="IdDefaultWorker" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsAssignable" Type="Boolean" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Effort" Type="Double" />
+    <Property Name="DefaultPercentage" Type="Double" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CatalogSubOperationByDealer" Relationship="Self.FK_CatalogSubOperationByDealer_CatalogOperationsByDealer" FromRole="CatalogOperationsByDealer" ToRole="CatalogSubOperationByDealer" />
+    <NavigationProperty Name="OperationByWorkOrder" Relationship="Self.FK_OperationByWorkOrder_CatalogOperationsByDealer" FromRole="CatalogOperationsByDealer" ToRole="OperationByWorkOrder" />
+  </EntityType>
+  <EntityType Name="CatalogSubOperationByDealer">
+    <Key>
+      <PropertyRef Name="IdSubOperationByDealer" />
+    </Key>
+    <Property Name="IdSubOperationByDealer" Type="Int32" Nullable="false" />
+    <Property Name="IdDealerShop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdOperationByDealer" Type="Int32" />
+    <Property Name="IdSubOperation" Type="Int32" Nullable="false" />
+    <Property Name="IdNextSubOperationByDealer" Type="Int32" />
+    <Property Name="IdDefaultWorker" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsExternalJob" Type="Boolean" />
+    <Property Name="IsAssignable" Type="Boolean" />
+    <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Effort" Type="Double" />
+    <Property Name="DefaultPercentage" Type="Double" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CatalogOperationsByDealer" Relationship="Self.FK_CatalogSubOperationByDealer_CatalogOperationsByDealer" FromRole="CatalogSubOperationByDealer" ToRole="CatalogOperationsByDealer" />
+    <NavigationProperty Name="SubOperationByWorkOrder" Relationship="Self.FK_SubOperationByWorkOrder_CatalogSubOperationByDealer" FromRole="CatalogSubOperationByDealer" ToRole="SubOperationByWorkOrder" />
+  </EntityType>
+  <EntityType Name="OperationByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdOperationByWorkOrder" />
+    </Key>
+    <Property Name="IdOperationByWorkOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdOperationByDealer" Type="Int32" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="EstimatedAt" Type="DateTime" Precision="3" />
+    <Property Name="EstimatedTime" Type="Double" Nullable="false" />
+    <Property Name="WorkforceCost" Type="Double" Nullable="false" />
+    <Property Name="MaterialCost" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WorkedTime" Type="Double" Nullable="false" />
+    <Property Name="CompletedAt" Type="DateTime" Precision="3" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CatalogOperationsByDealer" Relationship="Self.FK_OperationByWorkOrder_CatalogOperationsByDealer" FromRole="OperationByWorkOrder" ToRole="CatalogOperationsByDealer" />
+    <NavigationProperty Name="WorkOrders" Relationship="Self.FK_OperationByWorkOrder_WorkOrders" FromRole="OperationByWorkOrder" ToRole="WorkOrders" />
+    <NavigationProperty Name="SubOperationByWorkOrder" Relationship="Self.FK_SubOperationByWorkOrder_OperationByWorkOrder" FromRole="OperationByWorkOrder" ToRole="SubOperationByWorkOrder" />
+  </EntityType>
+  <EntityType Name="SubOperationByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdSubOperationByWorkOrder" />
+    </Key>
+    <Property Name="IdSubOperationByWorkOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdOperationByWorkOrder" Type="Int32" Nullable="false" />
+    <Property Name="IdSubOperationByDealer" Type="Int32" Nullable="false" />
+    <Property Name="AssignedTo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AssignedById" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AssignedAt" Type="DateTime" Precision="3" />
+    <Property Name="SubOperationTime" Type="Double" Nullable="false" />
+    <Property Name="OperationTimePercentage" Type="Double" Nullable="false" />
+    <Property Name="WorkedTime" Type="Double" />
+    <Property Name="CompletedAt" Type="DateTime" Precision="3" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CatalogSubOperationByDealer" Relationship="Self.FK_SubOperationByWorkOrder_CatalogSubOperationByDealer" FromRole="SubOperationByWorkOrder" ToRole="CatalogSubOperationByDealer" />
+    <NavigationProperty Name="OperationByWorkOrder" Relationship="Self.FK_SubOperationByWorkOrder_OperationByWorkOrder" FromRole="SubOperationByWorkOrder" ToRole="OperationByWorkOrder" />
+  </EntityType>
+  <EntityType Name="WorkOrders">
+    <Key>
+      <PropertyRef Name="IdWorkOrder" />
+    </Key>
+    <Property Name="IdWorkOrder" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdCatalogWorkLevel" Type="Int32" />
+    <Property Name="IdDealerShop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdVinNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdPhysicalTag" Type="Int32" />
+    <Property Name="IdErpQuote" Type="Int32" />
+    <Property Name="IdCurrentOperation" Type="Int32" />
+    <Property Name="IdCurrentWorker" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IdSalesRepresentative" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdInsuranceCompany" Type="Int32" />
+    <Property Name="IdCustomer" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="OpenOtAt" Type="DateTime" Precision="3" />
+    <Property Name="EnteredAt" Type="DateTime" Precision="3" />
+    <Property Name="PromisedAt" Type="DateTime" Precision="3" />
+    <Property Name="AuthorizedAt" Type="DateTime" Precision="3" />
+    <Property Name="PartsCompletedAt" Type="DateTime" Precision="3" />
+    <Property Name="ReadyToPickUpAt" Type="DateTime" Precision="3" />
+    <Property Name="WarrantyAt" Type="DateTime" Precision="3" />
+    <Property Name="GuaranteedDistanceTraveled" Type="Int32" />
+    <Property Name="PickedUpAt" Type="DateTime" Precision="3" />
+    <Property Name="InvoicedAt" Type="DateTime" Precision="3" />
+    <Property Name="HasTotalLoss" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RatingDealer" Type="Int16" />
+    <Property Name="IsInsured" Type="Boolean" Nullable="false" />
+    <Property Name="RatingInsuranceCompany" Type="Int16" />
+    <Property Name="FeedBack" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Canceled" Type="Boolean" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="OperationByWorkOrder" Relationship="Self.FK_OperationByWorkOrder_WorkOrders" FromRole="WorkOrders" ToRole="OperationByWorkOrder" />
+    <NavigationProperty Name="WorkOrderTracking" Relationship="Self.FK_WorkOrderTracking_WorkOrders" FromRole="WorkOrders" ToRole="WorkOrderTracking" />
+  </EntityType>
+  <EntityType Name="WorkOrderTracking">
+    <Key>
+      <PropertyRef Name="IdWorkOrderTracking" />
+    </Key>
+    <Property Name="IdWorkOrderTracking" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdWorkOrder" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdSubOperationByDealer" Type="Int32" Nullable="false" />
+    <Property Name="InitiatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CompletedAt" Type="DateTime" Precision="3" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedById" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrderTracking_WorkOrders" FromRole="WorkOrderTracking" ToRole="WorkOrders" />
+    <NavigationProperty Name="WorkOrderTrackingDetail" Relationship="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking" FromRole="WorkOrderTracking" ToRole="WorkOrderTrackingDetail" />
+  </EntityType>
+  <EntityType Name="WorkOrderTrackingDetail">
+    <Key>
+      <PropertyRef Name="IdWorkOrderTrackingDetail" />
+    </Key>
+    <Property Name="IdWorkOrderTrackingDetail" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdWorkOrderTracking" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdWorker" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCurrentWorker" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsWaiting" Type="Boolean" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrackingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HasPhoto" Type="Boolean" Nullable="false" />
+    <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WorkOrderTracking" Relationship="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking" FromRole="WorkOrderTrackingDetail" ToRole="WorkOrderTracking" />
+  </EntityType>
+  <Association Name="FK_CatalogSubOperationByDealer_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="0..1" />
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperationByWorkOrder_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="1" />
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="OperationByWorkOrder">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubOperationByWorkOrder_CatalogSubOperationByDealer">
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="1" />
+    <End Role="SubOperationByWorkOrder" Type="Self.SubOperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Principal>
+      <Dependent Role="SubOperationByWorkOrder">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperationByWorkOrder_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="OperationByWorkOrder">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubOperationByWorkOrder_OperationByWorkOrder">
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="1" />
+    <End Role="SubOperationByWorkOrder" Type="Self.SubOperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OperationByWorkOrder">
+        <PropertyRef Name="IdOperationByWorkOrder" />
+      </Principal>
+      <Dependent Role="SubOperationByWorkOrder">
+        <PropertyRef Name="IdOperationByWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderTracking_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="WorkOrderTracking" Type="Self.WorkOrderTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="WorkOrderTracking">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderTrackingDetail_WorkOrderTraking">
+    <End Role="WorkOrderTracking" Type="Self.WorkOrderTracking" Multiplicity="1" />
+    <End Role="WorkOrderTrackingDetail" Type="Self.WorkOrderTrackingDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderTracking">
+        <PropertyRef Name="IdWorkOrderTracking" />
+      </Principal>
+      <Dependent Role="WorkOrderTrackingDetail">
+        <PropertyRef Name="IdWorkOrderTracking" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SystimedbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CatalogOperationsByDealer" EntityType="Self.CatalogOperationsByDealer" />
+    <EntitySet Name="CatalogSubOperationByDealer" EntityType="Self.CatalogSubOperationByDealer" />
+    <EntitySet Name="OperationByWorkOrder" EntityType="Self.OperationByWorkOrder" />
+    <EntitySet Name="SubOperationByWorkOrder" EntityType="Self.SubOperationByWorkOrder" />
+    <EntitySet Name="WorkOrders" EntityType="Self.WorkOrders" />
+    <EntitySet Name="WorkOrderTracking" EntityType="Self.WorkOrderTracking" />
+    <EntitySet Name="WorkOrderTrackingDetail" EntityType="Self.WorkOrderTrackingDetail" />
+    <AssociationSet Name="FK_CatalogSubOperationByDealer_CatalogOperationsByDealer" Association="Self.FK_CatalogSubOperationByDealer_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperationByWorkOrder_CatalogOperationsByDealer" Association="Self.FK_OperationByWorkOrder_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubOperationByWorkOrder_CatalogSubOperationByDealer" Association="Self.FK_SubOperationByWorkOrder_CatalogSubOperationByDealer">
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+      <End Role="SubOperationByWorkOrder" EntitySet="SubOperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperationByWorkOrder_WorkOrders" Association="Self.FK_OperationByWorkOrder_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubOperationByWorkOrder_OperationByWorkOrder" Association="Self.FK_SubOperationByWorkOrder_OperationByWorkOrder">
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+      <End Role="SubOperationByWorkOrder" EntitySet="SubOperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderTracking_WorkOrders" Association="Self.FK_WorkOrderTracking_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="WorkOrderTracking" EntitySet="WorkOrderTracking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderTrackingDetail_WorkOrderTraking" Association="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking">
+      <End Role="WorkOrderTracking" EntitySet="WorkOrderTracking" />
+      <End Role="WorkOrderTrackingDetail" EntitySet="WorkOrderTrackingDetail" />
+    </AssociationSet>
+    <FunctionImport Name="InsertNewTracking" ReturnType="Collection(Decimal)">
+      <Parameter Name="idWorkOrder" Mode="In" Type="String" />
+      <Parameter Name="idSubOperationByDealer" Mode="In" Type="Int32" />
+      <Parameter Name="idWorker" Mode="In" Type="String" />
+      <Parameter Name="idCurrentWorker" Mode="In" Type="String" />
+      <Parameter Name="isWaiting" Mode="In" Type="Boolean" />
+      <Parameter Name="hasPhoto" Mode="In" Type="Boolean" />
+      <Parameter Name="note" Mode="In" Type="String" />
+      <Parameter Name="user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertNewTrackingMigrate" ReturnType="Collection(Decimal)">
+      <Parameter Name="idWorkOrder" Mode="In" Type="String" />
+      <Parameter Name="idSubOperationByDealer" Mode="In" Type="Int32" />
+      <Parameter Name="idWorker" Mode="In" Type="String" />
+      <Parameter Name="idCurrentWorker" Mode="In" Type="String" />
+      <Parameter Name="isWaiting" Mode="In" Type="Boolean" />
+      <Parameter Name="hasPhoto" Mode="In" Type="Boolean" />
+      <Parameter Name="note" Mode="In" Type="String" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="inicializateAt" Mode="In" Type="DateTime" />
+      <Parameter Name="trakingDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_WCF_SetOperationByWorkOrder" ReturnType="Collection(Int32)">
+      <Parameter Name="idOperationByDealer" Mode="In" Type="Int32" />
+      <Parameter Name="idWorkOrder" Mode="In" Type="Decimal" />
+      <Parameter Name="estimatedTime" Mode="In" Type="Double" />
+      <Parameter Name="workforceCost" Mode="In" Type="Double" />
+      <Parameter Name="materialCost" Mode="In" Type="Double" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="CreatedOrUpdatedById" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_WCF_SetSubOperationByWorkOrder" ReturnType="Collection(Int32)">
+      <Parameter Name="idOperationByWorkOrder" Mode="In" Type="Int32" />
+      <Parameter Name="idSubOperationByDealer" Mode="In" Type="Int32" />
+      <Parameter Name="AssignedTo" Mode="In" Type="String" />
+      <Parameter Name="AssignedById" Mode="In" Type="String" />
+      <Parameter Name="OperationTimePercentage" Mode="In" Type="Double" />
+      <Parameter Name="workedTime" Mode="In" Type="Double" />
+      <Parameter Name="CreatedOrUpdatedById" Mode="In" Type="String" />
+      <Parameter Name="deleted" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_WCF_SetSubOperationByWorkOrderMigrate" ReturnType="Collection(Int32)">
+      <Parameter Name="idOperationByWorkOrder" Mode="In" Type="Int32" />
+      <Parameter Name="idSubOperationByDealer" Mode="In" Type="Int32" />
+      <Parameter Name="AssignedTo" Mode="In" Type="String" />
+      <Parameter Name="AssignedById" Mode="In" Type="String" />
+      <Parameter Name="OperationTimePercentage" Mode="In" Type="Double" />
+      <Parameter Name="workedTime" Mode="In" Type="Double" />
+      <Parameter Name="CreatedOrUpdatedById" Mode="In" Type="String" />
+      <Parameter Name="AssinetAt" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="MigrationAccessError" EntityType="SystimedbModel.MigrationAccessError" />
+  </EntityContainer>
+  <EntityType Name="MigrationAccessError">
+    <Key>
+      <PropertyRef Name="IdMigrationAccess" />
+    </Key>
+    <Property Name="IdMigrationAccess" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkOrderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdShop" Type="Int32" Nullable="false" />
+    <Property Name="ExceptionMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="CreatedById" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

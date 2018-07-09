@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DmsV1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="abc_terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="clasificacion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="porcentaje_clasificacion" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="valor_tercero" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bodegas">
+    <Key>
+      <PropertyRef Name="bodega" />
+    </Key>
+    <Property Name="bodega" Type="Int16" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="centro" Type="Int32" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="texto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_cliente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="es_punto_venta" Type="Boolean" />
+    <Property Name="impresora" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="departamento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="autoretenedorica" Type="Boolean" />
+    <Property Name="es_bod_taller" Type="Boolean" />
+    <Property Name="id_clasificacion" Type="Int32" />
+    <Property Name="Acepta_Ext" Type="Boolean" />
+    <Property Name="Utilidad" Type="Int32" />
+    <Property Name="idSMD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="demostracion" Type="Boolean" />
+    <Property Name="codigoPostal" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="es_bod_vehiculos" Type="Boolean" />
+    <Property Name="es_bodega_obsoleta" Type="Boolean" Nullable="false" />
+    <Property Name="es_almacen" Type="Boolean" Nullable="false" />
+    <Property Name="inactiva" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BAC" Type="Int32" />
+    <Property Name="principal" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoBIR_Renault" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="cuentaGarantiaRenault" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="EsServicioRapido" Type="Boolean" />
+    <Property Name="usa_rental" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="idSede" Type="Int32" />
+    <Property Name="envia_distrinet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="renault" Type="Byte" />
+    <Property Name="cod_concesionario" Type="Int32" />
+    <Property Name="unidad_negocio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="referencias">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_oferta" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="generico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clase" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contable" Type="Byte" Nullable="false" />
+    <Property Name="grupo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subgrupo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="valor_unitario" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="porcentaje_iva" Type="Single" />
+    <Property Name="costo_unitario" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="maneja_inventario" Type="Boolean" Nullable="false" />
+    <Property Name="und_1" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="can_1" Type="Single" />
+    <Property Name="und_2" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="can_2" Type="Single" />
+    <Property Name="und_3" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="can_3" Type="Single" />
+    <Property Name="und_vta" Type="Byte" />
+    <Property Name="und_com" Type="Byte" />
+    <Property Name="impoconsumo" Type="Single" />
+    <Property Name="valor_und1" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="valor_und2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="valor_und3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="conversion" Type="Single" />
+    <Property Name="otro_impuesto" Type="Single" />
+    <Property Name="minimo_iva" Type="Single" />
+    <Property Name="minimo_iva_c" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="precio_marcado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="factor_compra" Type="Single" />
+    <Property Name="factor_venta_1" Type="Single" />
+    <Property Name="factor_venta_2" Type="Single" />
+    <Property Name="factor_venta_3" Type="Single" />
+    <Property Name="factor_venta_4" Type="Single" />
+    <Property Name="factor_venta_5" Type="Single" />
+    <Property Name="factor_venta_6" Type="Single" />
+    <Property Name="factor_venta_7" Type="Single" />
+    <Property Name="factor_venta_8" Type="Single" />
+    <Property Name="factor_venta_9" Type="Single" />
+    <Property Name="factor_venta_10" Type="Single" />
+    <Property Name="fec_cambio_precio" Type="DateTime" Precision="3" />
+    <Property Name="costo_anterior" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fec_ultima_entrada" Type="DateTime" Precision="3" />
+    <Property Name="fec_ultima_salida" Type="DateTime" Precision="3" />
+    <Property Name="impoconsumo_compra" Type="Single" />
+    <Property Name="porcentaje_iva_compra" Type="Single" />
+    <Property Name="precio_si_costo_cero" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
+    <Property Name="maximo_descuento" Type="Single" />
+    <Property Name="maneja_lotes" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="maneja_otra_und" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="otra_und" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="tam_alto" Type="Single" />
+    <Property Name="tam_largo" Type="Single" />
+    <Property Name="tam_ancho" Type="Single" />
+    <Property Name="costo_estandar" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="reposicion" Type="Single" />
+    <Property Name="ref_anulada" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="vcmto_refer" Type="DateTime" Precision="0" />
+    <Property Name="impodeporte" Type="Single" />
+    <Property Name="subgrupo2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="subgrupo3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="controlado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="promocion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="maneja_series" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="codigo_enlace" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad_enlace" Type="Single" />
+    <Property Name="usar_descto_cliente" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="usar_dcto_vol" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="costo_compra_emergencia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="codigo_descuento" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="pedir" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="tipo_1" Type="Int32" />
+    <Property Name="tipo_2" Type="Int32" />
+    <Property Name="tipo_3" Type="Int32" />
+    <Property Name="tipo_4" Type="Int32" />
+    <Property Name="tipo_5" Type="Int32" />
+    <Property Name="tipo_6" Type="Int32" />
+    <Property Name="tipo_7" Type="Int32" />
+    <Property Name="iva_es_costo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="calificacion_abc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="grupo_comision" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cantidad_promocion_max" Type="Single" />
+    <Property Name="fecha_inicia_promocion" Type="DateTime" Precision="3" />
+    <Property Name="precio_pos" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fecha_actualizacion" Type="DateTime" Precision="3" />
+    <Property Name="borrar_promocion" Type="Boolean" />
+    <Property Name="porcentaje_impoconsumo" Type="Single" />
+    <Property Name="no_aplica_retenciones" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="accesorio" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Notas" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_8" Type="Int32" />
+    <Property Name="tipo_9" Type="Int32" />
+    <Property Name="restringir_pos" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="esLubricante" Type="Boolean" />
+    <Property Name="EsPintura" Type="Boolean" />
+    <Property Name="esNeumatico" Type="Boolean" />
+    <Property Name="MinDespacho" Type="Int32" />
+    <Property Name="codDIV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="si_flota" Type="Boolean" />
+    <Property Name="Debajo_Costo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="peso1" Type="Single" />
+    <Property Name="peso2" Type="Single" />
+    <NavigationProperty Name="referencias_imp" Relationship="Self.FK_referencias_IMP_referencias" FromRole="referencias" ToRole="referencias_imp" />
+    <NavigationProperty Name="tall_citas" Relationship="Self.FK_tall_citas_referencias" FromRole="referencias" ToRole="tall_citas" />
+    <NavigationProperty Name="tall_encabeza_orden" Relationship="Self.FK_tall_encabeza_orden_referencias" FromRole="referencias" ToRole="tall_encabeza_orden" />
+    <NavigationProperty Name="terceros" Relationship="Self.refer_terceros" FromRole="referencias" ToRole="terceros" />
+    <Property Name="proveedor_unico" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="referencias_imp">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pos_arancel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="costo_unitario_FOB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="gravamen" Type="Single" />
+    <Property Name="explicacion" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="serie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="chasis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="motor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modelo_ano" Type="Int16" />
+    <Property Name="tipo_motor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="manifiesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nit_prenda" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_1" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_2" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_3" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="horas_uso" Type="Int32" />
+    <Property Name="kilometraje" Type="Int32" />
+    <Property Name="placa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_fin_garantia" Type="DateTime" Precision="3" />
+    <Property Name="nit_comprador" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="comprado" Type="Byte" />
+    <Property Name="id_modano" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_manifiesto" Type="DateTime" Precision="0" />
+    <Property Name="garantia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_venta" Type="Byte" />
+    <Property Name="plan_venta" Type="Byte" />
+    <Property Name="usado_comprado" Type="Byte" />
+    <Property Name="usado_retomado" Type="Byte" />
+    <Property Name="usado_consignado" Type="Byte" />
+    <Property Name="recibido_canje" Type="Byte" />
+    <Property Name="entregado_canje" Type="Byte" />
+    <Property Name="vendido" Type="Byte" />
+    <Property Name="asignacion" Type="Int32" />
+    <Property Name="entregado_cliente" Type="Boolean" />
+    <Property Name="entregado_matricula" Type="Boolean" />
+    <Property Name="reservado" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_reserva" Type="DateTime" Precision="0" />
+    <Property Name="fin_reserva" Type="DateTime" Precision="0" />
+    <Property Name="costo_alistamiento" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="costo_compra" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="fecha_venta" Type="DateTime" Precision="0" />
+    <Property Name="codigo_concesionario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="modelo_taller" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OtroServicio" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad_placa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_cambio_km" Type="DateTime" Precision="3" />
+    <Property Name="carpeta" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nit_aseguradora" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fec_vencimiento_seg" Type="DateTime" Precision="3" />
+    <Property Name="Levante" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Año_Fab" Type="Int32" />
+    <Property Name="Oferta" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Color_Interno" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Codigo_Radio" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tiempo_Garantia" Type="Int16" />
+    <Property Name="Km_Garantia" Type="Int32" />
+    <Property Name="NumSOAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Razon_Cambio_Prop" Type="Int32" />
+    <Property Name="fecha_expedicion_manifiesto" Type="DateTime" Precision="0" />
+    <Property Name="fin_asignacion" Type="DateTime" Precision="3" />
+    <Property Name="Refrendo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="requiere_registro" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="registro_importacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="vencimiento_registro" Type="DateTime" Precision="3" />
+    <Property Name="cantidad_registro" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="costo_registro" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="id_estado" Type="Int32" />
+    <Property Name="moneda" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_aprobado" Type="DateTime" Precision="3" />
+    <Property Name="pos_arancel_internacional" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nit_usuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_entrega" Type="DateTime" Precision="3" />
+    <Property Name="sinLimiteDekmEnGtia" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="puertas" Type="Byte" />
+    <Property Name="homologacion" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad_manifiesto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Revista" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cabina" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tipoPintura" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="fecha_cambio_horas_uso" Type="DateTime" Precision="3" />
+    <Property Name="consecutivo_compra" Type="Int32" />
+    <Property Name="fecha_obligatorio" Type="DateTime" Precision="0" />
+    <Property Name="fecha_gases" Type="DateTime" Precision="0" />
+    <Property Name="fecha_tecnico_mecanica" Type="DateTime" Precision="0" />
+    <Property Name="tipo_caja" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="linea_chevystar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="blindado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Convertido_gas" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="documento_relacionado" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="motivo_pedido" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="bitvta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="numero_inserto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="scope" Type="Boolean" />
+    <Property Name="flotilla_sofasa" Type="Boolean" />
+    <Property Name="fabricacion_sofasa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="estado_sofasa" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="concesionario_comprador" Type="Int32" />
+    <NavigationProperty Name="referencias" Relationship="Self.FK_referencias_IMP_referencias" FromRole="referencias_imp" ToRole="referencias" />
+    <NavigationProperty Name="vh_modelo_ano" Relationship="Self.FK_referencias_imp_modelo_ano" FromRole="referencias_imp" ToRole="vh_modelo_ano" />
+  </EntityType>
+  <EntityType Name="tall_citas">
+    <Key>
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_cita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bodega" Type="Int16" Nullable="false" />
+    <Property Name="fecha_hora_creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado_cita" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="descripcion_estado" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_hora_ini" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fecha_hora_fin" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Byte" Nullable="false" />
+    <Property Name="minutos" Type="Byte" Nullable="false" />
+    <Property Name="duracion_minutos" Type="Int32" />
+    <Property Name="codigo_veh" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="placa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nombre_cliente" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="nit_nuevo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nombre_encargado" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="telefonos" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="notas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="modelo_veh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ano_veh" Type="Int32" />
+    <Property Name="fecha_hora_asistio" Type="DateTime" Precision="0" />
+    <Property Name="numero_orden_taller" Type="Int32" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="modulo" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="razon" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="jefe_unidad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_llamada" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="referencias" Relationship="Self.FK_tall_citas_referencias" FromRole="tall_citas" ToRole="referencias" />
+    <NavigationProperty Name="terceros" Relationship="Self.FK_tall_citas_terceros" FromRole="tall_citas" ToRole="terceros" />
+  </EntityType>
+  <EntityType Name="tall_conceptos_operaciones">
+    <Key>
+      <PropertyRef Name="concepto" />
+    </Key>
+    <Property Name="concepto" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bloqueado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tall_encabeza_orden">
+    <Key>
+      <PropertyRef Name="numero" />
+      <PropertyRef Name="bodega" />
+    </Key>
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="serie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="entrada" Type="DateTime" Precision="3" />
+    <Property Name="vendedor" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="promesa_entrega" Type="DateTime" Precision="3" />
+    <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="aseguradora" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="poliza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="siniestro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="deducible" Type="Decimal" Precision="16" Scale="13" />
+    <Property Name="minimo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="entrega" Type="DateTime" Precision="3" />
+    <Property Name="notas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kilometraje" Type="Int32" />
+    <Property Name="horas_uso" Type="Int32" />
+    <Property Name="bodega" Type="Int16" Nullable="false" />
+    <Property Name="entrego" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="facturada" Type="Boolean" Nullable="false" />
+    <Property Name="rombo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="facturo_deducible" Type="Boolean" Nullable="false" />
+    <Property Name="ocupada_por" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="horas" Type="Int16" />
+    <Property Name="anulada" Type="Boolean" Nullable="false" />
+    <Property Name="pc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ultima_modificacion" Type="DateTime" Precision="3" />
+    <Property Name="condicion_pago" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="rombo_usado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_deducible" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="numero_deducible" Type="Int32" />
+    <Property Name="fecha_hora_entrega_real" Type="DateTime" Precision="3" />
+    <Property Name="usuario_entrega_real" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="pc_entrega_real" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="numero_entrega" Type="Int32" />
+    <Property Name="tipo_orden" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="bloqueada" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="codigo_direccion" Type="Int16" />
+    <Property Name="spid" Type="Int16" />
+    <Property Name="login_time" Type="DateTime" Precision="3" />
+    <Property Name="km_anterior" Type="Int32" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numero_orden_anulada" Type="Int32" />
+    <Property Name="cotizacion" Type="Int32" />
+    <Property Name="asesor_aseguradora" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="notas2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="usuario_autoriza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_hora_autoriza" Type="DateTime" Precision="3" />
+    <Property Name="razon" Type="Int16" />
+    <Property Name="Recepcion_Interactiva" Type="Int16" />
+    <Property Name="procesadaPlano" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="horas_uso_anterior" Type="Int32" />
+    <Property Name="es_ppc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="porce_apoyo_1" Type="Single" />
+    <Property Name="porce_apoyo_2" Type="Single" />
+    <Property Name="porce_apoyo_3" Type="Single" />
+    <Property Name="fecha_cierre_final" Type="DateTime" Precision="3" />
+    <Property Name="perdida_total" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="notas3" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="referencias" Relationship="Self.FK_tall_encabeza_orden_referencias" FromRole="tall_encabeza_orden" ToRole="referencias" />
+    <Property Name="cita" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tall_operarios">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="escalafon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="actividad" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="bodega" Type="Int16" />
+    <Property Name="contratista" Type="Boolean" Nullable="false" />
+    <Property Name="patio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_op" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="terceros" Relationship="Self.FK_tall_operarios_terceros" FromRole="tall_operarios" ToRole="terceros" />
+  </EntityType>
+  <EntityType Name="terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="digito" Type="Byte" />
+    <Property Name="nombres" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="apartado_aereo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_identificacion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="gran_contribuyente" Type="Boolean" Nullable="false" />
+    <Property Name="autoretenedor" Type="Boolean" Nullable="false" />
+    <Property Name="bloqueo" Type="Byte" />
+    <Property Name="notas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="lista" Type="Byte" />
+    <Property Name="concepto_1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_4" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_5" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_6" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_7" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_8" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_9" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_10" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="pos_num" Type="Byte" Nullable="false" />
+    <Property Name="regimen" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="cupo_credito" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="nit_real" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="condicion" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="vendedor" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fletes" Type="Single" />
+    <Property Name="es_excento_iva" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="contacto_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contacto_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="formato_factura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="3" />
+    <Property Name="formato_copias" Type="Byte" />
+    <Property Name="tipo_factura" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="dias_gracia" Type="Int16" />
+    <Property Name="solo_contado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="descuento_fijo" Type="Single" />
+    <Property Name="excluir_tabla_desc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="centro_fijo" Type="Int32" />
+    <Property Name="exportado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="factor_o_lista" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="codigo_ica" Type="Int32" />
+    <Property Name="descuento_fijo2" Type="Single" />
+    <Property Name="y_dpto" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="y_ciudad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_11" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_12" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_13" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_14" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_15" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_16" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_17" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_18" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_19" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="concepto_20" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descuento_fijo_prov" Type="Single" />
+    <Property Name="solo_contado_compra" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_cambio_razon" Type="DateTime" Precision="0" />
+    <Property Name="razon_comercial" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="minimo_ret_vtas" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="y_pais" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ext_1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_alterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_devolucion" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tipo_direccion" Type="Int16" />
+    <Property Name="id_definicion_tributaria_tipo" Type="Int32" />
+    <Property Name="Separa_Iva" Type="Boolean" />
+    <Property Name="Separa_Negocio" Type="Boolean" />
+    <Property Name="Solo_Remision" Type="Boolean" />
+    <Property Name="Devolver_Prod" Type="Boolean" />
+    <Property Name="departamento" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad2" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="dias_recibo_caja" Type="Int16" />
+    <Property Name="Runt" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Runt" Type="DateTime" Precision="0" />
+    <Property Name="estado_civil" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="cupo_credito_vh" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="estrato" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="paginaweb" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="area_labora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ext2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="celular2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="otro_descuento" Type="Single" />
+    <Property Name="no_regulados" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="descuento_financiero" Type="Single" />
+    <Property Name="actividad_cree" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="es_excento_cree_ventas" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="sincronizado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="codigoPostal" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="mail_adicional" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ean" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_cumple_ter" Type="DateTime" Precision="3" />
+    <Property Name="tieneRUT" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="codigoActividadEconomica" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ftoCopia_factura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="formatoRemision" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="es_extranet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="copiaRemision" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="referencias" Relationship="Self.refer_terceros" FromRole="terceros" ToRole="referencias" />
+    <NavigationProperty Name="tall_citas" Relationship="Self.FK_tall_citas_terceros" FromRole="terceros" ToRole="tall_citas" />
+    <NavigationProperty Name="tall_operarios" Relationship="Self.FK_tall_operarios_terceros" FromRole="terceros" ToRole="tall_operarios" />
+  </EntityType>
+  <EntityType Name="vh_clase">
+    <Key>
+      <PropertyRef Name="clase" />
+    </Key>
+    <Property Name="clase" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="vh_modelo" Relationship="Self.FK_modelo_clase" FromRole="vh_clase" ToRole="vh_modelo" />
+  </EntityType>
+  <EntityType Name="vh_eventos">
+    <Key>
+      <PropertyRef Name="evento" />
+    </Key>
+    <Property Name="evento" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="editable" Type="Boolean" Nullable="false" />
+    <Property Name="automatico" Type="Boolean" Nullable="false" />
+    <Property Name="usa_tercero" Type="Boolean" />
+    <Property Name="usa_ubica" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="vh_familias">
+    <Key>
+      <PropertyRef Name="familia" />
+    </Key>
+    <Property Name="familia" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vh_marcas">
+    <Key>
+      <PropertyRef Name="marca" />
+    </Key>
+    <Property Name="marca" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="vh_modelo" Relationship="Self.FK_modelo_marcas" FromRole="vh_marcas" ToRole="vh_modelo" />
+  </EntityType>
+  <EntityType Name="vh_modelo">
+    <Key>
+      <PropertyRef Name="modelo" />
+    </Key>
+    <Property Name="modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="grupo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clase" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contable" Type="Byte" Nullable="false" />
+    <Property Name="capacidad" Type="Single" Nullable="false" />
+    <Property Name="und_capacidad" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="cilindraje" Type="Single" />
+    <Property Name="servicio" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="combustible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="origen" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="descontinuado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modelo_taller" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="foto_modelo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="homologacion" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="adicional" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo_Auto" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="familia" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="GrupoICE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="familiaVComercial" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Modelo_Sofasa" Type="Boolean" />
+    <NavigationProperty Name="vh_clase" Relationship="Self.FK_modelo_clase" FromRole="vh_modelo" ToRole="vh_clase" />
+    <NavigationProperty Name="vh_marcas" Relationship="Self.FK_modelo_marcas" FromRole="vh_modelo" ToRole="vh_marcas" />
+    <NavigationProperty Name="vh_modelo_ano" Relationship="Self.FK_modano_modelo" FromRole="vh_modelo" ToRole="vh_modelo_ano" />
+    <NavigationProperty Name="vh_tipo_modelo" Relationship="Self.FK_modelo_tipo" FromRole="vh_modelo" ToRole="vh_tipo_modelo" />
+  </EntityType>
+  <EntityType Name="vh_modelo_ano">
+    <Key>
+      <PropertyRef Name="id_modano" />
+    </Key>
+    <Property Name="id_modano" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ano" Type="Int32" Nullable="false" />
+    <Property Name="precio_lista" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="precio_anterior" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ultimo_cambio_precio" Type="DateTime" Precision="0" />
+    <Property Name="maximo_vl_dcto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="maximo_porc_dcto" Type="Single" />
+    <Property Name="codigo_iva" Type="Int16" Nullable="false" />
+    <Property Name="codigo_iva_compra" Type="Int16" Nullable="false" />
+    <Property Name="valor_seguro" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="costo_unitario" Type="Decimal" Precision="28" Scale="16" />
+    <Property Name="costo_anterior" Type="Decimal" Precision="28" Scale="16" />
+    <Property Name="alto" Type="Single" />
+    <Property Name="ancho" Type="Single" />
+    <Property Name="peso" Type="Single" />
+    <Property Name="margen" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="porc_margen" Type="Single" />
+    <Property Name="porc_concesionario" Type="Single" />
+    <Property Name="comision" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="porc_comision" Type="Single" />
+    <Property Name="largo" Type="Single" />
+    <Property Name="tex1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="tex2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="tex3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="nuevo" Type="Boolean" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="km_dia" Type="Decimal" Precision="12" Scale="8" />
+    <Property Name="soat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="descontinuado" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="precio_final_impoconsumo" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="matricula" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="referencias_imp" Relationship="Self.FK_referencias_imp_modelo_ano" FromRole="vh_modelo_ano" ToRole="referencias_imp" />
+    <NavigationProperty Name="vh_modelo" Relationship="Self.FK_modano_modelo" FromRole="vh_modelo_ano" ToRole="vh_modelo" />
+  </EntityType>
+  <EntityType Name="vh_modelo_taller">
+    <Key>
+      <PropertyRef Name="modelo_taller" />
+    </Key>
+    <Property Name="modelo_taller" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="marca" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="grupo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="familia" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="familiaVersionComercial" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="esModeloSofasa" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vh_terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nombres" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="usuario_creo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="notas" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="y_dpto" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="y_ciudad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+    <Property Name="tipo_identificacion" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_cotizacion" Type="DateTime" Precision="0" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="vh_tipo_carroceria">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="Byte" Nullable="false" />
+    <Property Name="codigo_runt" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vh_tipo_flotas">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vh_tipo_modelo">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="vh_modelo" Relationship="Self.FK_modelo_tipo" FromRole="vh_tipo_modelo" ToRole="vh_modelo" />
+  </EntityType>
+  <EntityType Name="VH_tipo_pintura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_ciudades">
+    <Key>
+      <PropertyRef Name="ciudad" />
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="ciudad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="departamento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_departamentos">
+    <Key>
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="departamento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="pais" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_paises">
+    <Key>
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="pais" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_referencias_IMP_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="1" />
+    <End Role="referencias_imp" Type="Self.referencias_imp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="referencias_imp">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_citas_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="0..1" />
+    <End Role="tall_citas" Type="Self.tall_citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tall_citas">
+        <PropertyRef Name="codigo_veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_encabeza_orden_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="0..1" />
+    <End Role="tall_encabeza_orden" Type="Self.tall_encabeza_orden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tall_encabeza_orden">
+        <PropertyRef Name="serie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="refer_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="1" />
+    <End Role="referencias" Type="Self.referencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="referencias">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_referencias_imp_modelo_ano">
+    <End Role="vh_modelo_ano" Type="Self.vh_modelo_ano" Multiplicity="0..1" />
+    <End Role="referencias_imp" Type="Self.referencias_imp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_modelo_ano">
+        <PropertyRef Name="id_modano" />
+      </Principal>
+      <Dependent Role="referencias_imp">
+        <PropertyRef Name="id_modano" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_citas_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="0..1" />
+    <End Role="tall_citas" Type="Self.tall_citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="tall_citas">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_operarios_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="1" />
+    <End Role="tall_operarios" Type="Self.tall_operarios" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="tall_operarios">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_clase">
+    <End Role="vh_clase" Type="Self.vh_clase" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_clase">
+        <PropertyRef Name="clase" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="clase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_marcas">
+    <End Role="vh_marcas" Type="Self.vh_marcas" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_marcas">
+        <PropertyRef Name="marca" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modano_modelo">
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="0..1" />
+    <End Role="vh_modelo_ano" Type="Self.vh_modelo_ano" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_modelo">
+        <PropertyRef Name="modelo" />
+      </Principal>
+      <Dependent Role="vh_modelo_ano">
+        <PropertyRef Name="modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_tipo">
+    <End Role="vh_tipo_modelo" Type="Self.vh_tipo_modelo" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_tipo_modelo">
+        <PropertyRef Name="tipo" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DmsV1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="abc_terceros" EntityType="Self.abc_terceros" />
+    <EntitySet Name="bodegas" EntityType="Self.bodegas" />
+    <EntitySet Name="referencias" EntityType="Self.referencias" />
+    <EntitySet Name="referencias_imp" EntityType="Self.referencias_imp" />
+    <EntitySet Name="tall_citas" EntityType="Self.tall_citas" />
+    <EntitySet Name="tall_conceptos_operaciones" EntityType="Self.tall_conceptos_operaciones" />
+    <EntitySet Name="tall_encabeza_orden" EntityType="Self.tall_encabeza_orden" />
+    <EntitySet Name="tall_operarios" EntityType="Self.tall_operarios" />
+    <EntitySet Name="terceros" EntityType="Self.terceros" />
+    <EntitySet Name="vh_clase" EntityType="Self.vh_clase" />
+    <EntitySet Name="vh_eventos" EntityType="Self.vh_eventos" />
+    <EntitySet Name="vh_familias" EntityType="Self.vh_familias" />
+    <EntitySet Name="vh_marcas" EntityType="Self.vh_marcas" />
+    <EntitySet Name="vh_modelo" EntityType="Self.vh_modelo" />
+    <EntitySet Name="vh_modelo_ano" EntityType="Self.vh_modelo_ano" />
+    <EntitySet Name="vh_modelo_taller" EntityType="Self.vh_modelo_taller" />
+    <EntitySet Name="vh_terceros" EntityType="Self.vh_terceros" />
+    <EntitySet Name="vh_tipo_carroceria" EntityType="Self.vh_tipo_carroceria" />
+    <EntitySet Name="vh_tipo_flotas" EntityType="Self.vh_tipo_flotas" />
+    <EntitySet Name="vh_tipo_modelo" EntityType="Self.vh_tipo_modelo" />
+    <EntitySet Name="VH_tipo_pintura" EntityType="Self.VH_tipo_pintura" />
+    <EntitySet Name="y_ciudades" EntityType="Self.y_ciudades" />
+    <EntitySet Name="y_departamentos" EntityType="Self.y_departamentos" />
+    <EntitySet Name="y_paises" EntityType="Self.y_paises" />
+    <AssociationSet Name="FK_referencias_IMP_referencias" Association="Self.FK_referencias_IMP_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="referencias_imp" EntitySet="referencias_imp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_citas_referencias" Association="Self.FK_tall_citas_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="tall_citas" EntitySet="tall_citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_encabeza_orden_referencias" Association="Self.FK_tall_encabeza_orden_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="tall_encabeza_orden" EntitySet="tall_encabeza_orden" />
+    </AssociationSet>
+    <AssociationSet Name="refer_terceros" Association="Self.refer_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="referencias" EntitySet="referencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_referencias_imp_modelo_ano" Association="Self.FK_referencias_imp_modelo_ano">
+      <End Role="vh_modelo_ano" EntitySet="vh_modelo_ano" />
+      <End Role="referencias_imp" EntitySet="referencias_imp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_citas_terceros" Association="Self.FK_tall_citas_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="tall_citas" EntitySet="tall_citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_operarios_terceros" Association="Self.FK_tall_operarios_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="tall_operarios" EntitySet="tall_operarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_clase" Association="Self.FK_modelo_clase">
+      <End Role="vh_clase" EntitySet="vh_clase" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_marcas" Association="Self.FK_modelo_marcas">
+      <End Role="vh_marcas" EntitySet="vh_marcas" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modano_modelo" Association="Self.FK_modano_modelo">
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+      <End Role="vh_modelo_ano" EntitySet="vh_modelo_ano" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_tipo" Association="Self.FK_modelo_tipo">
+      <End Role="vh_tipo_modelo" EntitySet="vh_tipo_modelo" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <EntitySet Name="NotificationSystime" EntityType="DmsV1Model.NotificationSystime" />
+  </EntityContainer>
+  <EntityType Name="NotificationSystime">
+    <Key>
+      <PropertyRef Name="IdNotificationSystime" />
+    </Key>
+    <Property Name="IdNotificationSystime" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JsonKeys" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EventTable" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

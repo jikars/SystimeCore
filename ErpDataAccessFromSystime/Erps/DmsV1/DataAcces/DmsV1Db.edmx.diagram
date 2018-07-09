@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ddcbe5f6aca434c8613eb36e7ae6554" Name="Diagram1">
+        <EntityTypeShape EntityType="DmsV1Model.abc_terceros" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.bodegas" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.referencias" Width="1.5" PointX="5.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.referencias_imp" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.tall_citas" Width="1.5" PointX="10.5" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.tall_conceptos_operaciones" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.tall_encabeza_orden" Width="1.5" PointX="7.5" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.tall_operarios" Width="1.5" PointX="5.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.terceros" Width="1.5" PointX="3" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_clase" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_eventos" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_familias" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_marcas" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_modelo" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_modelo_ano" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_modelo_taller" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_terceros" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_tipo_carroceria" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_tipo_flotas" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.vh_tipo_modelo" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.VH_tipo_pintura" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.y_ciudades" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.y_departamentos" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DmsV1Model.y_paises" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DmsV1Model.FK_referencias_IMP_referencias" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_tall_citas_referencias" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_tall_encabeza_orden_referencias" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.refer_terceros" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_referencias_imp_modelo_ano" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_tall_citas_terceros" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_tall_operarios_terceros" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_modelo_clase" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_modelo_marcas" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_modano_modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="DmsV1Model.FK_modelo_tipo" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DmsV1Model.NotificationSystime" Width="1.5" PointX="14.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

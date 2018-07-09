@@ -1,0 +1,40 @@
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\Models.dll.config
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\Models.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\Models.pdb
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\GlobalResources.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\Microsoft.CSharp.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.ComponentModel.DataAnnotations.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.Data.DataSetExtensions.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.Data.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.Net.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.Xml.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\System.Xml.Linq.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\GlobalResources.pdb
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\EN-US\GlobalResources.resources.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\bin\Debug\ES-CO\GlobalResources.resources.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Debug\Models.csproj.CopyComplete
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Debug\Models.dll
+D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Debug\Models.pdb
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\Models.dll.config
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\Models.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\Models.pdb
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\GlobalResources.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\Microsoft.CSharp.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.ComponentModel.DataAnnotations.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.Data.DataSetExtensions.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.Data.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.Net.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.Xml.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\System.Xml.Linq.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\GlobalResources.pdb
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\EN-US\GlobalResources.resources.dll
+D:\Systime\SystimeCore\SystimeCore\Models\bin\Debug\ES-CO\GlobalResources.resources.dll
+D:\Systime\SystimeCore\SystimeCore\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\Systime\SystimeCore\SystimeCore\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Systime\SystimeCore\SystimeCore\Models\obj\Debug\Models.csproj.CopyComplete
+D:\Systime\SystimeCore\SystimeCore\Models\obj\Debug\Models.dll
+D:\Systime\SystimeCore\SystimeCore\Models\obj\Debug\Models.pdb

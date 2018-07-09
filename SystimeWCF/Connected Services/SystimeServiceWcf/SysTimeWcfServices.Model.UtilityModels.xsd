@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ObjectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Worker" />
+      <xs:enumeration value="WorkOrder" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ObjectType" nillable="true" type="tns:ObjectType" />
+  <xs:simpleType name="WorkOrderDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AuthorizedAt" />
+      <xs:enumeration value="PartsCompletedAt" />
+      <xs:enumeration value="ReadyToPickUpAt" />
+      <xs:enumeration value="PickedUpAt" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkOrderDataType" nillable="true" type="tns:WorkOrderDataType" />
+  <xs:simpleType name="IdUrlPath">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AcceptedQuotes" />
+      <xs:enumeration value="InitialQUotes" />
+      <xs:enumeration value="InsuranceCompanies" />
+      <xs:enumeration value="QuotesRequest" />
+      <xs:enumeration value="Shops" />
+      <xs:enumeration value="Tracking" />
+      <xs:enumeration value="TrackingDetail" />
+      <xs:enumeration value="Vehicles" />
+      <xs:enumeration value="Workers" />
+      <xs:enumeration value="WorkOrders" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IdUrlPath" nillable="true" type="tns:IdUrlPath" />
+  <xs:simpleType name="FileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pictures" />
+      <xs:enumeration value="Documents" />
+      <xs:enumeration value="AllFiles" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FileType" nillable="true" type="tns:FileType" />
+</xs:schema>

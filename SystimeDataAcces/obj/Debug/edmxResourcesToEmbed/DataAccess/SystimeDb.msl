@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SystimedbModelStoreContainer" CdmEntityContainer="SystimedbEntities">
+    <EntitySetMapping Name="CatalogActions">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogActions">
+        <MappingFragment StoreEntitySet="CatalogActions">
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="ActionTranslate" ColumnName="ActionTranslate" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogDefaultSubOperationByIdJobTitle">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogDefaultSubOperationByIdJobTitle">
+        <MappingFragment StoreEntitySet="CatalogDefaultSubOperationByIdJobTitle">
+          <ScalarProperty Name="IdDefaultSubOperationByJobTitle" ColumnName="IdDefaultSubOperationByJobTitle" />
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="IdJobTitleByDealer" ColumnName="IdJobTitleByDealer" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogExternalJobsByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogExternalJobsByDealer">
+        <MappingFragment StoreEntitySet="CatalogExternalJobsByDealer">
+          <ScalarProperty Name="IdExternalJobByDealer" ColumnName="IdExternalJobByDealer" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogJobTitleByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogJobTitleByDealer">
+        <MappingFragment StoreEntitySet="CatalogJobTitleByDealer">
+          <ScalarProperty Name="IdJobTitle" ColumnName="IdJobTitle" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IdDefaultSubOperation" ColumnName="IdDefaultSubOperation" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogNotificationType">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogNotificationType">
+        <MappingFragment StoreEntitySet="CatalogNotificationType">
+          <ScalarProperty Name="IdNotificationType" ColumnName="IdNotificationType" />
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="RegularExpression" ColumnName="RegularExpression" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogOperationsByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogOperationsByDealer">
+        <MappingFragment StoreEntitySet="CatalogOperationsByDealer">
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdNextOperationByDealer" ColumnName="IdNextOperationByDealer" />
+          <ScalarProperty Name="IdDefaultWorker" ColumnName="IdDefaultWorker" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Effort" ColumnName="Effort" />
+          <ScalarProperty Name="DefaultPercentage" ColumnName="DefaultPercentage" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogParts">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogParts">
+        <MappingFragment StoreEntitySet="CatalogParts">
+          <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+          <ScalarProperty Name="Part" ColumnName="Part" />
+          <ScalarProperty Name="PartTranslate" ColumnName="PartTranslate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogPermissions">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogPermissions">
+        <MappingFragment StoreEntitySet="CatalogPermissions">
+          <ScalarProperty Name="IdPermission" ColumnName="IdPermission" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogProviders">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogProviders">
+        <MappingFragment StoreEntitySet="CatalogProviders">
+          <ScalarProperty Name="IdProvider" ColumnName="IdProvider" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="TIN" ColumnName="TIN" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogRoles">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogRoles">
+        <MappingFragment StoreEntitySet="CatalogRoles">
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogSubOperationByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogSubOperationByDealer">
+        <MappingFragment StoreEntitySet="CatalogSubOperationByDealer">
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdSubOperation" ColumnName="IdSubOperation" />
+          <ScalarProperty Name="IdNextSubOperationByDealer" ColumnName="IdNextSubOperationByDealer" />
+          <ScalarProperty Name="IdJobTitle" ColumnName="IdJobTitle" />
+          <ScalarProperty Name="IdDefaultWorker" ColumnName="IdDefaultWorker" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsExternalJob" ColumnName="IsExternalJob" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Effort" ColumnName="Effort" />
+          <ScalarProperty Name="DefaultPercentage" ColumnName="DefaultPercentage" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogWorkLevel">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogWorkLevel">
+        <MappingFragment StoreEntitySet="CatalogWorkLevel">
+          <ScalarProperty Name="IdCatalogWorkLevel" ColumnName="IdCatalogWorkLevel" />
+          <ScalarProperty Name="WorkLevel" ColumnName="WorkLevel" />
+          <ScalarProperty Name="WorkeLevelTranslate" ColumnName="WorkeLevelTranslate" />
+          <ScalarProperty Name="NumericLevel" ColumnName="NumericLevel" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionTranslate" ColumnName="DescriptionTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogCities">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogCities">
+        <MappingFragment StoreEntitySet="CloudCatalogCities">
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="IdState" ColumnName="IdState" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Logitud" ColumnName="Logitud" />
+          <ScalarProperty Name="TimeZoneName" ColumnName="TimeZoneName" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogCountries">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogCountries">
+        <MappingFragment StoreEntitySet="CloudCatalogCountries">
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CountryTranslate" ColumnName="CountryTranslate" />
+          <ScalarProperty Name="Alpha3" ColumnName="Alpha3" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="IdCurrency" ColumnName="IdCurrency" />
+          <ScalarProperty Name="IdLanguage" ColumnName="IdLanguage" />
+          <ScalarProperty Name="IdDistanceUnit" ColumnName="IdDistanceUnit" />
+          <ScalarProperty Name="TraveledDistanceAverage" ColumnName="TraveledDistanceAverage" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogCurrency">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogCurrency">
+        <MappingFragment StoreEntitySet="CloudCatalogCurrency">
+          <ScalarProperty Name="IdCurrency" ColumnName="IdCurrency" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="CurrencyTranslate" ColumnName="CurrencyTranslate" />
+          <ScalarProperty Name="Simbol" ColumnName="Simbol" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogDealerShops">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogDealerShops">
+        <MappingFragment StoreEntitySet="CloudCatalogDealerShops">
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="Shop" ColumnName="Shop" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogInsuranceCompanies">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogInsuranceCompanies">
+        <MappingFragment StoreEntitySet="CloudCatalogInsuranceCompanies">
+          <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="TIN" ColumnName="TIN" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogLanguage">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogLanguage">
+        <MappingFragment StoreEntitySet="CloudCatalogLanguage">
+          <ScalarProperty Name="IdLanguage" ColumnName="IdLanguage" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="LanguageTranslate" ColumnName="LanguageTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogOperations">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogOperations">
+        <MappingFragment StoreEntitySet="CloudCatalogOperations">
+          <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="OperationTransalate" ColumnName="OperationTransalate" />
+          <ScalarProperty Name="IsParalell" ColumnName="IsParalell" />
+          <ScalarProperty Name="CumulativeProgress" ColumnName="CumulativeProgress" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogSubOperations">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogSubOperations">
+        <MappingFragment StoreEntitySet="CloudCatalogSubOperations">
+          <ScalarProperty Name="IdSubOperation" ColumnName="IdSubOperation" />
+          <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
+          <ScalarProperty Name="SubOperation" ColumnName="SubOperation" />
+          <ScalarProperty Name="SubOperationTranslate" ColumnName="SubOperationTranslate" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogUnits">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogUnits">
+        <MappingFragment StoreEntitySet="CloudCatalogUnits">
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="IdUnitType" ColumnName="IdUnitType" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="UnitTransalate" ColumnName="UnitTransalate" />
+          <ScalarProperty Name="UnitConversion" ColumnName="UnitConversion" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogUnitTypes">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogUnitTypes">
+        <MappingFragment StoreEntitySet="CloudCatalogUnitTypes">
+          <ScalarProperty Name="IdUnitType" ColumnName="IdUnitType" />
+          <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+          <ScalarProperty Name="UnitTypeTranslate" ColumnName="UnitTypeTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogUrlBase">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogUrlBase">
+        <MappingFragment StoreEntitySet="CloudCatalogUrlBase">
+          <ScalarProperty Name="IdUrlBase" ColumnName="IdUrlBase" />
+          <ScalarProperty Name="UrlBase" ColumnName="UrlBase" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ConectionString" ColumnName="ConectionString" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogUrlPaths">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogUrlPaths">
+        <MappingFragment StoreEntitySet="CloudCatalogUrlPaths">
+          <ScalarProperty Name="IdUrlPath" ColumnName="IdUrlPath" />
+          <ScalarProperty Name="IdUrlBase" ColumnName="IdUrlBase" />
+          <ScalarProperty Name="Container" ColumnName="Container" />
+          <ScalarProperty Name="FileStorageUrl" ColumnName="FileStorageUrl" />
+          <ScalarProperty Name="Arguments" ColumnName="Arguments" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogVehicleBrands">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogVehicleBrands">
+        <MappingFragment StoreEntitySet="CloudCatalogVehicleBrands">
+          <ScalarProperty Name="IdVehicleBrand" ColumnName="IdVehicleBrand" />
+          <ScalarProperty Name="VehicleBrand" ColumnName="VehicleBrand" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogVehicleModels">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogVehicleModels">
+        <MappingFragment StoreEntitySet="CloudCatalogVehicleModels">
+          <ScalarProperty Name="IdVehicleModel" ColumnName="IdVehicleModel" />
+          <ScalarProperty Name="IdVehicleBrand" ColumnName="IdVehicleBrand" />
+          <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogVehiclesServiceTypes">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogVehiclesServiceTypes">
+        <MappingFragment StoreEntitySet="CloudCatalogVehiclesServiceTypes">
+          <ScalarProperty Name="IdVehicleServiceType" ColumnName="IdVehicleServiceType" />
+          <ScalarProperty Name="VehicleServiceType" ColumnName="VehicleServiceType" />
+          <ScalarProperty Name="VehicleServiceTypeTranslate" ColumnName="VehicleServiceTypeTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CloudCatalogVehicleTypes">
+      <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogVehicleTypes">
+        <MappingFragment StoreEntitySet="CloudCatalogVehicleTypes">
+          <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleTypeTranslate" ColumnName="VehicleTypeTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="SystimedbModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobsByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.JobsByWorkOrder">
+        <MappingFragment StoreEntitySet="JobsByWorkOrder">
+          <ScalarProperty Name="IdJobByWorkOrder" ColumnName="IdJobByWorkOrder" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="IdProvaider" ColumnName="IdProvaider" />
+          <ScalarProperty Name="IsExternalJob" ColumnName="IsExternalJob" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobTilteByWorker">
+      <EntityTypeMapping TypeName="SystimedbModel.JobTilteByWorker">
+        <MappingFragment StoreEntitySet="JobTilteByWorker">
+          <ScalarProperty Name="IdJobTitleByWorker" ColumnName="IdJobTitleByWorker" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdJobTitleByDealer" ColumnName="IdJobTitleByDealer" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalUrlPaths">
+      <EntityTypeMapping TypeName="SystimedbModel.LocalUrlPaths">
+        <MappingFragment StoreEntitySet="LocalUrlPaths">
+          <ScalarProperty Name="IdUrlPath" ColumnName="IdUrlPath" />
+          <ScalarProperty Name="IdUrlBase" ColumnName="IdUrlBase" />
+          <ScalarProperty Name="FileUrlPath" ColumnName="FileUrlPath" />
+          <ScalarProperty Name="Arguments" ColumnName="Arguments" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="SystimedbModel.Logs">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+          <ScalarProperty Name="OSName" ColumnName="OSName" />
+          <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
+          <ScalarProperty Name="DeviceBrand" ColumnName="DeviceBrand" />
+          <ScalarProperty Name="DeviveModel" ColumnName="DeviveModel" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="App" ColumnName="App" />
+          <ScalarProperty Name="AppUser" ColumnName="AppUser" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+          <ScalarProperty Name="SourceMethodEvent" ColumnName="SourceMethodEvent" />
+          <ScalarProperty Name="NumberLine" ColumnName="NumberLine" />
+          <ScalarProperty Name="SystemMessage" ColumnName="SystemMessage" />
+          <ScalarProperty Name="ControlledMessage" ColumnName="ControlledMessage" />
+          <ScalarProperty Name="TimeOfEventClient" ColumnName="TimeOfEventClient" />
+          <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+          <ScalarProperty Name="ReviewedAt" ColumnName="ReviewedAt" />
+          <ScalarProperty Name="ErrorSolved" ColumnName="ErrorSolved" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MigrationAccessError">
+      <EntityTypeMapping TypeName="SystimedbModel.MigrationAccessError">
+        <MappingFragment StoreEntitySet="MigrationAccessError">
+          <ScalarProperty Name="IdMigrationAccess" ColumnName="IdMigrationAccess" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WorkOrderNumber" />
+          <ScalarProperty Name="IdShop" ColumnName="IdShop" />
+          <ScalarProperty Name="ExceptionMessage" ColumnName="ExceptionMessage" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationErpErrors">
+      <EntityTypeMapping TypeName="SystimedbModel.NotificationErpErrors">
+        <MappingFragment StoreEntitySet="NotificationErpErrors">
+          <ScalarProperty Name="IdNotificationErpError" ColumnName="IdNotificationErpError" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="EntityUpdateJson" ColumnName="EntityUpdateJson" />
+          <ScalarProperty Name="ErrorGenerate" ColumnName="ErrorGenerate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationLogs">
+      <EntityTypeMapping TypeName="SystimedbModel.NotificationLogs">
+        <MappingFragment StoreEntitySet="NotificationLogs">
+          <ScalarProperty Name="IdNotificationLog" ColumnName="IdNotificationLog" />
+          <ScalarProperty Name="NotificationName" ColumnName="NotificationName" />
+          <ScalarProperty Name="NameRecipientsType" ColumnName="NameRecipientsType" />
+          <ScalarProperty Name="FillterRecipenttype" ColumnName="FillterRecipenttype" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Provaider" ColumnName="Provaider" />
+          <ScalarProperty Name="MessageSend" ColumnName="MessageSend" />
+          <ScalarProperty Name="TitleMessage" ColumnName="TitleMessage" />
+          <ScalarProperty Name="MessageErrorProvaider" ColumnName="MessageErrorProvaider" />
+          <ScalarProperty Name="TypeNotification" ColumnName="TypeNotification" />
+          <ScalarProperty Name="IsSend" ColumnName="IsSend" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperationByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.OperationByWorkOrder">
+        <MappingFragment StoreEntitySet="OperationByWorkOrder">
+          <ScalarProperty Name="IdOperationByWorkOrder" ColumnName="IdOperationByWorkOrder" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="EstimatedAt" ColumnName="EstimatedAt" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+          <ScalarProperty Name="WorkforceCost" ColumnName="WorkforceCost" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WorkedTime" ColumnName="WorkedTime" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PendingTask">
+      <EntityTypeMapping TypeName="SystimedbModel.PendingTask">
+        <MappingFragment StoreEntitySet="PendingTask">
+          <ScalarProperty Name="IdPendingTask" ColumnName="IdPendingTask" />
+          <ScalarProperty Name="PendingTask1" ColumnName="PendingTask" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="PendingTaskGroup" ColumnName="PendingTaskGroup" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="ExpirationAt" ColumnName="ExpirationAt" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgressByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.ProgressByWorkOrder">
+        <MappingFragment StoreEntitySet="ProgressByWorkOrder">
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="SpecificProgress" ColumnName="SpecificProgress" />
+          <ScalarProperty Name="CumulativeProgress" ColumnName="CumulativeProgress" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvidersByExternalJob">
+      <EntityTypeMapping TypeName="SystimedbModel.ProvidersByExternalJob">
+        <MappingFragment StoreEntitySet="ProvidersByExternalJob">
+          <ScalarProperty Name="IdProviderByExernalJob" ColumnName="IdProviderByExernalJob" />
+          <ScalarProperty Name="IdExternalJob" ColumnName="IdExternalJob" />
+          <ScalarProperty Name="IdProvider" ColumnName="IdProvider" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteDetails">
+      <EntityTypeMapping TypeName="SystimedbModel.QuoteDetails">
+        <MappingFragment StoreEntitySet="QuoteDetails">
+          <ScalarProperty Name="IsQuoteDetail" ColumnName="IsQuoteDetail" />
+          <ScalarProperty Name="IdQuote" ColumnName="IdQuote" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LaborCost" ColumnName="LaborCost" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="EstimatedWorkShopTime" ColumnName="EstimatedWorkShopTime" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuoteRequest">
+      <EntityTypeMapping TypeName="SystimedbModel.QuoteRequest">
+        <MappingFragment StoreEntitySet="QuoteRequest">
+          <ScalarProperty Name="IdQuoteRequest" ColumnName="IdQuoteRequest" />
+          <ScalarProperty Name="IdVinNumber" ColumnName="IdVinNumber" />
+          <ScalarProperty Name="IdRequestById" ColumnName="IdRequestById" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Observations" ColumnName="Observations" />
+          <ScalarProperty Name="ReviwedById" ColumnName="ReviwedById" />
+          <ScalarProperty Name="ReviwedByAt" ColumnName="ReviwedByAt" />
+          <ScalarProperty Name="IsPhoto" ColumnName="IsPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotes">
+      <EntityTypeMapping TypeName="SystimedbModel.Quotes">
+        <MappingFragment StoreEntitySet="Quotes">
+          <ScalarProperty Name="IdQuote" ColumnName="IdQuote" />
+          <ScalarProperty Name="IdShop" ColumnName="IdShop" />
+          <ScalarProperty Name="IdQuoteRequest" ColumnName="IdQuoteRequest" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Observations" ColumnName="Observations" />
+          <ScalarProperty Name="AutorizedAt" ColumnName="AutorizedAt" />
+          <ScalarProperty Name="AuthorizedById" ColumnName="AuthorizedById" />
+          <ScalarProperty Name="IsPhoto" ColumnName="IsPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleDetail">
+      <EntityTypeMapping TypeName="SystimedbModel.ScheduleDetail">
+        <MappingFragment StoreEntitySet="ScheduleDetail">
+          <ScalarProperty Name="IdScheduleDetail" ColumnName="IdScheduleDetail" />
+          <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsWorking" ColumnName="IsWorking" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Setting">
+      <EntityTypeMapping TypeName="SystimedbModel.Setting">
+        <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="IdSetting" ColumnName="IdSetting" />
+          <ScalarProperty Name="AppSetting" ColumnName="AppSetting" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShopAppointments">
+      <EntityTypeMapping TypeName="SystimedbModel.ShopAppointments">
+        <MappingFragment StoreEntitySet="ShopAppointments">
+          <ScalarProperty Name="IdShopAppointments" ColumnName="IdShopAppointments" />
+          <ScalarProperty Name="IdQuote" ColumnName="IdQuote" />
+          <ScalarProperty Name="IdAppUser" ColumnName="IdAppUser" />
+          <ScalarProperty Name="DateOfAppointment" ColumnName="DateOfAppointment" />
+          <ScalarProperty Name="IdUserRevised" ColumnName="IdUserRevised" />
+          <ScalarProperty Name="DateOfRevised" ColumnName="DateOfRevised" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecialDates">
+      <EntityTypeMapping TypeName="SystimedbModel.SpecialDates">
+        <MappingFragment StoreEntitySet="SpecialDates">
+          <ScalarProperty Name="IdSpecialDate" ColumnName="IdSpecialDate" />
+          <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
+          <ScalarProperty Name="SpecialDate" ColumnName="SpecialDate" />
+          <ScalarProperty Name="SpecialDateTranslate" ColumnName="SpecialDateTranslate" />
+          <ScalarProperty Name="Observations" ColumnName="Observations" />
+          <ScalarProperty Name="ObservationsTranslate" ColumnName="ObservationsTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubOperationByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.SubOperationByWorkOrder">
+        <MappingFragment StoreEntitySet="SubOperationByWorkOrder">
+          <ScalarProperty Name="IdSubOperationByWorkOrder" ColumnName="IdSubOperationByWorkOrder" />
+          <ScalarProperty Name="IdOperationByWorkOrder" ColumnName="IdOperationByWorkOrder" />
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="AssignedById" ColumnName="AssignedById" />
+          <ScalarProperty Name="AssignedAt" ColumnName="AssignedAt" />
+          <ScalarProperty Name="SubOperationTime" ColumnName="SubOperationTime" />
+          <ScalarProperty Name="OperationTimePercentage" ColumnName="OperationTimePercentage" />
+          <ScalarProperty Name="WorkedTime" ColumnName="WorkedTime" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TranslationReferences">
+      <EntityTypeMapping TypeName="SystimedbModel.TranslationReferences">
+        <MappingFragment StoreEntitySet="TranslationReferences">
+          <ScalarProperty Name="IdTranslationReference" ColumnName="IdTranslationReference" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Translations">
+      <EntityTypeMapping TypeName="SystimedbModel.Translations">
+        <MappingFragment StoreEntitySet="Translations">
+          <ScalarProperty Name="IdTranslation" ColumnName="IdTranslation" />
+          <ScalarProperty Name="IdTransalationReference" ColumnName="IdTransalationReference" />
+          <ScalarProperty Name="IdLanguage" ColumnName="IdLanguage" />
+          <ScalarProperty Name="TranslationText" ColumnName="TranslationText" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAT" ColumnName="UpdatedAT" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrlsBase">
+      <EntityTypeMapping TypeName="SystimedbModel.UrlsBase">
+        <MappingFragment StoreEntitySet="UrlsBase">
+          <ScalarProperty Name="IdUrlBase" ColumnName="IdUrlBase" />
+          <ScalarProperty Name="UrlBase" ColumnName="UrlBase" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpDateAt" ColumnName="UpDateAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPermissionByRole">
+      <EntityTypeMapping TypeName="SystimedbModel.UserPermissionByRole">
+        <MappingFragment StoreEntitySet="UserPermissionByRole">
+          <ScalarProperty Name="IdPermissionByRole" ColumnName="IdPermissionByRole" />
+          <ScalarProperty Name="IdPermission" ColumnName="IdPermission" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="IdShop" ColumnName="IdShop" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="SystimedbModel.Vehicles">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="IdVinNumber" ColumnName="IdVinNumber" />
+          <ScalarProperty Name="IdCountry" ColumnName="IdCountry" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="IdVehicleType" ColumnName="IdVehicleType" />
+          <ScalarProperty Name="IdVehicleServiceType" ColumnName="IdVehicleServiceType" />
+          <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
+          <ScalarProperty Name="IdVehicleModel" ColumnName="IdVehicleModel" />
+          <ScalarProperty Name="SaleGuaranteeAt" ColumnName="SaleGuaranteeAt" />
+          <ScalarProperty Name="GuaranteedSaleDistanceTraveled" ColumnName="GuaranteedSaleDistanceTraveled" />
+          <ScalarProperty Name="IdCustomerOwner" ColumnName="IdCustomerOwner" />
+          <ScalarProperty Name="DealerCity" ColumnName="DealerCity" />
+          <ScalarProperty Name="DealerVehicleModel" ColumnName="DealerVehicleModel" />
+          <ScalarProperty Name="Plate" ColumnName="Plate" />
+          <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="LastMileage" ColumnName="LastMileage" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeekDays">
+      <EntityTypeMapping TypeName="SystimedbModel.WeekDays">
+        <MappingFragment StoreEntitySet="WeekDays">
+          <ScalarProperty Name="IdDay" ColumnName="IdDay" />
+          <ScalarProperty Name="IdSchedule" ColumnName="IdSchedule" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="DayTranslate" ColumnName="DayTranslate" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="SystimedbModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IdCity" ColumnName="IdCity" />
+          <ScalarProperty Name="HasPendingTask" ColumnName="HasPendingTask" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerShedule">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkerShedule">
+        <MappingFragment StoreEntitySet="WorkerShedule">
+          <ScalarProperty Name="IdWorkerShedule" ColumnName="IdWorkerShedule" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="Monday" ColumnName="Monday" />
+          <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+          <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+          <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+          <ScalarProperty Name="Friday" ColumnName="Friday" />
+          <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+          <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderDetails">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderDetails">
+        <MappingFragment StoreEntitySet="WorkOrderDetails">
+          <ScalarProperty Name="IdWorkOrderDetail" ColumnName="IdWorkOrderDetail" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
+          <ScalarProperty Name="IdPart" ColumnName="IdPart" />
+          <ScalarProperty Name="IdAction" ColumnName="IdAction" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderLoadErrorLog">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderLoadErrorLog">
+        <MappingFragment StoreEntitySet="WorkOrderLoadErrorLog">
+          <ScalarProperty Name="IdWorkOrderNumberErp" ColumnName="IdWorkOrderNumberErp" />
+          <ScalarProperty Name="idCustomerOT" ColumnName="idCustomerOT" />
+          <ScalarProperty Name="idDealerShopOtErp" ColumnName="idDealerShopOtErp" />
+          <ScalarProperty Name="idVehicle" ColumnName="idVehicle" />
+          <ScalarProperty Name="idWorkerOT" ColumnName="idWorkerOT" />
+          <ScalarProperty Name="CloudUpdateError" ColumnName="CloudUpdateError" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderNotificationByCustomer">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderNotificationByCustomer">
+        <MappingFragment StoreEntitySet="WorkOrderNotificationByCustomer">
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrders">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrders">
+        <MappingFragment StoreEntitySet="WorkOrders">
+          <ScalarProperty Name="IsIncludedInReports" ColumnName="IsIncludedInReports" />
+          <ScalarProperty Name="IsInvoiced" ColumnName="IsInvoiced" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WorkOrderNumber" />
+          <ScalarProperty Name="IdCatalogWorkLevel" ColumnName="IdCatalogWorkLevel" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdVinNumber" ColumnName="IdVinNumber" />
+          <ScalarProperty Name="IdPhysicalTag" ColumnName="IdPhysicalTag" />
+          <ScalarProperty Name="IdErpQuote" ColumnName="IdErpQuote" />
+          <ScalarProperty Name="IdCurrentOperation" ColumnName="IdCurrentOperation" />
+          <ScalarProperty Name="IdCurrentWorker" ColumnName="IdCurrentWorker" />
+          <ScalarProperty Name="IdSalesRepresentative" ColumnName="IdSalesRepresentative" />
+          <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
+          <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+          <ScalarProperty Name="OpenOtAt" ColumnName="OpenOtAt" />
+          <ScalarProperty Name="EnteredAt" ColumnName="EnteredAt" />
+          <ScalarProperty Name="PromisedAt" ColumnName="PromisedAt" />
+          <ScalarProperty Name="AuthorizedAt" ColumnName="AuthorizedAt" />
+          <ScalarProperty Name="PartsCompletedAt" ColumnName="PartsCompletedAt" />
+          <ScalarProperty Name="ReadyToPickUpAt" ColumnName="ReadyToPickUpAt" />
+          <ScalarProperty Name="WarrantyAt" ColumnName="WarrantyAt" />
+          <ScalarProperty Name="GuaranteedDistanceTraveled" ColumnName="GuaranteedDistanceTraveled" />
+          <ScalarProperty Name="PickedUpAt" ColumnName="PickedUpAt" />
+          <ScalarProperty Name="InvoicedAt" ColumnName="InvoicedAt" />
+          <ScalarProperty Name="HasTotalLoss" ColumnName="HasTotalLoss" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="RatingDealer" ColumnName="RatingDealer" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="RatingInsuranceCompany" ColumnName="RatingInsuranceCompany" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="Canceled" ColumnName="Canceled" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderTracking">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTracking">
+        <MappingFragment StoreEntitySet="WorkOrderTracking">
+          <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="InitiatedAt" ColumnName="InitiatedAt" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderTrackingDetail">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTrackingDetail">
+        <MappingFragment StoreEntitySet="WorkOrderTrackingDetail">
+          <ScalarProperty Name="IdWorkOrderTrackingDetail" ColumnName="IdWorkOrderTrackingDetail" />
+          <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdCurrentWorker" ColumnName="IdCurrentWorker" />
+          <ScalarProperty Name="IsWaiting" ColumnName="IsWaiting" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TrackingDate" ColumnName="TrackingDate" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SystimedbModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="LastLoginAt" ColumnName="LastLoginAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AjustCity" FunctionName="SystimedbModel.Store.AjustCity" />
+    <FunctionImportMapping FunctionImportName="AjustCountry" FunctionName="SystimedbModel.Store.AjustCountry" />
+    <FunctionImportMapping FunctionImportName="AjustVehicleBrands" FunctionName="SystimedbModel.Store.AjustVehicleBrands">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SystimedbModel.AjustVehicleBrands_Result">
+          <ScalarProperty Name="IdVehicleBrand" ColumnName="IdVehicleBrand" />
+          <ScalarProperty Name="VehicleBrand" ColumnName="VehicleBrand" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FillterSystimeErp" FunctionName="SystimedbModel.Store.FillterSystimeErp" />
+    <FunctionImportMapping FunctionImportName="GET_PATH" FunctionName="SystimedbModel.Store.GET_PATH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SystimedbModel.GET_PATH_Result">
+          <ScalarProperty Name="UrlBase" ColumnName="UrlBase" />
+          <ScalarProperty Name="ConectionString" ColumnName="ConectionString" />
+          <ScalarProperty Name="Container" ColumnName="Container" />
+          <ScalarProperty Name="FileStorageUrl" ColumnName="FileStorageUrl" />
+          <ScalarProperty Name="Arguments" ColumnName="Arguments" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SystimedbModelStoreContainer" CdmEntityContainer="SystimedbEntities">
+    <EntitySetMapping Name="CatalogOperationsByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogOperationsByDealer">
+        <MappingFragment StoreEntitySet="CatalogOperationsByDealer">
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdNextOperationByDealer" ColumnName="IdNextOperationByDealer" />
+          <ScalarProperty Name="IdDefaultWorker" ColumnName="IdDefaultWorker" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Effort" ColumnName="Effort" />
+          <ScalarProperty Name="DefaultPercentage" ColumnName="DefaultPercentage" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogSubOperationByDealer">
+      <EntityTypeMapping TypeName="SystimedbModel.CatalogSubOperationByDealer">
+        <MappingFragment StoreEntitySet="CatalogSubOperationByDealer">
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdSubOperation" ColumnName="IdSubOperation" />
+          <ScalarProperty Name="IdNextSubOperationByDealer" ColumnName="IdNextSubOperationByDealer" />
+          <ScalarProperty Name="IdDefaultWorker" ColumnName="IdDefaultWorker" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsExternalJob" ColumnName="IsExternalJob" />
+          <ScalarProperty Name="IsAssignable" ColumnName="IsAssignable" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Effort" ColumnName="Effort" />
+          <ScalarProperty Name="DefaultPercentage" ColumnName="DefaultPercentage" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OperationByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.OperationByWorkOrder">
+        <MappingFragment StoreEntitySet="OperationByWorkOrder">
+          <ScalarProperty Name="IdOperationByWorkOrder" ColumnName="IdOperationByWorkOrder" />
+          <ScalarProperty Name="IdOperationByDealer" ColumnName="IdOperationByDealer" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="EstimatedAt" ColumnName="EstimatedAt" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+          <ScalarProperty Name="WorkforceCost" ColumnName="WorkforceCost" />
+          <ScalarProperty Name="MaterialCost" ColumnName="MaterialCost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WorkedTime" ColumnName="WorkedTime" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubOperationByWorkOrder">
+      <EntityTypeMapping TypeName="SystimedbModel.SubOperationByWorkOrder">
+        <MappingFragment StoreEntitySet="SubOperationByWorkOrder">
+          <ScalarProperty Name="IdSubOperationByWorkOrder" ColumnName="IdSubOperationByWorkOrder" />
+          <ScalarProperty Name="IdOperationByWorkOrder" ColumnName="IdOperationByWorkOrder" />
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="AssignedById" ColumnName="AssignedById" />
+          <ScalarProperty Name="AssignedAt" ColumnName="AssignedAt" />
+          <ScalarProperty Name="SubOperationTime" ColumnName="SubOperationTime" />
+          <ScalarProperty Name="OperationTimePercentage" ColumnName="OperationTimePercentage" />
+          <ScalarProperty Name="WorkedTime" ColumnName="WorkedTime" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrders">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrders">
+        <MappingFragment StoreEntitySet="WorkOrders">
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WorkOrderNumber" />
+          <ScalarProperty Name="IdCatalogWorkLevel" ColumnName="IdCatalogWorkLevel" />
+          <ScalarProperty Name="IdDealerShop" ColumnName="IdDealerShop" />
+          <ScalarProperty Name="IdVinNumber" ColumnName="IdVinNumber" />
+          <ScalarProperty Name="IdPhysicalTag" ColumnName="IdPhysicalTag" />
+          <ScalarProperty Name="IdErpQuote" ColumnName="IdErpQuote" />
+          <ScalarProperty Name="IdCurrentOperation" ColumnName="IdCurrentOperation" />
+          <ScalarProperty Name="IdCurrentWorker" ColumnName="IdCurrentWorker" />
+          <ScalarProperty Name="IdSalesRepresentative" ColumnName="IdSalesRepresentative" />
+          <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
+          <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
+          <ScalarProperty Name="OpenOtAt" ColumnName="OpenOtAt" />
+          <ScalarProperty Name="EnteredAt" ColumnName="EnteredAt" />
+          <ScalarProperty Name="PromisedAt" ColumnName="PromisedAt" />
+          <ScalarProperty Name="AuthorizedAt" ColumnName="AuthorizedAt" />
+          <ScalarProperty Name="PartsCompletedAt" ColumnName="PartsCompletedAt" />
+          <ScalarProperty Name="ReadyToPickUpAt" ColumnName="ReadyToPickUpAt" />
+          <ScalarProperty Name="WarrantyAt" ColumnName="WarrantyAt" />
+          <ScalarProperty Name="GuaranteedDistanceTraveled" ColumnName="GuaranteedDistanceTraveled" />
+          <ScalarProperty Name="PickedUpAt" ColumnName="PickedUpAt" />
+          <ScalarProperty Name="InvoicedAt" ColumnName="InvoicedAt" />
+          <ScalarProperty Name="HasTotalLoss" ColumnName="HasTotalLoss" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="RatingDealer" ColumnName="RatingDealer" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="RatingInsuranceCompany" ColumnName="RatingInsuranceCompany" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="Canceled" ColumnName="Canceled" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderTracking">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTracking">
+        <MappingFragment StoreEntitySet="WorkOrderTracking">
+          <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
+          <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
+          <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
+          <ScalarProperty Name="InitiatedAt" ColumnName="InitiatedAt" />
+          <ScalarProperty Name="CompletedAt" ColumnName="CompletedAt" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkOrderTrackingDetail">
+      <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTrackingDetail">
+        <MappingFragment StoreEntitySet="WorkOrderTrackingDetail">
+          <ScalarProperty Name="IdWorkOrderTrackingDetail" ColumnName="IdWorkOrderTrackingDetail" />
+          <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
+          <ScalarProperty Name="IdWorker" ColumnName="IdWorker" />
+          <ScalarProperty Name="IdCurrentWorker" ColumnName="IdCurrentWorker" />
+          <ScalarProperty Name="IsWaiting" ColumnName="IsWaiting" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TrackingDate" ColumnName="TrackingDate" />
+          <ScalarProperty Name="HasPhoto" ColumnName="HasPhoto" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertNewTracking" FunctionName="SystimedbModel.Store.InsertNewTracking" />
+    <FunctionImportMapping FunctionImportName="InsertNewTrackingMigrate" FunctionName="SystimedbModel.Store.InsertNewTrackingMigrate" />
+    <FunctionImportMapping FunctionImportName="SP_WCF_SetOperationByWorkOrder" FunctionName="SystimedbModel.Store.SP_WCF_SetOperationByWorkOrder" />
+    <FunctionImportMapping FunctionImportName="SP_WCF_SetSubOperationByWorkOrder" FunctionName="SystimedbModel.Store.SP_WCF_SetSubOperationByWorkOrder" />
+    <FunctionImportMapping FunctionImportName="SP_WCF_SetSubOperationByWorkOrderMigrate" FunctionName="SystimedbModel.Store.SP_WCF_SetSubOperationByWorkOrderMigrate" />
+    <EntitySetMapping Name="MigrationAccessError">
+      <EntityTypeMapping TypeName="SystimedbModel.MigrationAccessError">
+        <MappingFragment StoreEntitySet="MigrationAccessError">
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ExceptionMessage" ColumnName="ExceptionMessage" />
+          <ScalarProperty Name="IdShop" ColumnName="IdShop" />
+          <ScalarProperty Name="WorkOrderNumber" ColumnName="WorkOrderNumber" />
+          <ScalarProperty Name="IdMigrationAccess" ColumnName="IdMigrationAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

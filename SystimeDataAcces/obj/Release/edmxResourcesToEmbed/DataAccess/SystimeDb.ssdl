@@ -1,0 +1,2251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SystimedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CatalogActions">
+    <Key>
+      <PropertyRef Name="IdAction" />
+    </Key>
+    <Property Name="IdAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActionTranslate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Action" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogDefaultSubOperationByIdJobTitle">
+    <Key>
+      <PropertyRef Name="IdDefaultSubOperationByJobTitle" />
+    </Key>
+    <Property Name="IdDefaultSubOperationByJobTitle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdJobTitleByDealer" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="CatalogExternalJobsByDealer">
+    <Key>
+      <PropertyRef Name="IdExternalJobByDealer" />
+    </Key>
+    <Property Name="IdExternalJobByDealer" Type="int" Nullable="false" />
+    <Property Name="IdOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdPart" Type="int" Nullable="false" />
+    <Property Name="IdAction" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogJobTitleByDealer">
+    <Key>
+      <PropertyRef Name="IdJobTitle" />
+    </Key>
+    <Property Name="IdJobTitle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdDefaultSubOperation" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="IsAssignable" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogNotificationType">
+    <Key>
+      <PropertyRef Name="IdNotificationType" />
+    </Key>
+    <Property Name="IdNotificationType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotificationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegularExpression" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogOperationsByDealer">
+    <Key>
+      <PropertyRef Name="IdOperationByDealer" />
+    </Key>
+    <Property Name="IdOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdOperation" Type="int" Nullable="false" />
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNextOperationByDealer" Type="int" />
+    <Property Name="IdDefaultWorker" Type="varchar" MaxLength="25" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsAssignable" Type="bit" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Effort" Type="float" />
+    <Property Name="DefaultPercentage" Type="float" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogParts">
+    <Key>
+      <PropertyRef Name="IdPart" />
+    </Key>
+    <Property Name="IdPart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Part" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PartTranslate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogPermissions">
+    <Key>
+      <PropertyRef Name="IdPermission" />
+    </Key>
+    <Property Name="IdPermission" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Module" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogProviders">
+    <Key>
+      <PropertyRef Name="IdProvider" />
+    </Key>
+    <Property Name="IdProvider" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Provider" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TIN" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdCity" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogRoles">
+    <Key>
+      <PropertyRef Name="IdRole" />
+    </Key>
+    <Property Name="IdRole" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogSubOperationByDealer">
+    <Key>
+      <PropertyRef Name="IdSubOperationByDealer" />
+    </Key>
+    <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdOperationByDealer" Type="int" />
+    <Property Name="IdSubOperation" Type="int" Nullable="false" />
+    <Property Name="IdNextSubOperationByDealer" Type="int" />
+    <Property Name="IdJobTitle" Type="varchar" MaxLength="20" />
+    <Property Name="IdDefaultWorker" Type="varchar" MaxLength="25" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsExternalJob" Type="bit" />
+    <Property Name="IsAssignable" Type="bit" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Effort" Type="float" />
+    <Property Name="DefaultPercentage" Type="float" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogWorkLevel">
+    <Key>
+      <PropertyRef Name="IdCatalogWorkLevel" />
+    </Key>
+    <Property Name="IdCatalogWorkLevel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkLevel" Type="bigint" Nullable="false" />
+    <Property Name="WorkeLevelTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumericLevel" Type="tinyint" Nullable="false" />
+    <Property Name="Description" Type="bigint" />
+    <Property Name="DescriptionTranslate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogCities">
+    <Key>
+      <PropertyRef Name="IdCity" />
+    </Key>
+    <Property Name="IdCity" Type="int" Nullable="false" />
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdState" Type="bigint" />
+    <Property Name="CityCode" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Latitud" Type="float" />
+    <Property Name="Logitud" Type="float" />
+    <Property Name="TimeZoneName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogCountries">
+    <Key>
+      <PropertyRef Name="IdCountry" />
+    </Key>
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Country" Type="int" Nullable="false" />
+    <Property Name="CountryTranslate" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Alpha3" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="PhoneCode" Type="int" />
+    <Property Name="IdCurrency" Type="nvarchar" MaxLength="10" />
+    <Property Name="IdLanguage" Type="nvarchar" MaxLength="10" />
+    <Property Name="IdDistanceUnit" Type="nvarchar" MaxLength="10" />
+    <Property Name="TraveledDistanceAverage" Type="float" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogCurrency">
+    <Key>
+      <PropertyRef Name="IdCurrency" />
+    </Key>
+    <Property Name="IdCurrency" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Currency" Type="int" Nullable="false" />
+    <Property Name="CurrencyTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Simbol" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogDealerShops">
+    <Key>
+      <PropertyRef Name="IdDealerShop" />
+    </Key>
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdCity" Type="int" Nullable="false" />
+    <Property Name="Shop" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogInsuranceCompanies">
+    <Key>
+      <PropertyRef Name="IdInsuranceCompany" />
+    </Key>
+    <Property Name="IdInsuranceCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InsuranceCompany" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TIN" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="IdCity" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogLanguage">
+    <Key>
+      <PropertyRef Name="IdLanguage" />
+    </Key>
+    <Property Name="IdLanguage" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Language" Type="int" Nullable="false" />
+    <Property Name="LanguageTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogOperations">
+    <Key>
+      <PropertyRef Name="IdOperation" />
+    </Key>
+    <Property Name="IdOperation" Type="int" Nullable="false" />
+    <Property Name="Operation" Type="int" Nullable="false" />
+    <Property Name="OperationTransalate" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsParalell" Type="bit" Nullable="false" />
+    <Property Name="CumulativeProgress" Type="float" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogSubOperations">
+    <Key>
+      <PropertyRef Name="IdSubOperation" />
+    </Key>
+    <Property Name="IdSubOperation" Type="int" Nullable="false" />
+    <Property Name="IdOperation" Type="int" Nullable="false" />
+    <Property Name="SubOperation" Type="int" Nullable="false" />
+    <Property Name="SubOperationTranslate" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="IsAssignable" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogUnits">
+    <Key>
+      <PropertyRef Name="IdUnit" />
+    </Key>
+    <Property Name="IdUnit" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdUnitType" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="int" Nullable="false" />
+    <Property Name="UnitTransalate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitConversion" Type="float" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogUnitTypes">
+    <Key>
+      <PropertyRef Name="IdUnitType" />
+    </Key>
+    <Property Name="IdUnitType" Type="int" Nullable="false" />
+    <Property Name="UnitType" Type="int" Nullable="false" />
+    <Property Name="UnitTypeTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogUrlBase">
+    <Key>
+      <PropertyRef Name="IdUrlBase" />
+    </Key>
+    <Property Name="IdUrlBase" Type="int" Nullable="false" />
+    <Property Name="UrlBase" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConectionString" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogUrlPaths">
+    <Key>
+      <PropertyRef Name="IdUrlPath" />
+    </Key>
+    <Property Name="IdUrlPath" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdUrlBase" Type="int" Nullable="false" />
+    <Property Name="Container" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileStorageUrl" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Arguments" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogVehicleBrands">
+    <Key>
+      <PropertyRef Name="IdVehicleBrand" />
+    </Key>
+    <Property Name="IdVehicleBrand" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VehicleBrand" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogVehicleModels">
+    <Key>
+      <PropertyRef Name="IdVehicleModel" />
+    </Key>
+    <Property Name="IdVehicleModel" Type="int" Nullable="false" />
+    <Property Name="IdVehicleBrand" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VehicleModel" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogVehiclesServiceTypes">
+    <Key>
+      <PropertyRef Name="IdVehicleServiceType" />
+    </Key>
+    <Property Name="IdVehicleServiceType" Type="int" Nullable="false" />
+    <Property Name="VehicleServiceType" Type="int" Nullable="false" />
+    <Property Name="VehicleServiceTypeTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CloudCatalogVehicleTypes">
+    <Key>
+      <PropertyRef Name="IdVehicleType" />
+    </Key>
+    <Property Name="IdVehicleType" Type="int" Nullable="false" />
+    <Property Name="VehicleType" Type="int" Nullable="false" />
+    <Property Name="VehicleTypeTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="IdCustomer" />
+    </Key>
+    <Property Name="IdCustomer" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="75" />
+    <Property Name="IdCity" Type="int" Nullable="false" />
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="25" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobsByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdJobByWorkOrder" />
+    </Key>
+    <Property Name="IdJobByWorkOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdPart" Type="int" Nullable="false" />
+    <Property Name="IdAction" Type="int" Nullable="false" />
+    <Property Name="IdProvaider" Type="int" Nullable="false" />
+    <Property Name="IsExternalJob" Type="bit" />
+    <Property Name="EstimatedTime" Type="float" />
+    <Property Name="CompletedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobTilteByWorker">
+    <Key>
+      <PropertyRef Name="IdJobTitleByWorker" />
+    </Key>
+    <Property Name="IdJobTitleByWorker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdJobTitleByDealer" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="LocalUrlPaths">
+    <Key>
+      <PropertyRef Name="IdUrlPath" />
+    </Key>
+    <Property Name="IdUrlPath" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdUrlBase" Type="int" Nullable="false" />
+    <Property Name="FileUrlPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Arguments" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="int" Nullable="false" />
+    <Property Name="OSName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="OSVersion" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="DeviceBrand" Type="nchar" MaxLength="10" />
+    <Property Name="DeviveModel" Type="nchar" MaxLength="10" />
+    <Property Name="DeviceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="App" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AppUser" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar" MaxLength="20" />
+    <Property Name="ClassName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MethodName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SourceMethodEvent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumberLine" Type="int" Nullable="false" />
+    <Property Name="SystemMessage" Type="nvarchar(max)" />
+    <Property Name="ControlledMessage" Type="nvarchar(max)" />
+    <Property Name="TimeOfEventClient" Type="datetime" Nullable="false" />
+    <Property Name="ReviewedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ReviewedAt" Type="datetime" />
+    <Property Name="ErrorSolved" Type="bit" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MigrationAccessError">
+    <Key>
+      <PropertyRef Name="IdMigrationAccess" />
+    </Key>
+    <Property Name="IdMigrationAccess" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrderNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdShop" Type="int" Nullable="false" />
+    <Property Name="ExceptionMessage" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NotificationErpErrors">
+    <Key>
+      <PropertyRef Name="IdNotificationErpError" />
+    </Key>
+    <Property Name="IdNotificationErpError" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntityUpdateJson" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ErrorGenerate" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotificationLogs">
+    <Key>
+      <PropertyRef Name="IdNotificationLog" />
+    </Key>
+    <Property Name="IdNotificationLog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NotificationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NameRecipientsType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FillterRecipenttype" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="50" />
+    <Property Name="Provaider" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MessageSend" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TitleMessage" Type="nvarchar" MaxLength="100" />
+    <Property Name="MessageErrorProvaider" Type="nvarchar" MaxLength="200" />
+    <Property Name="TypeNotification" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsSend" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OperationByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdOperationByWorkOrder" />
+    </Key>
+    <Property Name="IdOperationByWorkOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="EstimatedAt" Type="datetime" />
+    <Property Name="EstimatedTime" Type="float" Nullable="false" />
+    <Property Name="WorkforceCost" Type="float" Nullable="false" />
+    <Property Name="MaterialCost" Type="float" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="WorkedTime" Type="float" Nullable="false" />
+    <Property Name="CompletedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="varchar" MaxLength="20" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PendingTask">
+    <Key>
+      <PropertyRef Name="IdPendingTask" />
+    </Key>
+    <Property Name="IdPendingTask" Type="int" Nullable="false" />
+    <Property Name="PendingTask" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="varchar" MaxLength="20" />
+    <Property Name="PendingTaskGroup" Type="int" />
+    <Property Name="Priority" Type="smallint" Nullable="false" />
+    <Property Name="ExpirationAt" Type="datetime" />
+    <Property Name="CompletedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgressByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdOperationByDealer" />
+      <PropertyRef Name="IdWorkOrder" />
+    </Key>
+    <Property Name="IdOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpecificProgress" Type="float" Nullable="false" />
+    <Property Name="CumulativeProgress" Type="float" Nullable="false" />
+    <Property Name="Progress" Type="float" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProvidersByExternalJob">
+    <Key>
+      <PropertyRef Name="IdProviderByExernalJob" />
+    </Key>
+    <Property Name="IdProviderByExernalJob" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdExternalJob" Type="int" Nullable="false" />
+    <Property Name="IdProvider" Type="int" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteDetails">
+    <Key>
+      <PropertyRef Name="IsQuoteDetail" />
+    </Key>
+    <Property Name="IsQuoteDetail" Type="int" Nullable="false" />
+    <Property Name="IdQuote" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="smallint" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LaborCost" Type="float" />
+    <Property Name="MaterialCost" Type="float" />
+    <Property Name="EstimatedWorkShopTime" Type="float" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuoteRequest">
+    <Key>
+      <PropertyRef Name="IdQuoteRequest" />
+    </Key>
+    <Property Name="IdQuoteRequest" Type="int" Nullable="false" />
+    <Property Name="IdVinNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdRequestById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Observations" Type="nvarchar(max)" />
+    <Property Name="ReviwedById" Type="varchar" MaxLength="20" />
+    <Property Name="ReviwedByAt" Type="datetime" />
+    <Property Name="IsPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quotes">
+    <Key>
+      <PropertyRef Name="IdQuote" />
+    </Key>
+    <Property Name="IdQuote" Type="int" Nullable="false" />
+    <Property Name="IdShop" Type="int" Nullable="false" />
+    <Property Name="IdQuoteRequest" Type="int" />
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Title" Type="varbinary" MaxLength="20" Nullable="false" />
+    <Property Name="Observations" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AutorizedAt" Type="datetime" />
+    <Property Name="AuthorizedById" Type="varchar" MaxLength="20" />
+    <Property Name="IsPhoto" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScheduleDetail">
+    <Key>
+      <PropertyRef Name="IdScheduleDetail" />
+    </Key>
+    <Property Name="IdScheduleDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSchedule" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="IsWorking" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="IdSetting" />
+    </Key>
+    <Property Name="IdSetting" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AppSetting" Type="nchar" MaxLength="10" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ShopAppointments">
+    <Key>
+      <PropertyRef Name="IdShopAppointments" />
+    </Key>
+    <Property Name="IdShopAppointments" Type="int" Nullable="false" />
+    <Property Name="IdQuote" Type="int" />
+    <Property Name="IdAppUser" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateOfAppointment" Type="datetime" Nullable="false" />
+    <Property Name="IdUserRevised" Type="varchar" MaxLength="20" />
+    <Property Name="DateOfRevised" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpecialDates">
+    <Key>
+      <PropertyRef Name="IdSpecialDate" />
+    </Key>
+    <Property Name="IdSpecialDate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSchedule" Type="int" Nullable="false" />
+    <Property Name="SpecialDate" Type="int" Nullable="false" />
+    <Property Name="SpecialDateTranslate" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Observations" Type="int" />
+    <Property Name="ObservationsTranslate" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubOperationByWorkOrder">
+    <Key>
+      <PropertyRef Name="IdSubOperationByWorkOrder" />
+    </Key>
+    <Property Name="IdSubOperationByWorkOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdOperationByWorkOrder" Type="int" Nullable="false" />
+    <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="AssignedTo" Type="nvarchar" MaxLength="20" />
+    <Property Name="AssignedById" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AssignedAt" Type="datetime" />
+    <Property Name="SubOperationTime" Type="float" Nullable="false" />
+    <Property Name="OperationTimePercentage" Type="float" Nullable="false" />
+    <Property Name="WorkedTime" Type="float" />
+    <Property Name="CompletedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="varchar" MaxLength="20" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TranslationReferences">
+    <Key>
+      <PropertyRef Name="IdTranslationReference" />
+    </Key>
+    <Property Name="IdTranslationReference" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Translations">
+    <Key>
+      <PropertyRef Name="IdTranslation" />
+    </Key>
+    <Property Name="IdTranslation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTransalationReference" Type="int" Nullable="false" />
+    <Property Name="IdLanguage" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TranslationText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAT" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UrlsBase">
+    <Key>
+      <PropertyRef Name="IdUrlBase" />
+    </Key>
+    <Property Name="IdUrlBase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrlBase" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpDateAt" Type="datetime" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermissionByRole">
+    <Key>
+      <PropertyRef Name="IdPermissionByRole" />
+    </Key>
+    <Property Name="IdPermissionByRole" Type="int" Nullable="false" />
+    <Property Name="IdPermission" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdRole" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdShop" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="IdUser" />
+      <PropertyRef Name="IdWorker" />
+      <PropertyRef Name="IdRole" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Token" />
+      <PropertyRef Name="CreatedAt" />
+      <PropertyRef Name="CreatedById" />
+      <PropertyRef Name="Version" />
+      <PropertyRef Name="Deleted" />
+    </Key>
+    <Property Name="IdUser" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdRole" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tag" Type="nvarchar(max)" />
+    <Property Name="Token" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastLoginAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="IdVinNumber" />
+    </Key>
+    <Property Name="IdVinNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdCountry" Type="nvarchar" MaxLength="2" />
+    <Property Name="IdCity" Type="int" Nullable="false" />
+    <Property Name="IdVehicleType" Type="int" />
+    <Property Name="IdVehicleServiceType" Type="int" />
+    <Property Name="IdInsuranceCompany" Type="int" />
+    <Property Name="IdVehicleModel" Type="int" Nullable="false" />
+    <Property Name="SaleGuaranteeAt" Type="datetime" />
+    <Property Name="GuaranteedSaleDistanceTraveled" Type="int" />
+    <Property Name="IdCustomerOwner" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DealerCity" Type="varchar" MaxLength="20" />
+    <Property Name="DealerVehicleModel" Type="varchar" MaxLength="75" />
+    <Property Name="Plate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ModelYear" Type="int" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="10" />
+    <Property Name="LastMileage" Type="int" />
+    <Property Name="HasPhoto" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WeekDays">
+    <Key>
+      <PropertyRef Name="IdDay" />
+    </Key>
+    <Property Name="IdDay" Type="int" Nullable="false" />
+    <Property Name="IdSchedule" Type="int" Nullable="false" />
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="DayTranslate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="IdWorker" />
+    </Key>
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NickName" Type="varchar" MaxLength="15" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="75" />
+    <Property Name="IdCity" Type="int" />
+    <Property Name="HasPendingTask" Type="bit" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkerShedule">
+    <Key>
+      <PropertyRef Name="IdWorkerShedule" />
+    </Key>
+    <Property Name="IdWorkerShedule" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Monday" Type="nchar" MaxLength="10" />
+    <Property Name="Tuesday" Type="nchar" MaxLength="10" />
+    <Property Name="Wednesday" Type="nchar" MaxLength="10" />
+    <Property Name="Thursday" Type="nchar" MaxLength="10" />
+    <Property Name="Friday" Type="nchar" MaxLength="10" />
+    <Property Name="Saturday" Type="nchar" MaxLength="10" />
+    <Property Name="Sunday" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderDetails">
+    <Key>
+      <PropertyRef Name="IdWorkOrderDetail" />
+    </Key>
+    <Property Name="IdWorkOrderDetail" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdOperation" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdPart" Type="int" Nullable="false" />
+    <Property Name="IdAction" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderLoadErrorLog">
+    <Key>
+      <PropertyRef Name="IdWorkOrderNumberErp" />
+      <PropertyRef Name="idDealerShopOtErp" />
+    </Key>
+    <Property Name="IdWorkOrderNumberErp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idCustomerOT" Type="nvarchar" MaxLength="50" />
+    <Property Name="idDealerShopOtErp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idVehicle" Type="nvarchar" MaxLength="50" />
+    <Property Name="idWorkerOT" Type="nvarchar" MaxLength="50" />
+    <Property Name="CloudUpdateError" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nvarchar" MaxLength="50" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderNotificationByCustomer">
+    <Key>
+      <PropertyRef Name="IdWorkOrder" />
+      <PropertyRef Name="IdCustomer" />
+    </Key>
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdCustomer" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrders">
+    <Key>
+      <PropertyRef Name="IdWorkOrder" />
+    </Key>
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkOrderNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdCatalogWorkLevel" Type="int" />
+    <Property Name="IdDealerShop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdVinNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdPhysicalTag" Type="int" />
+    <Property Name="IdErpQuote" Type="int" />
+    <Property Name="IdCurrentOperation" Type="int" />
+    <Property Name="IdCurrentWorker" Type="varchar" MaxLength="25" />
+    <Property Name="IdSalesRepresentative" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdInsuranceCompany" Type="int" />
+    <Property Name="IdCustomer" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="OpenOtAt" Type="datetime" />
+    <Property Name="EnteredAt" Type="datetime" />
+    <Property Name="PromisedAt" Type="datetime" />
+    <Property Name="AuthorizedAt" Type="datetime" />
+    <Property Name="PartsCompletedAt" Type="datetime" />
+    <Property Name="ReadyToPickUpAt" Type="datetime" />
+    <Property Name="WarrantyAt" Type="datetime" />
+    <Property Name="GuaranteedDistanceTraveled" Type="int" />
+    <Property Name="PickedUpAt" Type="datetime" />
+    <Property Name="InvoicedAt" Type="datetime" />
+    <Property Name="HasTotalLoss" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="255" />
+    <Property Name="RatingDealer" Type="smallint" />
+    <Property Name="IsInsured" Type="bit" Nullable="false" />
+    <Property Name="RatingInsuranceCompany" Type="smallint" />
+    <Property Name="FeedBack" Type="varchar" MaxLength="255" />
+    <Property Name="IsInvoiced" Type="bit" />
+    <Property Name="IsIncludedInReports" Type="bit" />
+    <Property Name="Canceled" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderTracking">
+    <Key>
+      <PropertyRef Name="IdWorkOrderTracking" />
+    </Key>
+    <Property Name="IdWorkOrderTracking" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="InitiatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CompletedAt" Type="datetime" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedById" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="UpdatedById" Type="nchar" MaxLength="10" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkOrderTrackingDetail">
+    <Key>
+      <PropertyRef Name="IdWorkOrderTrackingDetail" />
+    </Key>
+    <Property Name="IdWorkOrderTrackingDetail" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdWorkOrderTracking" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdWorker" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdCurrentWorker" Type="varchar" MaxLength="25" />
+    <Property Name="IsWaiting" Type="bit" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="TrackingDate" Type="datetime" Nullable="false" />
+    <Property Name="HasPhoto" Type="bit" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CatalogCities_CatalogCountries">
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="1" />
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCountries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="CloudCatalogCities">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogCountries_CatalogLanguage">
+    <End Role="CloudCatalogLanguage" Type="Self.CloudCatalogLanguage" Multiplicity="0..1" />
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogLanguage">
+        <PropertyRef Name="IdLanguage" />
+      </Principal>
+      <Dependent Role="CloudCatalogCountries">
+        <PropertyRef Name="IdLanguage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogDefaultSubOperationByIdJobTitle_CatalogJobTitleByDealer1">
+    <End Role="CatalogJobTitleByDealer" Type="Self.CatalogJobTitleByDealer" Multiplicity="1" />
+    <End Role="CatalogDefaultSubOperationByIdJobTitle" Type="Self.CatalogDefaultSubOperationByIdJobTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogJobTitleByDealer">
+        <PropertyRef Name="IdJobTitle" />
+      </Principal>
+      <Dependent Role="CatalogDefaultSubOperationByIdJobTitle">
+        <PropertyRef Name="IdJobTitleByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogDefaultSubOperationByIdJobTitle_CatalogSubOperationByDealer1">
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="1" />
+    <End Role="CatalogDefaultSubOperationByIdJobTitle" Type="Self.CatalogDefaultSubOperationByIdJobTitle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Principal>
+      <Dependent Role="CatalogDefaultSubOperationByIdJobTitle">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogExternalJobsByDealer_CatalogActions">
+    <End Role="CatalogActions" Type="Self.CatalogActions" Multiplicity="1" />
+    <End Role="CatalogExternalJobsByDealer" Type="Self.CatalogExternalJobsByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogActions">
+        <PropertyRef Name="IdAction" />
+      </Principal>
+      <Dependent Role="CatalogExternalJobsByDealer">
+        <PropertyRef Name="IdAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogExternalJobsByDealer_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="1" />
+    <End Role="CatalogExternalJobsByDealer" Type="Self.CatalogExternalJobsByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="CatalogExternalJobsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogExternalJobsByDealer_CatalogParts">
+    <End Role="CatalogParts" Type="Self.CatalogParts" Multiplicity="1" />
+    <End Role="CatalogExternalJobsByDealer" Type="Self.CatalogExternalJobsByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogParts">
+        <PropertyRef Name="IdPart" />
+      </Principal>
+      <Dependent Role="CatalogExternalJobsByDealer">
+        <PropertyRef Name="IdPart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogOperationsByDealer_CloudCatalogOperations">
+    <End Role="CloudCatalogOperations" Type="Self.CloudCatalogOperations" Multiplicity="1" />
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogOperations">
+        <PropertyRef Name="IdOperation" />
+      </Principal>
+      <Dependent Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogProviders_CloudCatalogCities">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="1" />
+    <End Role="CatalogProviders" Type="Self.CatalogProviders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="CatalogProviders">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogProviders_CloudCatalogCountries">
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="1" />
+    <End Role="CatalogProviders" Type="Self.CatalogProviders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCountries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="CatalogProviders">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogSubOperationByDealer_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="0..1" />
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogSubOperationByDealer_CloudCatalogSubOperations">
+    <End Role="CloudCatalogSubOperations" Type="Self.CloudCatalogSubOperations" Multiplicity="1" />
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogSubOperations">
+        <PropertyRef Name="IdSubOperation" />
+      </Principal>
+      <Dependent Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdSubOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogSubOperationByDealer_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdDefaultWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogUnits_CatalogUnitTypes1">
+    <End Role="CloudCatalogUnitTypes" Type="Self.CloudCatalogUnitTypes" Multiplicity="1" />
+    <End Role="CloudCatalogUnits" Type="Self.CloudCatalogUnits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogUnitTypes">
+        <PropertyRef Name="IdUnitType" />
+      </Principal>
+      <Dependent Role="CloudCatalogUnits">
+        <PropertyRef Name="IdUnitType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogVehicleModels_CatalogVehicleBrands">
+    <End Role="CloudCatalogVehicleBrands" Type="Self.CloudCatalogVehicleBrands" Multiplicity="1" />
+    <End Role="CloudCatalogVehicleModels" Type="Self.CloudCatalogVehicleModels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogVehicleBrands">
+        <PropertyRef Name="IdVehicleBrand" />
+      </Principal>
+      <Dependent Role="CloudCatalogVehicleModels">
+        <PropertyRef Name="IdVehicleBrand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="0..1" />
+    <End Role="CloudCatalogInsuranceCompanies" Type="Self.CloudCatalogInsuranceCompanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="CloudCatalogInsuranceCompanies">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_CloudCatalogCountries">
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCountries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CloudCatalogCountries_CloudCatalogUnits">
+    <End Role="CloudCatalogUnits" Type="Self.CloudCatalogUnits" Multiplicity="0..1" />
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogUnits">
+        <PropertyRef Name="IdUnit" />
+      </Principal>
+      <Dependent Role="CloudCatalogCountries">
+        <PropertyRef Name="IdDistanceUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CloudCatalogDealerShops_CloudCatalogCities">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="1" />
+    <End Role="CloudCatalogDealerShops" Type="Self.CloudCatalogDealerShops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="CloudCatalogDealerShops">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CloudCatalogSubOperations_CloudCatalogOperations">
+    <End Role="CloudCatalogOperations" Type="Self.CloudCatalogOperations" Multiplicity="1" />
+    <End Role="CloudCatalogSubOperations" Type="Self.CloudCatalogSubOperations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogOperations">
+        <PropertyRef Name="IdOperation" />
+      </Principal>
+      <Dependent Role="CloudCatalogSubOperations">
+        <PropertyRef Name="IdOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CloudCatalogUrlPaths_CloudCatalogUrlBase">
+    <End Role="CloudCatalogUrlBase" Type="Self.CloudCatalogUrlBase" Multiplicity="1" />
+    <End Role="CloudCatalogUrlPaths" Type="Self.CloudCatalogUrlPaths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogUrlBase">
+        <PropertyRef Name="IdUrlBase" />
+      </Principal>
+      <Dependent Role="CloudCatalogUrlPaths">
+        <PropertyRef Name="IdUrlBase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Countrie">
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="1" />
+    <End Role="CloudCatalogInsuranceCompanies" Type="Self.CloudCatalogInsuranceCompanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCountries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="CloudCatalogInsuranceCompanies">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_CloudCatalogCities">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobsByWorkOrder_CatalogActions">
+    <End Role="CatalogActions" Type="Self.CatalogActions" Multiplicity="1" />
+    <End Role="JobsByWorkOrder" Type="Self.JobsByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogActions">
+        <PropertyRef Name="IdAction" />
+      </Principal>
+      <Dependent Role="JobsByWorkOrder">
+        <PropertyRef Name="IdAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobsByWorkOrder_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="1" />
+    <End Role="JobsByWorkOrder" Type="Self.JobsByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="JobsByWorkOrder">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobsByWorkOrder_CatalogParts">
+    <End Role="CatalogParts" Type="Self.CatalogParts" Multiplicity="1" />
+    <End Role="JobsByWorkOrder" Type="Self.JobsByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogParts">
+        <PropertyRef Name="IdPart" />
+      </Principal>
+      <Dependent Role="JobsByWorkOrder">
+        <PropertyRef Name="IdPart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobsByWorkOrder_CatalogProviders">
+    <End Role="CatalogProviders" Type="Self.CatalogProviders" Multiplicity="1" />
+    <End Role="JobsByWorkOrder" Type="Self.JobsByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogProviders">
+        <PropertyRef Name="IdProvider" />
+      </Principal>
+      <Dependent Role="JobsByWorkOrder">
+        <PropertyRef Name="IdProvaider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobsByWorkOrder_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="JobsByWorkOrder" Type="Self.JobsByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="JobsByWorkOrder">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobTilteByWorker_CatalogJobTitleByDealer">
+    <End Role="CatalogJobTitleByDealer" Type="Self.CatalogJobTitleByDealer" Multiplicity="1" />
+    <End Role="JobTilteByWorker" Type="Self.JobTilteByWorker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogJobTitleByDealer">
+        <PropertyRef Name="IdJobTitle" />
+      </Principal>
+      <Dependent Role="JobTilteByWorker">
+        <PropertyRef Name="IdJobTitleByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalUrlPaths_UrlsBase">
+    <End Role="UrlsBase" Type="Self.UrlsBase" Multiplicity="1" />
+    <End Role="LocalUrlPaths" Type="Self.LocalUrlPaths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UrlsBase">
+        <PropertyRef Name="IdUrlBase" />
+      </Principal>
+      <Dependent Role="LocalUrlPaths">
+        <PropertyRef Name="IdUrlBase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperationByWorkOrder_CatalogOperationsByDealer">
+    <End Role="CatalogOperationsByDealer" Type="Self.CatalogOperationsByDealer" Multiplicity="1" />
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogOperationsByDealer">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Principal>
+      <Dependent Role="OperationByWorkOrder">
+        <PropertyRef Name="IdOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OperationByWorkOrder_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="OperationByWorkOrder">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PendingTask_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="PendingTask" Type="Self.PendingTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="PendingTask">
+        <PropertyRef Name="IdWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProvidersByExternalJob_CatalogExternalJobsByDealer">
+    <End Role="CatalogExternalJobsByDealer" Type="Self.CatalogExternalJobsByDealer" Multiplicity="1" />
+    <End Role="ProvidersByExternalJob" Type="Self.ProvidersByExternalJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogExternalJobsByDealer">
+        <PropertyRef Name="IdExternalJobByDealer" />
+      </Principal>
+      <Dependent Role="ProvidersByExternalJob">
+        <PropertyRef Name="IdExternalJob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProvidersByExternalJob_CatalogProviders">
+    <End Role="CatalogProviders" Type="Self.CatalogProviders" Multiplicity="1" />
+    <End Role="ProvidersByExternalJob" Type="Self.ProvidersByExternalJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogProviders">
+        <PropertyRef Name="IdProvider" />
+      </Principal>
+      <Dependent Role="ProvidersByExternalJob">
+        <PropertyRef Name="IdProvider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteDetails_Quotes">
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="1" />
+    <End Role="QuoteDetails" Type="Self.QuoteDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quotes">
+        <PropertyRef Name="IdQuote" />
+      </Principal>
+      <Dependent Role="QuoteDetails">
+        <PropertyRef Name="IdQuote" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuoteRequest_Vehicles">
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="1" />
+    <End Role="QuoteRequest" Type="Self.QuoteRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="IdVinNumber" />
+      </Principal>
+      <Dependent Role="QuoteRequest">
+        <PropertyRef Name="IdVinNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quotes_QuoteRequest">
+    <End Role="QuoteRequest" Type="Self.QuoteRequest" Multiplicity="0..1" />
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuoteRequest">
+        <PropertyRef Name="IdQuoteRequest" />
+      </Principal>
+      <Dependent Role="Quotes">
+        <PropertyRef Name="IdQuoteRequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quotes_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="0..1" />
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="Quotes">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopAppointments_Quotes">
+    <End Role="Quotes" Type="Self.Quotes" Multiplicity="0..1" />
+    <End Role="ShopAppointments" Type="Self.ShopAppointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quotes">
+        <PropertyRef Name="IdQuote" />
+      </Principal>
+      <Dependent Role="ShopAppointments">
+        <PropertyRef Name="IdQuote" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubOperationByWorkOrder_CatalogSubOperationByDealer">
+    <End Role="CatalogSubOperationByDealer" Type="Self.CatalogSubOperationByDealer" Multiplicity="1" />
+    <End Role="SubOperationByWorkOrder" Type="Self.SubOperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogSubOperationByDealer">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Principal>
+      <Dependent Role="SubOperationByWorkOrder">
+        <PropertyRef Name="IdSubOperationByDealer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubOperationByWorkOrder_OperationByWorkOrder">
+    <End Role="OperationByWorkOrder" Type="Self.OperationByWorkOrder" Multiplicity="1" />
+    <End Role="SubOperationByWorkOrder" Type="Self.SubOperationByWorkOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OperationByWorkOrder">
+        <PropertyRef Name="IdOperationByWorkOrder" />
+      </Principal>
+      <Dependent Role="SubOperationByWorkOrder">
+        <PropertyRef Name="IdOperationByWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Translations_CatalogLanguage">
+    <End Role="CloudCatalogLanguage" Type="Self.CloudCatalogLanguage" Multiplicity="1" />
+    <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogLanguage">
+        <PropertyRef Name="IdLanguage" />
+      </Principal>
+      <Dependent Role="Translations">
+        <PropertyRef Name="IdLanguage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Translations_TranslationReferences">
+    <End Role="TranslationReferences" Type="Self.TranslationReferences" Multiplicity="1" />
+    <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TranslationReferences">
+        <PropertyRef Name="IdTranslationReference" />
+      </Principal>
+      <Dependent Role="Translations">
+        <PropertyRef Name="IdTransalationReference" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionByRole_CatalogPermissions">
+    <End Role="CatalogPermissions" Type="Self.CatalogPermissions" Multiplicity="1" />
+    <End Role="UserPermissionByRole" Type="Self.UserPermissionByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogPermissions">
+        <PropertyRef Name="IdPermission" />
+      </Principal>
+      <Dependent Role="UserPermissionByRole">
+        <PropertyRef Name="IdPermission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionByRole_CatalogRoles">
+    <End Role="CatalogRoles" Type="Self.CatalogRoles" Multiplicity="1" />
+    <End Role="UserPermissionByRole" Type="Self.UserPermissionByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogRoles">
+        <PropertyRef Name="IdRole" />
+      </Principal>
+      <Dependent Role="UserPermissionByRole">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_CatalogRoles">
+    <End Role="CatalogRoles" Type="Self.CatalogRoles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogRoles">
+        <PropertyRef Name="IdRole" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IdWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_Clients">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdCustomerOwner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_CloudCatalogCities">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_CloudCatalogInsuranceCompanies">
+    <End Role="CloudCatalogInsuranceCompanies" Type="Self.CloudCatalogInsuranceCompanies" Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogInsuranceCompanies">
+        <PropertyRef Name="IdInsuranceCompany" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdInsuranceCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_CloudCatalogVehicleModels">
+    <End Role="CloudCatalogVehicleModels" Type="Self.CloudCatalogVehicleModels" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogVehicleModels">
+        <PropertyRef Name="IdVehicleModel" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdVehicleModel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_CloudCatalogVehiclesServiceTypes">
+    <End Role="CloudCatalogVehiclesServiceTypes" Type="Self.CloudCatalogVehiclesServiceTypes" Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogVehiclesServiceTypes">
+        <PropertyRef Name="IdVehicleServiceType" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdVehicleServiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicles_CloudCatalogVehicleTypes">
+    <End Role="CloudCatalogVehicleTypes" Type="Self.CloudCatalogVehicleTypes" Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogVehicleTypes">
+        <PropertyRef Name="IdVehicleType" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdVehicleType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehiclesIdCouuntry">
+    <End Role="CloudCatalogCountries" Type="Self.CloudCatalogCountries" Multiplicity="0..1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCountries">
+        <PropertyRef Name="IdCountry" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="IdCountry" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_CloudCatalogCities">
+    <End Role="CloudCatalogCities" Type="Self.CloudCatalogCities" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogCities">
+        <PropertyRef Name="IdCity" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="IdCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkerShedule_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="WorkerShedule" Type="Self.WorkerShedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="WorkerShedule">
+        <PropertyRef Name="IdWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorKOrder">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="WorkOrderNotificationByCustomer" Type="Self.WorkOrderNotificationByCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="WorkOrderNotificationByCustomer">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderDetails_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="WorkOrderDetails" Type="Self.WorkOrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="WorkOrderDetails">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderNotificationByClient_Clients">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="WorkOrderNotificationByCustomer" Type="Self.WorkOrderNotificationByCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="WorkOrderNotificationByCustomer">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_CatalogTypeOfLoss">
+    <End Role="CatalogWorkLevel" Type="Self.CatalogWorkLevel" Multiplicity="0..1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogWorkLevel">
+        <PropertyRef Name="IdCatalogWorkLevel" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdCatalogWorkLevel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_Clients">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="IdCustomer" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_CloudCatalogDealerShops">
+    <End Role="CloudCatalogDealerShops" Type="Self.CloudCatalogDealerShops" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogDealerShops">
+        <PropertyRef Name="IdDealerShop" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdDealerShop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_CloudCatalogInsuranceCompanies">
+    <End Role="CloudCatalogInsuranceCompanies" Type="Self.CloudCatalogInsuranceCompanies" Multiplicity="0..1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CloudCatalogInsuranceCompanies">
+        <PropertyRef Name="IdInsuranceCompany" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdInsuranceCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_Vehicles">
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicles">
+        <PropertyRef Name="IdVinNumber" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdVinNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrders_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="WorkOrders">
+        <PropertyRef Name="IdSalesRepresentative" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderTracking_WorkOrders">
+    <End Role="WorkOrders" Type="Self.WorkOrders" Multiplicity="1" />
+    <End Role="WorkOrderTracking" Type="Self.WorkOrderTracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrders">
+        <PropertyRef Name="IdWorkOrder" />
+      </Principal>
+      <Dependent Role="WorkOrderTracking">
+        <PropertyRef Name="IdWorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderTrackingDetail_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="WorkOrderTrackingDetail" Type="Self.WorkOrderTrackingDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="IdWorker" />
+      </Principal>
+      <Dependent Role="WorkOrderTrackingDetail">
+        <PropertyRef Name="IdWorker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrderTrackingDetail_WorkOrderTraking">
+    <End Role="WorkOrderTracking" Type="Self.WorkOrderTracking" Multiplicity="1" />
+    <End Role="WorkOrderTrackingDetail" Type="Self.WorkOrderTrackingDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkOrderTracking">
+        <PropertyRef Name="IdWorkOrderTracking" />
+      </Principal>
+      <Dependent Role="WorkOrderTrackingDetail">
+        <PropertyRef Name="IdWorkOrderTracking" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AjustCity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityContain" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AjustCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCountry" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="contryContain" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AjustVehicleBrands" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBradVehicle" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="FillterSystimeErp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="table" Type="nvarchar" Mode="In" />
+    <Parameter Name="event" Type="nvarchar" Mode="In" />
+    <Parameter Name="jsonSend" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GET_PATH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idPaht" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SystimedbModelStoreContainer">
+    <EntitySet Name="CatalogActions" EntityType="Self.CatalogActions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogDefaultSubOperationByIdJobTitle" EntityType="Self.CatalogDefaultSubOperationByIdJobTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogExternalJobsByDealer" EntityType="Self.CatalogExternalJobsByDealer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogJobTitleByDealer" EntityType="Self.CatalogJobTitleByDealer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogNotificationType" EntityType="Self.CatalogNotificationType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogOperationsByDealer" EntityType="Self.CatalogOperationsByDealer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogParts" EntityType="Self.CatalogParts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogPermissions" EntityType="Self.CatalogPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogProviders" EntityType="Self.CatalogProviders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogRoles" EntityType="Self.CatalogRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogSubOperationByDealer" EntityType="Self.CatalogSubOperationByDealer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatalogWorkLevel" EntityType="Self.CatalogWorkLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogCities" EntityType="Self.CloudCatalogCities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogCountries" EntityType="Self.CloudCatalogCountries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogCurrency" EntityType="Self.CloudCatalogCurrency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogDealerShops" EntityType="Self.CloudCatalogDealerShops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogInsuranceCompanies" EntityType="Self.CloudCatalogInsuranceCompanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogLanguage" EntityType="Self.CloudCatalogLanguage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogOperations" EntityType="Self.CloudCatalogOperations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogSubOperations" EntityType="Self.CloudCatalogSubOperations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogUnits" EntityType="Self.CloudCatalogUnits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogUnitTypes" EntityType="Self.CloudCatalogUnitTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogUrlBase" EntityType="Self.CloudCatalogUrlBase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogUrlPaths" EntityType="Self.CloudCatalogUrlPaths" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogVehicleBrands" EntityType="Self.CloudCatalogVehicleBrands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogVehicleModels" EntityType="Self.CloudCatalogVehicleModels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogVehiclesServiceTypes" EntityType="Self.CloudCatalogVehiclesServiceTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CloudCatalogVehicleTypes" EntityType="Self.CloudCatalogVehicleTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobsByWorkOrder" EntityType="Self.JobsByWorkOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobTilteByWorker" EntityType="Self.JobTilteByWorker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocalUrlPaths" EntityType="Self.LocalUrlPaths" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MigrationAccessError" EntityType="Self.MigrationAccessError" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotificationErpErrors" EntityType="Self.NotificationErpErrors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotificationLogs" EntityType="Self.NotificationLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OperationByWorkOrder" EntityType="Self.OperationByWorkOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PendingTask" EntityType="Self.PendingTask" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgressByWorkOrder" EntityType="Self.ProgressByWorkOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProvidersByExternalJob" EntityType="Self.ProvidersByExternalJob" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuoteDetails" EntityType="Self.QuoteDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuoteRequest" EntityType="Self.QuoteRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quotes" EntityType="Self.Quotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ScheduleDetail" EntityType="Self.ScheduleDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShopAppointments" EntityType="Self.ShopAppointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpecialDates" EntityType="Self.SpecialDates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubOperationByWorkOrder" EntityType="Self.SubOperationByWorkOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TranslationReferences" EntityType="Self.TranslationReferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Translations" EntityType="Self.Translations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UrlsBase" EntityType="Self.UrlsBase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermissionByRole" EntityType="Self.UserPermissionByRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeekDays" EntityType="Self.WeekDays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkerShedule" EntityType="Self.WorkerShedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrderDetails" EntityType="Self.WorkOrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrderLoadErrorLog" EntityType="Self.WorkOrderLoadErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrderNotificationByCustomer" EntityType="Self.WorkOrderNotificationByCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrders" EntityType="Self.WorkOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrderTracking" EntityType="Self.WorkOrderTracking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkOrderTrackingDetail" EntityType="Self.WorkOrderTrackingDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Users].[IdUser] AS [IdUser], 
+    [Users].[IdWorker] AS [IdWorker], 
+    [Users].[IdRole] AS [IdRole], 
+    [Users].[Password] AS [Password], 
+    [Users].[Tag] AS [Tag], 
+    [Users].[Token] AS [Token], 
+    [Users].[LastLoginAt] AS [LastLoginAt], 
+    [Users].[CreatedAt] AS [CreatedAt], 
+    [Users].[CreatedById] AS [CreatedById], 
+    [Users].[UpdatedAt] AS [UpdatedAt], 
+    [Users].[UpdatedById] AS [UpdatedById], 
+    [Users].[Version] AS [Version], 
+    [Users].[Deleted] AS [Deleted]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_CatalogCities_CatalogCountries" Association="Self.FK_CatalogCities_CatalogCountries">
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogCountries_CatalogLanguage" Association="Self.FK_CatalogCountries_CatalogLanguage">
+      <End Role="CloudCatalogLanguage" EntitySet="CloudCatalogLanguage" />
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogDefaultSubOperationByIdJobTitle_CatalogJobTitleByDealer1" Association="Self.FK_CatalogDefaultSubOperationByIdJobTitle_CatalogJobTitleByDealer1">
+      <End Role="CatalogJobTitleByDealer" EntitySet="CatalogJobTitleByDealer" />
+      <End Role="CatalogDefaultSubOperationByIdJobTitle" EntitySet="CatalogDefaultSubOperationByIdJobTitle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogDefaultSubOperationByIdJobTitle_CatalogSubOperationByDealer1" Association="Self.FK_CatalogDefaultSubOperationByIdJobTitle_CatalogSubOperationByDealer1">
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+      <End Role="CatalogDefaultSubOperationByIdJobTitle" EntitySet="CatalogDefaultSubOperationByIdJobTitle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogExternalJobsByDealer_CatalogActions" Association="Self.FK_CatalogExternalJobsByDealer_CatalogActions">
+      <End Role="CatalogActions" EntitySet="CatalogActions" />
+      <End Role="CatalogExternalJobsByDealer" EntitySet="CatalogExternalJobsByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogExternalJobsByDealer_CatalogOperationsByDealer" Association="Self.FK_CatalogExternalJobsByDealer_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="CatalogExternalJobsByDealer" EntitySet="CatalogExternalJobsByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogExternalJobsByDealer_CatalogParts" Association="Self.FK_CatalogExternalJobsByDealer_CatalogParts">
+      <End Role="CatalogParts" EntitySet="CatalogParts" />
+      <End Role="CatalogExternalJobsByDealer" EntitySet="CatalogExternalJobsByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogOperationsByDealer_CloudCatalogOperations" Association="Self.FK_CatalogOperationsByDealer_CloudCatalogOperations">
+      <End Role="CloudCatalogOperations" EntitySet="CloudCatalogOperations" />
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogProviders_CloudCatalogCities" Association="Self.FK_CatalogProviders_CloudCatalogCities">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="CatalogProviders" EntitySet="CatalogProviders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogProviders_CloudCatalogCountries" Association="Self.FK_CatalogProviders_CloudCatalogCountries">
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+      <End Role="CatalogProviders" EntitySet="CatalogProviders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogSubOperationByDealer_CatalogOperationsByDealer" Association="Self.FK_CatalogSubOperationByDealer_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogSubOperationByDealer_CloudCatalogSubOperations" Association="Self.FK_CatalogSubOperationByDealer_CloudCatalogSubOperations">
+      <End Role="CloudCatalogSubOperations" EntitySet="CloudCatalogSubOperations" />
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogSubOperationByDealer_Workers" Association="Self.FK_CatalogSubOperationByDealer_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogUnits_CatalogUnitTypes1" Association="Self.FK_CatalogUnits_CatalogUnitTypes1">
+      <End Role="CloudCatalogUnitTypes" EntitySet="CloudCatalogUnitTypes" />
+      <End Role="CloudCatalogUnits" EntitySet="CloudCatalogUnits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogVehicleModels_CatalogVehicleBrands" Association="Self.FK_CatalogVehicleModels_CatalogVehicleBrands">
+      <End Role="CloudCatalogVehicleBrands" EntitySet="CloudCatalogVehicleBrands" />
+      <End Role="CloudCatalogVehicleModels" EntitySet="CloudCatalogVehicleModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City" Association="Self.FK_City">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="CloudCatalogInsuranceCompanies" EntitySet="CloudCatalogInsuranceCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_CloudCatalogCountries" Association="Self.FK_Clients_CloudCatalogCountries">
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CloudCatalogCountries_CloudCatalogUnits" Association="Self.FK_CloudCatalogCountries_CloudCatalogUnits">
+      <End Role="CloudCatalogUnits" EntitySet="CloudCatalogUnits" />
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CloudCatalogDealerShops_CloudCatalogCities" Association="Self.FK_CloudCatalogDealerShops_CloudCatalogCities">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="CloudCatalogDealerShops" EntitySet="CloudCatalogDealerShops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CloudCatalogSubOperations_CloudCatalogOperations" Association="Self.FK_CloudCatalogSubOperations_CloudCatalogOperations">
+      <End Role="CloudCatalogOperations" EntitySet="CloudCatalogOperations" />
+      <End Role="CloudCatalogSubOperations" EntitySet="CloudCatalogSubOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CloudCatalogUrlPaths_CloudCatalogUrlBase" Association="Self.FK_CloudCatalogUrlPaths_CloudCatalogUrlBase">
+      <End Role="CloudCatalogUrlBase" EntitySet="CloudCatalogUrlBase" />
+      <End Role="CloudCatalogUrlPaths" EntitySet="CloudCatalogUrlPaths" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Countrie" Association="Self.FK_Countrie">
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+      <End Role="CloudCatalogInsuranceCompanies" EntitySet="CloudCatalogInsuranceCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_CloudCatalogCities" Association="Self.FK_Customers_CloudCatalogCities">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobsByWorkOrder_CatalogActions" Association="Self.FK_JobsByWorkOrder_CatalogActions">
+      <End Role="CatalogActions" EntitySet="CatalogActions" />
+      <End Role="JobsByWorkOrder" EntitySet="JobsByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobsByWorkOrder_CatalogOperationsByDealer" Association="Self.FK_JobsByWorkOrder_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="JobsByWorkOrder" EntitySet="JobsByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobsByWorkOrder_CatalogParts" Association="Self.FK_JobsByWorkOrder_CatalogParts">
+      <End Role="CatalogParts" EntitySet="CatalogParts" />
+      <End Role="JobsByWorkOrder" EntitySet="JobsByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobsByWorkOrder_CatalogProviders" Association="Self.FK_JobsByWorkOrder_CatalogProviders">
+      <End Role="CatalogProviders" EntitySet="CatalogProviders" />
+      <End Role="JobsByWorkOrder" EntitySet="JobsByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobsByWorkOrder_WorkOrders" Association="Self.FK_JobsByWorkOrder_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="JobsByWorkOrder" EntitySet="JobsByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobTilteByWorker_CatalogJobTitleByDealer" Association="Self.FK_JobTilteByWorker_CatalogJobTitleByDealer">
+      <End Role="CatalogJobTitleByDealer" EntitySet="CatalogJobTitleByDealer" />
+      <End Role="JobTilteByWorker" EntitySet="JobTilteByWorker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalUrlPaths_UrlsBase" Association="Self.FK_LocalUrlPaths_UrlsBase">
+      <End Role="UrlsBase" EntitySet="UrlsBase" />
+      <End Role="LocalUrlPaths" EntitySet="LocalUrlPaths" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperationByWorkOrder_CatalogOperationsByDealer" Association="Self.FK_OperationByWorkOrder_CatalogOperationsByDealer">
+      <End Role="CatalogOperationsByDealer" EntitySet="CatalogOperationsByDealer" />
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OperationByWorkOrder_WorkOrders" Association="Self.FK_OperationByWorkOrder_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PendingTask_Workers" Association="Self.FK_PendingTask_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="PendingTask" EntitySet="PendingTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProvidersByExternalJob_CatalogExternalJobsByDealer" Association="Self.FK_ProvidersByExternalJob_CatalogExternalJobsByDealer">
+      <End Role="CatalogExternalJobsByDealer" EntitySet="CatalogExternalJobsByDealer" />
+      <End Role="ProvidersByExternalJob" EntitySet="ProvidersByExternalJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProvidersByExternalJob_CatalogProviders" Association="Self.FK_ProvidersByExternalJob_CatalogProviders">
+      <End Role="CatalogProviders" EntitySet="CatalogProviders" />
+      <End Role="ProvidersByExternalJob" EntitySet="ProvidersByExternalJob" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteDetails_Quotes" Association="Self.FK_QuoteDetails_Quotes">
+      <End Role="Quotes" EntitySet="Quotes" />
+      <End Role="QuoteDetails" EntitySet="QuoteDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuoteRequest_Vehicles" Association="Self.FK_QuoteRequest_Vehicles">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="QuoteRequest" EntitySet="QuoteRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quotes_QuoteRequest" Association="Self.FK_Quotes_QuoteRequest">
+      <End Role="QuoteRequest" EntitySet="QuoteRequest" />
+      <End Role="Quotes" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quotes_WorkOrders" Association="Self.FK_Quotes_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="Quotes" EntitySet="Quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopAppointments_Quotes" Association="Self.FK_ShopAppointments_Quotes">
+      <End Role="Quotes" EntitySet="Quotes" />
+      <End Role="ShopAppointments" EntitySet="ShopAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubOperationByWorkOrder_CatalogSubOperationByDealer" Association="Self.FK_SubOperationByWorkOrder_CatalogSubOperationByDealer">
+      <End Role="CatalogSubOperationByDealer" EntitySet="CatalogSubOperationByDealer" />
+      <End Role="SubOperationByWorkOrder" EntitySet="SubOperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubOperationByWorkOrder_OperationByWorkOrder" Association="Self.FK_SubOperationByWorkOrder_OperationByWorkOrder">
+      <End Role="OperationByWorkOrder" EntitySet="OperationByWorkOrder" />
+      <End Role="SubOperationByWorkOrder" EntitySet="SubOperationByWorkOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Translations_CatalogLanguage" Association="Self.FK_Translations_CatalogLanguage">
+      <End Role="CloudCatalogLanguage" EntitySet="CloudCatalogLanguage" />
+      <End Role="Translations" EntitySet="Translations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Translations_TranslationReferences" Association="Self.FK_Translations_TranslationReferences">
+      <End Role="TranslationReferences" EntitySet="TranslationReferences" />
+      <End Role="Translations" EntitySet="Translations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionByRole_CatalogPermissions" Association="Self.FK_UserPermissionByRole_CatalogPermissions">
+      <End Role="CatalogPermissions" EntitySet="CatalogPermissions" />
+      <End Role="UserPermissionByRole" EntitySet="UserPermissionByRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionByRole_CatalogRoles" Association="Self.FK_UserPermissionByRole_CatalogRoles">
+      <End Role="CatalogRoles" EntitySet="CatalogRoles" />
+      <End Role="UserPermissionByRole" EntitySet="UserPermissionByRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_CatalogRoles" Association="Self.FK_Users_CatalogRoles">
+      <End Role="CatalogRoles" EntitySet="CatalogRoles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Workers" Association="Self.FK_Users_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_Clients" Association="Self.FK_Vehicles_Clients">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_CloudCatalogCities" Association="Self.FK_Vehicles_CloudCatalogCities">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_CloudCatalogInsuranceCompanies" Association="Self.FK_Vehicles_CloudCatalogInsuranceCompanies">
+      <End Role="CloudCatalogInsuranceCompanies" EntitySet="CloudCatalogInsuranceCompanies" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_CloudCatalogVehicleModels" Association="Self.FK_Vehicles_CloudCatalogVehicleModels">
+      <End Role="CloudCatalogVehicleModels" EntitySet="CloudCatalogVehicleModels" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_CloudCatalogVehiclesServiceTypes" Association="Self.FK_Vehicles_CloudCatalogVehiclesServiceTypes">
+      <End Role="CloudCatalogVehiclesServiceTypes" EntitySet="CloudCatalogVehiclesServiceTypes" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicles_CloudCatalogVehicleTypes" Association="Self.FK_Vehicles_CloudCatalogVehicleTypes">
+      <End Role="CloudCatalogVehicleTypes" EntitySet="CloudCatalogVehicleTypes" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehiclesIdCouuntry" Association="Self.FK_VehiclesIdCouuntry">
+      <End Role="CloudCatalogCountries" EntitySet="CloudCatalogCountries" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_CloudCatalogCities" Association="Self.FK_Workers_CloudCatalogCities">
+      <End Role="CloudCatalogCities" EntitySet="CloudCatalogCities" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkerShedule_Workers" Association="Self.FK_WorkerShedule_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="WorkerShedule" EntitySet="WorkerShedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorKOrder" Association="Self.FK_WorKOrder">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="WorkOrderNotificationByCustomer" EntitySet="WorkOrderNotificationByCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderDetails_WorkOrders" Association="Self.FK_WorkOrderDetails_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="WorkOrderDetails" EntitySet="WorkOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderNotificationByClient_Clients" Association="Self.FK_WorkOrderNotificationByClient_Clients">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="WorkOrderNotificationByCustomer" EntitySet="WorkOrderNotificationByCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_CatalogTypeOfLoss" Association="Self.FK_WorkOrders_CatalogTypeOfLoss">
+      <End Role="CatalogWorkLevel" EntitySet="CatalogWorkLevel" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_Clients" Association="Self.FK_WorkOrders_Clients">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_CloudCatalogDealerShops" Association="Self.FK_WorkOrders_CloudCatalogDealerShops">
+      <End Role="CloudCatalogDealerShops" EntitySet="CloudCatalogDealerShops" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_CloudCatalogInsuranceCompanies" Association="Self.FK_WorkOrders_CloudCatalogInsuranceCompanies">
+      <End Role="CloudCatalogInsuranceCompanies" EntitySet="CloudCatalogInsuranceCompanies" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_Vehicles" Association="Self.FK_WorkOrders_Vehicles">
+      <End Role="Vehicles" EntitySet="Vehicles" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrders_Workers" Association="Self.FK_WorkOrders_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderTracking_WorkOrders" Association="Self.FK_WorkOrderTracking_WorkOrders">
+      <End Role="WorkOrders" EntitySet="WorkOrders" />
+      <End Role="WorkOrderTracking" EntitySet="WorkOrderTracking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderTrackingDetail_Workers" Association="Self.FK_WorkOrderTrackingDetail_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="WorkOrderTrackingDetail" EntitySet="WorkOrderTrackingDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrderTrackingDetail_WorkOrderTraking" Association="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking">
+      <End Role="WorkOrderTracking" EntitySet="WorkOrderTracking" />
+      <End Role="WorkOrderTrackingDetail" EntitySet="WorkOrderTrackingDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

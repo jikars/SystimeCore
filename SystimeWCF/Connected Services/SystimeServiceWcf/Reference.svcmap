@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb490c65-e48c-4ccd-a1a4-4625e55b34a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="03c4fc8e-f06b-4764-8650-21a63f6c850f" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7b87d1f4-7bdb-46ca-9a5a-d2c5b4f44e2d" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0b51fa19-a6d1-45f5-a656-67167be0360f" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="SysTimeWcfServices.Models.Dealer.xsd" MetadataType="Schema" ID="5e2026bb-3fc5-46cc-a418-67726b4e240e" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="SysTimeWcfServices.Models.Dealer.Base.xsd" MetadataType="Schema" ID="78af9a55-83d1-4a64-8e67-efdc3324b4be" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="SysTimeWcfServices.Model.UtilityModels.xsd" MetadataType="Schema" ID="51a7e137-ee1c-4085-813c-238843d9fa7e" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="dddb5ace-7d75-4f64-aaf3-58bce3554d97" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="62e30760-dd68-40f5-9f1c-6ba1f3653fb1" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="Message.xsd" MetadataType="Schema" ID="472f0387-8093-437f-9a19-7f0ec27c7886" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+    <MetadataFile FileName="SysTimeWcfServices.Models.UtilityModels.xsd" MetadataType="Schema" ID="0e8d9b9f-28a3-4715-9ba7-6a465dd43e04" SourceId="1" SourceUrl="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

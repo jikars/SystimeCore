@@ -1,0 +1,10 @@
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Notifications.dll
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Notifications.pdb
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Newtonsoft.Json.dll
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Utils.dll
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Utils.pdb
+D:\Systime\SystimeCore\SystimeCore\Notifications\bin\Release\Newtonsoft.Json.xml
+D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csproj.CoreCompileInputs.cache
+D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csproj.CopyComplete
+D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.dll
+D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.pdb

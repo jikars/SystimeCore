@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdressMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para dirección </value>
+  </data>
+  <data name="AliasMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para el alias</value>
+  </data>
+  <data name="CountryRequerid" xml:space="preserve">
+    <value>Pais Requerido</value>
+  </data>
+  <data name="EmailIncorrectFormat" xml:space="preserve">
+    <value>Correo electronico no contiene un formato correcto</value>
+  </data>
+  <data name="EmailMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para el correo electronico</value>
+  </data>
+  <data name="FeedbackLeghtExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para el comentario de retroalimentación por parte del usuario </value>
+  </data>
+  <data name="IdCityRangeError" xml:space="preserve">
+    <value>Identificador de la ciudad fuera de los limites </value>
+  </data>
+  <data name="IdCityRequired" xml:space="preserve">
+    <value>Identificador de la ciudad es requerido</value>
+  </data>
+  <data name="IdContryMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para el país</value>
+  </data>
+  <data name="IdCustomerRangeError" xml:space="preserve">
+    <value>Identificador del cliente fuera de los límietes</value>
+  </data>
+  <data name="IdCustomerRequeired" xml:space="preserve">
+    <value>Identificador del cliente es requerido </value>
+  </data>
+  <data name="IdDealerRangeError" xml:space="preserve">
+    <value>Identificador del concesionario fuera de los limites</value>
+  </data>
+  <data name="IdDealerRepresentativeRangeError" xml:space="preserve">
+    <value>Identificado del asesor fuera de los límites</value>
+  </data>
+  <data name="IdDealerRepresentativeRequired" xml:space="preserve">
+    <value>Identificador del  asesor es requerido </value>
+  </data>
+  <data name="IdDealerRequired" xml:space="preserve">
+    <value>Identificador de la concesionario es requerido</value>
+  </data>
+  <data name="IdDealerShopRangeError" xml:space="preserve">
+    <value>Identificador de la tienda fuera de los limites</value>
+  </data>
+  <data name="IdDealerShopRequired" xml:space="preserve">
+    <value>Identificador de la tienda  es requerido</value>
+  </data>
+  <data name="IdentityNumberIsRequired" xml:space="preserve">
+    <value>Número de identificaón es requerido </value>
+  </data>
+  <data name="IdErpDealerRepresentativeIsRequired" xml:space="preserve">
+    <value>Identificador interno de la representante es requerido</value>
+  </data>
+  <data name="IdErpDealerRepresentativeLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para itentificador interno del asesor</value>
+  </data>
+  <data name="IdErpLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para itentificador interno de la tienda</value>
+  </data>
+  <data name="IdErpQuoteLegthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para el identificador interno de la cotización</value>
+  </data>
+  <data name="IdErpShop" xml:space="preserve">
+    <value>Identificador interno de la tienda es requerido</value>
+  </data>
+  <data name="IdErpWorkOrderLeghtExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para identificador itnerno de la orden de trabajo </value>
+  </data>
+  <data name="IdFuelTypeRangeError" xml:space="preserve">
+    <value>Identificador de typo de combusible  fuera de los limites </value>
+  </data>
+  <data name="IdGenderRangeError" xml:space="preserve">
+    <value>Identificador genero fuera de los limites</value>
+  </data>
+  <data name="IdInsuranceCompanyRangeError" xml:space="preserve">
+    <value>Identificador compañia de seguros fuera de  los limites</value>
+  </data>
+  <data name="IdRhRageError" xml:space="preserve">
+    <value>Identificador Rh fuera de los limites</value>
+  </data>
+  <data name="IdVehcileRangeError" xml:space="preserve">
+    <value>Identificador de modelo de vehiuculo fuera de los limites</value>
+  </data>
+  <data name="IdVehiccleServiceTypeRangeError" xml:space="preserve">
+    <value>Identificador de tipo de servicio del vehículo fuera de los limites </value>
+  </data>
+  <data name="IdVehicleTypeRangeError" xml:space="preserve">
+    <value>Identificador de tipo de vehículo fuera de los limites </value>
+  </data>
+  <data name="InsuranceCompanyRatingRangeError" xml:space="preserve">
+    <value>Calificación de la compañia de seguros fuera de los limites</value>
+  </data>
+  <data name="MaxLegthExceeded" xml:space="preserve">
+    <value>Longitud maxima superada</value>
+  </data>
+  <data name="ModelYearRangeError" xml:space="preserve">
+    <value>Año del modelo fuera de los limites </value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>Nombre requerido</value>
+  </data>
+  <data name="NameMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para el nombre</value>
+  </data>
+  <data name="NoteLegthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para la nota</value>
+  </data>
+  <data name="PhoneIncorrectFormat" xml:space="preserve">
+    <value>Teléfono no contiene un formato correcto</value>
+  </data>
+  <data name="PhoneMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para el telefono</value>
+  </data>
+  <data name="PhoneMobileIncorrectFormat" xml:space="preserve">
+    <value>Mobile no contiene un formato correcto</value>
+  </data>
+  <data name="PhoneMobileMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima logitud excedida para el telefono movil</value>
+  </data>
+  <data name="PlateMaxLegthExceeded" xml:space="preserve">
+    <value>Maxima longitud excedida para la placa</value>
+  </data>
+  <data name="PlateRequired" xml:space="preserve">
+    <value>Placa Requerida</value>
+  </data>
+  <data name="ProggresMessageLengthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para el mensaje de progreso</value>
+  </data>
+  <data name="ShopRaitngRangeError" xml:space="preserve">
+    <value>Calificación de la tienda fuera de los limites</value>
+  </data>
+  <data name="TINMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida número de identificación tributaria(NIT)</value>
+  </data>
+  <data name="TINReqired" xml:space="preserve">
+    <value>Número de itentificación tributaria(NIT) es requerido</value>
+  </data>
+  <data name="VinMaxLegthExceeded" xml:space="preserve">
+    <value>Maxima lognitud excedida para el número de identificación del vehículo(VIN) </value>
+  </data>
+  <data name="VinRequired" xml:space="preserve">
+    <value>Número de identificación del vehículo(VIN) es requerido </value>
+  </data>
+  <data name="WebSiteIncorrectFormat" xml:space="preserve">
+    <value>Sitio web no contiene un formato correcto de url</value>
+  </data>
+  <data name="WebSiteMaxLegthExceeded" xml:space="preserve">
+    <value>Máxima longitud excedida para el stitio web</value>
+  </data>
+</root>

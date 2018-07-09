@@ -1,0 +1,190 @@
+[  
+   {  
+      "NotificationName":"Notification Alistamiento",
+      "TableName":"WorkOrderTracking",
+      "ColumNotify":[  
+         "IdWorkOrderTracking,IdSubOperationByDealer,IdWorkOrder,IdSubOperationByDealer,InitiatedAt,CompletedAt,CreatedById"
+      ],
+      "EventDatabase":[  
+         {  
+            "EventName":"SubOperation alistamenito",
+            "EventDatabse":0,
+            "FillterDatabsase":"IdSubOperationByDealer = 16"
+         }
+      ],
+      "RecipientsType":[  
+         {  
+            "RecipientName":"Customer",
+            "Message":{  
+               "TitleMessage":"En Alistamiento",
+               "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura",
+               "ConfigMessage":[  
+                  {  
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[  
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[  
+                        "\\d{10}"
+                     ]
+                  }
+               ]
+            },
+            "FilttersRecipient":[  
+               {  
+                  "Filtter":"Select Customers.Phone,Customers.FullName,Vehicles.Plate,Customers.Email,Customers.Mobile from Customers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking = @IdWorkOrderTracking  AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdCustomer =Customers.IdCustomer",
+                  "TypeNotification":[  
+                     {  
+                        "TypeNotification":"SMS",
+                        "Provaider":"Contacto",
+                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                        "ExpressionRegularMach":"\\d{10}"
+                     }
+                  ]
+               }
+            ]
+         },
+         {  
+            "RecipientName":"Workers AS",
+            "Message":{  
+               "TitleMessage":"En Alistamiento",
+               "Message":"SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento.",
+               "ConfigMessage":[  
+                  {  
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[  
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[  
+                        "\\d{10}"
+                     ]
+                  }
+               ]
+            },
+            "FilttersRecipient":[  
+               {  
+                  "Filtter":"Select Workers.Phone,Workers.FullName,Vehicles.Plate,Workers.Email,Workers.Mobile from Workers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking =  @IdWorkOrderTracking AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdSalesRepresentative =Workers.IdWorker",
+                  "TypeNotification":[  
+                     {  
+                        "TypeNotification":"SMS",
+                        "Provaider":"Contacto",
+                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                        "ExpressionRegularMach":"\\d{10}"
+                     }
+                  ]
+               }
+            ]
+         }
+      ],
+      "FillterValidatePostScript":null,
+      "DelayTimeOut":null,
+      "NotificationModuleTable":false,
+      "QueryPostEvent":null
+   },
+   {  
+      "NotificationName":"Notificacion comienza el trabajo",
+      "TableName":"OperationByWorkOrder",
+      "ColumNotify":[  
+         "IdOperationByWorkOrder,IdWorkOrder,IdOperationByDealer"
+      ],
+      "EventDatabase":[  
+         {  
+            "EventName":"Primera vez que se asigne una operacion a la ot a la orden de trabajo",
+            "EventDatabse":0,
+            "FillterDatabsase":""
+         }
+      ],
+      "RecipientsType":[  
+         {  
+            "RecipientName":"Customers",
+            "Message":{  
+               "TitleMessage":"Comienzo reparacion",
+               "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme.",
+               "ConfigMessage":[  
+                  {  
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[  
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[  
+                        "\\d{10}"
+                     ]
+                  }
+               ]
+            },
+            "FilttersRecipient":[  
+               {  
+                  "Filtter":"select Customers.FullName,Customers.Mobile,Customers.Email,Vehicles.Plate from Customers,OperationByWorkOrder,WorkOrders,Vehicles where OperationByWorkOrder.IdOperationByWorkOrder = @IdOperationByWorkOrder AND OperationByWorkOrder.IdWorkOrder = WorkOrders.IdWorkOrder  and Vehicles.IdVinNumber =  WorkOrders.IdVinNumber and Customers.IdCustomer =WorkOrders.IdCustomer",
+                  "TypeNotification":[  
+                     {  
+                        "TypeNotification":"SMS",
+                        "Provaider":"Contacto",
+                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                        "ExpressionRegularMach":"\\d{10}"
+                     }
+                  ]
+               }
+            ]
+         }
+      ],
+      "FillterValidatePostScript":"SELECT  * from OperationByWorkOrder WHERE   IdOperationByDealer = @IdOperationByDealer  and IdOperationByWorkOrder IN (SELECT  top(1) IdOperationByWorkOrder FROM OperationByWorkOrder where IdWorkOrder =  @IdWorkOrder)",
+      "DelayTimeOut":5,
+      "NotificationModuleTable":true,
+      "QueryPostEvent":"exec InsertNewTracking @IdWorkOrder,9,'SystimeCore','SystimeCore',1,0,'seguimiento automatico','SystimeCore'"
+   },
+   {  
+      "NotificationName":"Notificacion para TOT",
+      "TableName":"JobsByWorkOrder",
+      "ColumNotify":[  
+         "IdJobByWorkOrder"
+      ],
+      "EventDatabase":[  
+         {  
+            "EventName":"Cada vez que se asinge una tot ",
+            "EventDatabse":0,
+            "FillterDatabsase":""
+         }
+      ],
+      "RecipientsType":[  
+         {  
+            "RecipientName":"Provaider TOT",
+            "Message":{  
+               "TitleMessage":"Asingacion TOT",
+               "Message":"SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias.",
+               "ConfigMessage":[  
+                  {  
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[  
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[  
+                        "\\d{10}"
+                     ]
+                  }
+               ]
+            },
+            "FilttersRecipient":[  
+               {  
+                  "Filtter":"select CatalogProviders.Mobile, CatalogProviders.Phone, CatalogProviders.Email,Vehicles.Plate from CatalogProviders,JobsByWorkOrder,Vehicles,WorkOrders where CatalogProviders.IdProvider = JobsByWorkOrder.IdProvaider and WorkOrders.IdWorkOrder = JobsByWorkOrder.IdWorkOrder and WorkOrders.IdVinNumber = Vehicles.IdVinNumber and JobsByWorkOrder.IdJobByWorkOrder = @IdJobByWorkOrder ",
+                  "TypeNotification":[  
+                     {  
+                        "TypeNotification":"SMS",
+                        "Provaider":"Contacto",
+                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                        "ExpressionRegularMach":"\\d{10}"
+                     }
+                  ]
+               }
+            ]
+         }
+      ],
+      "FillterValidatePostScript":null,
+      "DelayTimeOut":null,
+      "NotificationModuleTable":false,
+      "QueryPostEvent":null
+   }
+]

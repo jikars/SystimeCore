@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="55092b4c77a34d5ca29e299a3a7dbf64" Name="Diagram1">
+        <EntityTypeShape EntityType="NotificationDbModel.CatalogNotificationType" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationConditions" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationConfig" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationDestination" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationEvents" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationLog" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationMessageBase" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationConfig_CatalogNotificationType" ManuallyRouted="false" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationDestination_CatalogNotificationType" ManuallyRouted="false" />
+        <AssociationConnector Association="NotificationDbModel.FK_Notification_NotificationEvents" ManuallyRouted="false" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationDestination_NotificationConditions" ManuallyRouted="false" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationDestination_NotificationMessageBase" ManuallyRouted="false" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationLog_NotificationDestination" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationQueryCondition" Width="1.5" PointX="6" PointY="1" />
+        <AssociationConnector Association="NotificationDbModel.FK_NotificationQueryCondition_NotificationConditions" />
+        <EntityTypeShape EntityType="NotificationDbModel.NotificationTableDestination" Width="1.5" PointX="8.25" PointY="1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

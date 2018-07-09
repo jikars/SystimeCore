@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ee84691d2f240b6adbd87884f85e835" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="SystimedbModel.CatalogActions" Width="1.5" PointX="10.5" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogDefaultSubOperationByIdJobTitle" Width="1.5" PointX="12" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogExternalJobsByDealer" Width="1.5" PointX="13.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogJobTitleByDealer" Width="1.5" PointX="9.75" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogNotificationType" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogOperationsByDealer" Width="1.5" PointX="10.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogParts" Width="1.5" PointX="10.5" PointY="46.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogPermissions" Width="1.5" PointX="10.5" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogProviders" Width="1.5" PointX="10.5" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogRoles" Width="1.5" PointX="10.5" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogSubOperationByDealer" Width="1.5" PointX="9.75" PointY="56.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CatalogWorkLevel" Width="1.5" PointX="20.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogCities" Width="1.5" PointX="5.25" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogCountries" Width="1.5" PointX="3" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogCurrency" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogDealerShops" Width="1.5" PointX="7.5" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogInsuranceCompanies" Width="1.5" PointX="7.5" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogLanguage" Width="1.5" PointX="0.75" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogOperations" Width="1.5" PointX="8.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogSubOperations" Width="1.5" PointX="7.5" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogUnits" Width="1.5" PointX="0.75" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogUnitTypes" Width="1.5" PointX="1.5" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogUrlBase" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogUrlPaths" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogVehicleBrands" Width="1.5" PointX="11.25" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogVehicleModels" Width="1.5" PointX="13.5" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogVehiclesServiceTypes" Width="1.5" PointX="13.5" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.CloudCatalogVehicleTypes" Width="1.5" PointX="13.5" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Customers" Width="1.5" PointX="8.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.JobsByWorkOrder" Width="1.5" PointX="12.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.JobTilteByWorker" Width="1.5" PointX="12" PointY="64" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.LocalUrlPaths" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Logs" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.MigrationAccessError" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.NotificationErpErrors" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.NotificationLogs" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.OperationByWorkOrder" Width="1.5" PointX="25.25" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.PendingTask" Width="1.5" PointX="9.75" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.ProgressByWorkOrder" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.ProvidersByExternalJob" Width="1.5" PointX="15.75" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.QuoteDetails" Width="1.5" PointX="22.5" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.QuoteRequest" Width="1.5" PointX="18" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Quotes" Width="1.5" PointX="20.25" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.ScheduleDetail" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Setting" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.ShopAppointments" Width="1.5" PointX="22.5" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.SpecialDates" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.SubOperationByWorkOrder" Width="1.5" PointX="27.5" PointY="51.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.TranslationReferences" Width="1.5" PointX="3.75" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Translations" Width="1.5" PointX="6" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.UrlsBase" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.UserPermissionByRole" Width="1.5" PointX="12.75" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Vehicles" Width="1.5" PointX="15.75" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WeekDays" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Workers" Width="1.5" PointX="7.5" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkerShedule" Width="1.5" PointX="9.75" PointY="68" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrderDetails" Width="1.5" PointX="25.25" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrderLoadErrorLog" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrderNotificationByCustomer" Width="1.5" PointX="25.25" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrders" Width="1.5" PointX="23" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrderTracking" Width="1.5" PointX="25.25" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.WorkOrderTrackingDetail" Width="1.5" PointX="27.5" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystimedbModel.Users" Width="1.5" PointX="12.75" PointY="59.375" IsExpanded="true" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogExternalJobsByDealer_CatalogActions" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobsByWorkOrder_CatalogActions" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogDefaultSubOperationByIdJobTitle_CatalogJobTitleByDealer1" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogDefaultSubOperationByIdJobTitle_CatalogSubOperationByDealer1" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogExternalJobsByDealer_CatalogOperationsByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogExternalJobsByDealer_CatalogParts" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_ProvidersByExternalJob_CatalogExternalJobsByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobTilteByWorker_CatalogJobTitleByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogOperationsByDealer_CloudCatalogOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogSubOperationByDealer_CatalogOperationsByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobsByWorkOrder_CatalogOperationsByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_OperationByWorkOrder_CatalogOperationsByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobsByWorkOrder_CatalogParts" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_UserPermissionByRole_CatalogPermissions" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogProviders_CloudCatalogCities" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogProviders_CloudCatalogCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobsByWorkOrder_CatalogProviders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_ProvidersByExternalJob_CatalogProviders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_UserPermissionByRole_CatalogRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Users_CatalogRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogSubOperationByDealer_CloudCatalogSubOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogSubOperationByDealer_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_SubOperationByWorkOrder_CatalogSubOperationByDealer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_CatalogTypeOfLoss" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogCities_CatalogCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_City" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CloudCatalogDealerShops_CloudCatalogCities" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Customers_CloudCatalogCities" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_CloudCatalogCities" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Workers_CloudCatalogCities" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogCountries_CatalogLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Clients_CloudCatalogCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CloudCatalogCountries_CloudCatalogUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Countrie" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_VehiclesIdCouuntry" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_CloudCatalogDealerShops" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_CloudCatalogInsuranceCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_CloudCatalogInsuranceCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Translations_CatalogLanguage" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CloudCatalogSubOperations_CloudCatalogOperations" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogUnits_CatalogUnitTypes1" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CloudCatalogUrlPaths_CloudCatalogUrlBase" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_CatalogVehicleModels_CatalogVehicleBrands" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_CloudCatalogVehicleModels" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_CloudCatalogVehiclesServiceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_CloudCatalogVehicleTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Vehicles_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrderNotificationByClient_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_JobsByWorkOrder_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_LocalUrlPaths_UrlsBase" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_OperationByWorkOrder_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_SubOperationByWorkOrder_OperationByWorkOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_PendingTask_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_QuoteDetails_Quotes" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_QuoteRequest_Vehicles" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Quotes_QuoteRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Quotes_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_ShopAppointments_Quotes" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Translations_TranslationReferences" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_Vehicles" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_Users_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkerShedule_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrders_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrderTrackingDetail_Workers" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrderDetails_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorKOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrderTracking_WorkOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="SystimedbModel.FK_WorkOrderTrackingDetail_WorkOrderTraking" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

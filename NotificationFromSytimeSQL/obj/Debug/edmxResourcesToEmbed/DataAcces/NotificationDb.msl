@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NotificationDbModelStoreContainer" CdmEntityContainer="NotificationDbEntities">
+    <EntitySetMapping Name="CatalogNotificationType">
+      <EntityTypeMapping TypeName="NotificationDbModel.CatalogNotificationType">
+        <MappingFragment StoreEntitySet="CatalogNotificationType">
+          <ScalarProperty Name="RegularExpression" ColumnName="RegularExpression" />
+          <ScalarProperty Name="IdNotificationType" ColumnName="IdNotificationType" />
+          <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationConditions">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationConditions">
+        <MappingFragment StoreEntitySet="NotificationConditions">
+          <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+          <ScalarProperty Name="IdNotificationEvent" ColumnName="IdNotificationEvent" />
+          <ScalarProperty Name="Notify" ColumnName="Notify" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationConfig">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationConfig">
+        <MappingFragment StoreEntitySet="NotificationConfig">
+          <ScalarProperty Name="IdTypeNotification" ColumnName="IdTypeNotification" />
+          <ScalarProperty Name="ProvaiderNotification" ColumnName="ProvaiderNotification" />
+          <ScalarProperty Name="JsonConfig" ColumnName="JsonConfig" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationDestination">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationDestination">
+        <MappingFragment StoreEntitySet="NotificationDestination">
+          <ScalarProperty Name="IdNotificationCondtion" ColumnName="IdNotificationCondtion" />
+          <ScalarProperty Name="IdNotificationType" ColumnName="IdNotificationType" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableKeys" ColumnName="TableKeys" />
+          <ScalarProperty Name="BaseSend" ColumnName="BaseSend" />
+          <ScalarProperty Name="Notify" ColumnName="Notify" />
+          <ScalarProperty Name="IdMessageBase" ColumnName="IdMessageBase" />
+          <ScalarProperty Name="MessageSpecifict" ColumnName="MessageSpecifict" />
+          <ScalarProperty Name="TitleSpecifict" ColumnName="TitleSpecifict" />
+          <ScalarProperty Name="ParamsMessageBase" ColumnName="ParamsMessageBase" />
+          <ScalarProperty Name="ParamsTitleBase" ColumnName="ParamsTitleBase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationEvents">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationEvents">
+        <MappingFragment StoreEntitySet="NotificationEvents">
+          <ScalarProperty Name="IdNotificationEvent" ColumnName="IdNotificationEvent" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Nortify" ColumnName="Nortify" />
+          <ScalarProperty Name="EventUpdate" ColumnName="EventUpdate" />
+          <ScalarProperty Name="EventDelete" ColumnName="EventDelete" />
+          <ScalarProperty Name="EventInsert" ColumnName="EventInsert" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationLog">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationLog">
+        <MappingFragment StoreEntitySet="NotificationLog">
+          <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+          <ScalarProperty Name="TaleName" ColumnName="TaleName" />
+          <ScalarProperty Name="TableKeys" ColumnName="TableKeys" />
+          <ScalarProperty Name="IdTypeNotification" ColumnName="IdTypeNotification" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="DateSend" ColumnName="DateSend" />
+          <ScalarProperty Name="TableEvent" ColumnName="TableEvent" />
+          <ScalarProperty Name="BaseSend" ColumnName="BaseSend" />
+          <ScalarProperty Name="WasSend" ColumnName="WasSend" />
+          <ScalarProperty Name="TitleMessage" ColumnName="TitleMessage" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationMessageBase">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationMessageBase">
+        <MappingFragment StoreEntitySet="NotificationMessageBase">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IdMessageBase" ColumnName="IdMessageBase" />
+          <ScalarProperty Name="MessageBase" ColumnName="MessageBase" />
+          <ScalarProperty Name="MessageParams" ColumnName="MessageParams" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreatedById" ColumnName="CreatedById" />
+          <ScalarProperty Name="UpdatedById" ColumnName="UpdatedById" />
+          <ScalarProperty Name="TitleMessage" ColumnName="TitleMessage" />
+          <ScalarProperty Name="TitleParams" ColumnName="TitleParams" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationQueryCondition">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationQueryCondition">
+        <MappingFragment StoreEntitySet="NotificationQueryCondition">
+          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="ParameterDimical" ColumnName="ParameterDimical" />
+          <ScalarProperty Name="QueryCondition" ColumnName="QueryCondition" />
+          <ScalarProperty Name="IdNotificationCondition" ColumnName="IdNotificationCondition" />
+          <ScalarProperty Name="IdQueryCondition" ColumnName="IdQueryCondition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationTableDestination">
+      <EntityTypeMapping TypeName="NotificationDbModel.NotificationTableDestination">
+        <MappingFragment StoreEntitySet="NotificationTableDestination">
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+          <ScalarProperty Name="TableDestination" ColumnName="TableDestination" />
+          <ScalarProperty Name="IdNotificationTableDestination" ColumnName="IdNotificationTableDestination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

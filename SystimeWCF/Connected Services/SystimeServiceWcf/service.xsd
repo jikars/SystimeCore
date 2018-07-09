@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" />
+  <xs:import namespace="http://schemas.microsoft.com/Message" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.UtilityModels" />
+  <xs:element name="GetAllObjects">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="GetAllObjectsResult" nillable="true" type="q1:ArrayOfViewPortObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ack">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AckResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientPcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterClientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientPcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnRegisterClientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveWorkersByShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDealerShop" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveWorkersByShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="GetActiveWorkersByShopResult" nillable="true" type="q2:ArrayOfActiveWorker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenedWorkOrdersByShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idDealerShop" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element minOccurs="0" name="isLocated" type="xs:boolean" />
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenedWorkOrdersByShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="GetOpenedWorkOrdersByShopResult" nillable="true" type="q4:ArrayOfOpenedWorkOrders" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenedWorkOrdersByShop_old">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDealerShop" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isLocated" type="xs:boolean" />
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpenedWorkOrdersByShop_oldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="GetOpenedWorkOrdersByShop_oldResult" nillable="true" type="q5:ArrayOfOpenedWorkOrders" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolUsingValidation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolUsingValidationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRolUsingValidationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVinNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetVehicleByIdResult" nillable="true" type="q6:Vehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetOperationsCatalogResult" nillable="true" type="q7:ArrayOfOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetSubOperationsCatalogResult" nillable="true" type="q8:ArrayOfSubOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorker" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkerByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetWorkerByIdResult" nillable="true" type="q9:Worker" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetWorkOrderByIdResult" nillable="true" type="q10:WorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkOrderByNumberAndDealer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workOrderNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idDealerShop" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkOrderByNumberAndDealerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="WorkOrderByNumberAndDealerResult" nillable="true" type="q11:WorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCompanyById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idInsuranceCompany" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCompanyByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetInsuranceCompanyByIdResult" nillable="true" type="q12:InsuranceCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCompanyCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCompanyCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetInsuranceCompanyCatalogResult" nillable="true" type="q13:ArrayOfInsuranceCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idDealerShop" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetShopByIdResult" nillable="true" type="q14:DealerShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShopCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetShopCatalogResult" nillable="true" type="q15:ArrayOfDealerShop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workOrderNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idDealerShop" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetOperationsByWorkOrderResult" nillable="true" type="q16:ArrayOfOperationByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByDocumentNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByDocumentNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetCustomerByDocumentNumberResult" nillable="true" type="q17:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsByIdOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperationByWorkOrder" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsByIdOperationByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetSubOperationsByIdOperationByWorkOrderResult" nillable="true" type="q18:ArrayOfSubOperationByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDateToUpdateInWorkOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="dateType" type="q19:WorkOrderDataType" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetDateToUpdateInWorkOrdersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNewNoteToWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetNewNoteToWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTrackingByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="trackingByWorkOrderPacket" nillable="true" type="q20:TrackingByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetTrackingByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetTrackingByWorkOrderResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastNTrackingsByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element minOccurs="0" name="n" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastNTrackingsByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetLastNTrackingsByWorkOrderResult" nillable="true" type="q21:ArrayOfTrackingByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderByIsVinNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVinNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderByIsVinNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetWorkOrderByIsVinNumberResult" nillable="true" type="q22:WorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilesOrPaths">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="idUrlPath" type="q23:IdUrlPath" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="fileTypeFilter" type="q24:FileType" />
+        <xs:element minOccurs="0" name="filesNamesOrCompletePath" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilesOrPathsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFilesOrPathsResult" nillable="true" type="q25:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileFromPath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="idUrlPath" type="q26:IdUrlPath" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="fileType" type="q27:FileType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileFromPathResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/Message" name="GetFileFromPathResult" type="q28:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePhoto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="idUrlPath" type="q29:IdUrlPath" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePhotoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePhotoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePhotoPreview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" minOccurs="0" name="idUrlPath" type="q30:IdUrlPath" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="previewFactor" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePhotoPreviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePhotoPreviewResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWorkStationPolygons">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWorkStationPolygonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.UtilityModels" minOccurs="0" name="GetAllWorkStationPolygonsResult" nillable="true" type="q31:ArrayOfWorkStationPolygon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkOrderPosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workOrderNumber" type="xs:long" />
+        <xs:element minOccurs="0" name="xPosition" type="xs:double" />
+        <xs:element minOccurs="0" name="yPosition" type="xs:double" />
+        <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetWorkOrderPositionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="SetWorkOrderPositionResult" nillable="true" type="q32:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternalJobCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternalJobCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetExternalJobCatalogResult" nillable="true" type="q33:ArrayOfExternalWork" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobTitleByDealerCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobTitleByDealerCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetJobTitleByDealerCatalogResult" nillable="true" type="q34:ArrayOfJobTitle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLastTrackings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLastTrackingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetAllLastTrackingsResult" nillable="true" type="q35:ArrayOfTrackingByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternalJobsByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExternalJobsByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetExternalJobsByWorkOrderResult" nillable="true" type="q36:ArrayOfExternalWork" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetExternalJobByIdWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="externalJobByWorkOrder" nillable="true" type="q37:ExternalWork" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetExternalJobByIdWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetExternalJobByIdWorkOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobTitleCatalogByIdDealerShop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idDealerShops" nillable="true" type="q38:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobTitleCatalogByIdDealerShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetJobTitleCatalogByIdDealerShopResult" nillable="true" type="q39:ArrayOfJobTitle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsCatalogByIdDealerShops">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idDealerShops" nillable="true" type="q40:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsCatalogByIdDealerShopsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetOperationsCatalogByIdDealerShopsResult" nillable="true" type="q41:ArrayOfOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsCatalogByIdDealerShops">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="idDealerShops" nillable="true" type="q42:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubOperationsCatalogByIdDealerShopsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetSubOperationsCatalogByIdDealerShopsResult" nillable="true" type="q43:ArrayOfSubOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCitiesCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCitiesCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetCitiesCatalogResult" nillable="true" type="q44:ArrayOfCity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleBrandsCatalog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleBrandsCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetVehicleBrandsCatalogResult" nillable="true" type="q45:ArrayOfVehicleBrand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleModelsCatalogController">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleModelsCatalogControllerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="GetVehicleModelsCatalogControllerResult" nillable="true" type="q46:ArrayOfVehicleModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="customer" nillable="true" type="q47:Customer" />
+        <xs:element minOccurs="0" name="createdOrUpdatedById" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateOrUpdateCustomerResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="vehicle" nillable="true" type="q48:Vehicle" />
+        <xs:element minOccurs="0" name="createdOrUpdatedById" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateOrUpdateVehicleResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="workOrder" nillable="true" type="q49:WorkOrder" />
+        <xs:element minOccurs="0" name="createdOrUpdatedById" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrUpdateWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateOrUpdateWorkOrderResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyTableChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="notification" nillable="true" type="q50:Notification" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyTableChangedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NotifyTableChangedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperationByDealer" type="xs:int" />
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="estimatedTime" type="xs:double" />
+        <xs:element minOccurs="0" name="createdAt" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="createdById" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOperationByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOperationByWorkOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperationByWorkOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="EstimatedTime" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOperationByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSubOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOperationByWorkOrder" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="idSubOperationByDealer" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="assignedTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="assignedById" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subOperationTime" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="operationTimePercentage" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="createdAt" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="createdById" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSubOperationByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSubOperationByWorkOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSubOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSubOperationByWorkOrderr" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="assignedTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="assignedById" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subOperationTime" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="operationTimePercentage" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="updatat" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="deleted" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSubOperationByWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewPortObjects">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViewPortObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" minOccurs="0" name="GetViewPortObjectsResult" nillable="true" type="q51:ArrayOfViewPortObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AckBackResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyNewTracking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="newTracking" nillable="true" type="q52:TrackingByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyNewWorkOrderPosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="newPosition" nillable="true" type="q53:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyNewSubOperationByWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="subOperationByWorkOrder" nillable="true" type="q54:SubOperationByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyCustomerCreatedOrUpdated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCustomer" type="xs:long" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="customerModel" nillable="true" type="q55:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyVehicleCreatedOrUpdated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVinNumber" type="xs:long" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="vehicleModel" nillable="true" type="q56:Vehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyWorkOrderCreatedOrUpdated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idWorkOrder" type="xs:long" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" minOccurs="0" name="workOrderModel" nillable="true" type="q57:SubOperationByWorkOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

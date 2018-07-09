@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DmsV1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="abc_terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="clasificacion" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="porcentaje_clasificacion" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+    <Property Name="valor_tercero" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bodegas">
+    <Key>
+      <PropertyRef Name="bodega" />
+    </Key>
+    <Property Name="bodega" Type="smallint" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="centro" Type="int" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="80" />
+    <Property Name="telefono" Type="varchar" MaxLength="40" />
+    <Property Name="texto" Type="varchar" MaxLength="250" />
+    <Property Name="codigo_cliente" Type="varchar" MaxLength="20" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="es_punto_venta" Type="bit" />
+    <Property Name="impresora" Type="varchar" MaxLength="80" />
+    <Property Name="departamento" Type="varchar" MaxLength="5" />
+    <Property Name="ciudad" Type="varchar" MaxLength="5" />
+    <Property Name="autoretenedorica" Type="bit" />
+    <Property Name="es_bod_taller" Type="bit" />
+    <Property Name="id_clasificacion" Type="int" />
+    <Property Name="Acepta_Ext" Type="bit" />
+    <Property Name="Utilidad" Type="int" />
+    <Property Name="idSMD" Type="varchar" MaxLength="20" />
+    <Property Name="pais" Type="varchar" MaxLength="5" />
+    <Property Name="demostracion" Type="bit" />
+    <Property Name="codigoPostal" Type="nvarchar" MaxLength="9" />
+    <Property Name="es_bod_vehiculos" Type="bit" />
+    <Property Name="es_bodega_obsoleta" Type="bit" Nullable="false" />
+    <Property Name="es_almacen" Type="bit" Nullable="false" />
+    <Property Name="inactiva" Type="char" MaxLength="1" />
+    <Property Name="BAC" Type="int" />
+    <Property Name="principal" Type="varchar" MaxLength="1" />
+    <Property Name="CodigoBIR_Renault" Type="nvarchar" MaxLength="9" />
+    <Property Name="cuentaGarantiaRenault" Type="nvarchar" MaxLength="9" />
+    <Property Name="EsServicioRapido" Type="bit" />
+    <Property Name="usa_rental" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idSede" Type="int" />
+    <Property Name="envia_distrinet" Type="char" MaxLength="1" />
+    <Property Name="renault" Type="tinyint" />
+    <Property Name="cod_concesionario" Type="int" />
+    <Property Name="unidad_negocio" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="NotificationSystime">
+    <Key>
+      <PropertyRef Name="IdNotificationSystime" />
+    </Key>
+    <Property Name="IdNotificationSystime" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JsonKeys" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EventTable" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="CreateAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="referencias">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="80" />
+    <Property Name="codigo_oferta" Type="varchar" MaxLength="1" />
+    <Property Name="generico" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="clase" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="contable" Type="tinyint" Nullable="false" />
+    <Property Name="grupo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="subgrupo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="valor_unitario" Type="money" />
+    <Property Name="porcentaje_iva" Type="real" />
+    <Property Name="costo_unitario" Type="money" />
+    <Property Name="maneja_inventario" Type="bit" Nullable="false" />
+    <Property Name="und_1" Type="varchar" MaxLength="4" />
+    <Property Name="can_1" Type="real" />
+    <Property Name="und_2" Type="varchar" MaxLength="4" />
+    <Property Name="can_2" Type="real" />
+    <Property Name="und_3" Type="varchar" MaxLength="4" />
+    <Property Name="can_3" Type="real" />
+    <Property Name="und_vta" Type="tinyint" />
+    <Property Name="und_com" Type="tinyint" />
+    <Property Name="impoconsumo" Type="real" />
+    <Property Name="valor_und1" Type="money" />
+    <Property Name="valor_und2" Type="money" />
+    <Property Name="valor_und3" Type="money" />
+    <Property Name="conversion" Type="real" />
+    <Property Name="otro_impuesto" Type="real" />
+    <Property Name="minimo_iva" Type="real" />
+    <Property Name="minimo_iva_c" Type="money" />
+    <Property Name="precio_marcado" Type="varchar" MaxLength="1" />
+    <Property Name="factor_compra" Type="real" />
+    <Property Name="factor_venta_1" Type="real" />
+    <Property Name="factor_venta_2" Type="real" />
+    <Property Name="factor_venta_3" Type="real" />
+    <Property Name="factor_venta_4" Type="real" />
+    <Property Name="factor_venta_5" Type="real" />
+    <Property Name="factor_venta_6" Type="real" />
+    <Property Name="factor_venta_7" Type="real" />
+    <Property Name="factor_venta_8" Type="real" />
+    <Property Name="factor_venta_9" Type="real" />
+    <Property Name="factor_venta_10" Type="real" />
+    <Property Name="fec_cambio_precio" Type="datetime" />
+    <Property Name="costo_anterior" Type="money" />
+    <Property Name="fec_ultima_entrada" Type="datetime" />
+    <Property Name="fec_ultima_salida" Type="datetime" />
+    <Property Name="impoconsumo_compra" Type="real" />
+    <Property Name="porcentaje_iva_compra" Type="real" />
+    <Property Name="precio_si_costo_cero" Type="money" />
+    <Property Name="fecha_creacion" Type="datetime" />
+    <Property Name="maximo_descuento" Type="real" />
+    <Property Name="maneja_lotes" Type="varchar" MaxLength="1" />
+    <Property Name="maneja_otra_und" Type="varchar" MaxLength="1" />
+    <Property Name="otra_und" Type="varchar" MaxLength="4" />
+    <Property Name="tam_alto" Type="real" />
+    <Property Name="tam_largo" Type="real" />
+    <Property Name="tam_ancho" Type="real" />
+    <Property Name="costo_estandar" Type="money" />
+    <Property Name="reposicion" Type="real" />
+    <Property Name="ref_anulada" Type="char" MaxLength="1" />
+    <Property Name="vcmto_refer" Type="smalldatetime" />
+    <Property Name="impodeporte" Type="real" />
+    <Property Name="subgrupo2" Type="varchar" MaxLength="10" />
+    <Property Name="subgrupo3" Type="varchar" MaxLength="10" />
+    <Property Name="controlado" Type="varchar" MaxLength="1" />
+    <Property Name="promocion" Type="char" MaxLength="1" />
+    <Property Name="maneja_series" Type="char" MaxLength="1" />
+    <Property Name="codigo_enlace" Type="varchar" MaxLength="20" />
+    <Property Name="cantidad_enlace" Type="real" />
+    <Property Name="usar_descto_cliente" Type="char" MaxLength="1" />
+    <Property Name="usar_dcto_vol" Type="varchar" MaxLength="1" />
+    <Property Name="costo_compra_emergencia" Type="money" />
+    <Property Name="codigo_descuento" Type="char" MaxLength="1" />
+    <Property Name="pedir" Type="char" MaxLength="1" />
+    <Property Name="tipo_1" Type="int" />
+    <Property Name="tipo_2" Type="int" />
+    <Property Name="tipo_3" Type="int" />
+    <Property Name="tipo_4" Type="int" />
+    <Property Name="tipo_5" Type="int" />
+    <Property Name="tipo_6" Type="int" />
+    <Property Name="tipo_7" Type="int" />
+    <Property Name="iva_es_costo" Type="char" MaxLength="1" />
+    <Property Name="calificacion_abc" Type="char" MaxLength="1" />
+    <Property Name="grupo_comision" Type="varchar" MaxLength="10" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cantidad_promocion_max" Type="real" />
+    <Property Name="fecha_inicia_promocion" Type="datetime" />
+    <Property Name="precio_pos" Type="money" />
+    <Property Name="fecha_actualizacion" Type="datetime" />
+    <Property Name="borrar_promocion" Type="bit" />
+    <Property Name="porcentaje_impoconsumo" Type="real" />
+    <Property Name="no_aplica_retenciones" Type="char" MaxLength="1" />
+    <Property Name="accesorio" Type="char" MaxLength="1" />
+    <Property Name="Notas" Type="varchar" MaxLength="500" />
+    <Property Name="tipo_8" Type="int" />
+    <Property Name="tipo_9" Type="int" />
+    <Property Name="restringir_pos" Type="char" MaxLength="1" />
+    <Property Name="esLubricante" Type="bit" />
+    <Property Name="EsPintura" Type="bit" />
+    <Property Name="esNeumatico" Type="bit" />
+    <Property Name="MinDespacho" Type="int" />
+    <Property Name="codDIV" Type="nvarchar" MaxLength="10" />
+    <Property Name="si_flota" Type="bit" />
+    <Property Name="Debajo_Costo" Type="char" MaxLength="1" />
+    <Property Name="peso1" Type="real" />
+    <Property Name="peso2" Type="real" />
+    <Property Name="proveedor_unico" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="referencias_imp">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="pos_arancel" Type="varchar" MaxLength="20" />
+    <Property Name="costo_unitario_FOB" Type="money" />
+    <Property Name="gravamen" Type="real" />
+    <Property Name="explicacion" Type="varchar" MaxLength="800" />
+    <Property Name="serie" Type="varchar" MaxLength="50" />
+    <Property Name="chasis" Type="varchar" MaxLength="50" />
+    <Property Name="motor" Type="varchar" MaxLength="50" />
+    <Property Name="modelo_ano" Type="smallint" />
+    <Property Name="tipo_motor" Type="varchar" MaxLength="50" />
+    <Property Name="manifiesto" Type="varchar" MaxLength="50" />
+    <Property Name="nit_prenda" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_1" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_2" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nit_adicional_3" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="horas_uso" Type="int" />
+    <Property Name="kilometraje" Type="int" />
+    <Property Name="placa" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_fin_garantia" Type="datetime" />
+    <Property Name="nit_comprador" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="comprado" Type="tinyint" />
+    <Property Name="id_modano" Type="varchar" MaxLength="25" />
+    <Property Name="color" Type="varchar" MaxLength="3" />
+    <Property Name="fecha_manifiesto" Type="smalldatetime" />
+    <Property Name="garantia" Type="varchar" MaxLength="20" />
+    <Property Name="tipo_venta" Type="tinyint" />
+    <Property Name="plan_venta" Type="tinyint" />
+    <Property Name="usado_comprado" Type="tinyint" />
+    <Property Name="usado_retomado" Type="tinyint" />
+    <Property Name="usado_consignado" Type="tinyint" />
+    <Property Name="recibido_canje" Type="tinyint" />
+    <Property Name="entregado_canje" Type="tinyint" />
+    <Property Name="vendido" Type="tinyint" />
+    <Property Name="asignacion" Type="int" />
+    <Property Name="entregado_cliente" Type="bit" />
+    <Property Name="entregado_matricula" Type="bit" />
+    <Property Name="reservado" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_reserva" Type="smalldatetime" />
+    <Property Name="fin_reserva" Type="smalldatetime" />
+    <Property Name="costo_alistamiento" Type="money" />
+    <Property Name="costo_compra" Type="money" />
+    <Property Name="fecha_venta" Type="smalldatetime" />
+    <Property Name="codigo_concesionario" Type="varchar" MaxLength="10" />
+    <Property Name="modelo_taller" Type="varchar" MaxLength="10" />
+    <Property Name="OtroServicio" Type="varchar" MaxLength="15" />
+    <Property Name="ciudad_placa" Type="varchar" MaxLength="30" />
+    <Property Name="fecha_cambio_km" Type="datetime" />
+    <Property Name="carpeta" Type="varchar" MaxLength="30" />
+    <Property Name="nit_aseguradora" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fec_vencimiento_seg" Type="datetime" />
+    <Property Name="Levante" Type="varchar" MaxLength="16" />
+    <Property Name="Año_Fab" Type="int" />
+    <Property Name="Oferta" Type="money" />
+    <Property Name="Color_Interno" Type="nvarchar" MaxLength="3" />
+    <Property Name="Codigo_Radio" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tiempo_Garantia" Type="smallint" />
+    <Property Name="Km_Garantia" Type="int" />
+    <Property Name="NumSOAT" Type="varchar" MaxLength="30" />
+    <Property Name="Razon_Cambio_Prop" Type="int" />
+    <Property Name="fecha_expedicion_manifiesto" Type="smalldatetime" />
+    <Property Name="fin_asignacion" Type="datetime" />
+    <Property Name="Refrendo" Type="varchar" MaxLength="30" />
+    <Property Name="requiere_registro" Type="char" MaxLength="1" />
+    <Property Name="registro_importacion" Type="varchar" MaxLength="20" />
+    <Property Name="vencimiento_registro" Type="datetime" />
+    <Property Name="cantidad_registro" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="costo_registro" Type="money" />
+    <Property Name="id_estado" Type="int" />
+    <Property Name="moneda" Type="varchar" MaxLength="3" />
+    <Property Name="fecha_aprobado" Type="datetime" />
+    <Property Name="pos_arancel_internacional" Type="varchar" MaxLength="20" />
+    <Property Name="nit_usuario" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_entrega" Type="datetime" />
+    <Property Name="sinLimiteDekmEnGtia" Type="nvarchar" MaxLength="1" />
+    <Property Name="puertas" Type="tinyint" />
+    <Property Name="homologacion" Type="varchar" MaxLength="16" />
+    <Property Name="ciudad_manifiesto" Type="varchar" MaxLength="20" />
+    <Property Name="Revista" Type="money" />
+    <Property Name="cabina" Type="varchar" MaxLength="20" />
+    <Property Name="tipoPintura" Type="nvarchar" MaxLength="1" />
+    <Property Name="fecha_cambio_horas_uso" Type="datetime" />
+    <Property Name="consecutivo_compra" Type="int" />
+    <Property Name="fecha_obligatorio" Type="smalldatetime" />
+    <Property Name="fecha_gases" Type="smalldatetime" />
+    <Property Name="fecha_tecnico_mecanica" Type="smalldatetime" />
+    <Property Name="tipo_caja" Type="char" MaxLength="1" />
+    <Property Name="linea_chevystar" Type="varchar" MaxLength="20" />
+    <Property Name="blindado" Type="varchar" MaxLength="1" />
+    <Property Name="Convertido_gas" Type="varchar" MaxLength="1" />
+    <Property Name="documento_relacionado" Type="varchar" MaxLength="16" />
+    <Property Name="motivo_pedido" Type="varchar" MaxLength="3" />
+    <Property Name="bitvta" Type="char" MaxLength="1" />
+    <Property Name="numero_inserto" Type="varchar" MaxLength="20" />
+    <Property Name="scope" Type="bit" />
+    <Property Name="flotilla_sofasa" Type="bit" />
+    <Property Name="fabricacion_sofasa" Type="varchar" MaxLength="30" />
+    <Property Name="estado_sofasa" Type="varchar" MaxLength="1" />
+    <Property Name="concesionario_comprador" Type="int" />
+  </EntityType>
+  <EntityType Name="tall_citas">
+    <Key>
+      <PropertyRef Name="id_cita" />
+    </Key>
+    <Property Name="id_cita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bodega" Type="smallint" Nullable="false" />
+    <Property Name="fecha_hora_creacion" Type="datetime" Nullable="false" />
+    <Property Name="estado_cita" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="descripcion_estado" Type="varchar" MaxLength="12" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="fecha_hora_ini" Type="smalldatetime" Nullable="false" />
+    <Property Name="fecha_hora_fin" Type="smalldatetime" Nullable="false" />
+    <Property Name="hora" Type="tinyint" Nullable="false" />
+    <Property Name="minutos" Type="tinyint" Nullable="false" />
+    <Property Name="duracion_minutos" Type="int" />
+    <Property Name="codigo_veh" Type="varchar" MaxLength="20" />
+    <Property Name="placa" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nombre_cliente" Type="varchar" MaxLength="80" />
+    <Property Name="nit_nuevo" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nombre_encargado" Type="varchar" MaxLength="80" />
+    <Property Name="telefonos" Type="varchar" MaxLength="80" />
+    <Property Name="notas" Type="varchar" MaxLength="250" />
+    <Property Name="modelo_veh" Type="varchar" MaxLength="10" />
+    <Property Name="ano_veh" Type="int" />
+    <Property Name="fecha_hora_asistio" Type="smalldatetime" />
+    <Property Name="numero_orden_taller" Type="int" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="pc" Type="varchar" MaxLength="20" />
+    <Property Name="modulo" Type="varchar" MaxLength="4" />
+    <Property Name="razon" Type="nvarchar" MaxLength="4" />
+    <Property Name="jefe_unidad" Type="varchar" MaxLength="5" />
+    <Property Name="tipo_llamada" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tall_conceptos_operaciones">
+    <Key>
+      <PropertyRef Name="concepto" />
+    </Key>
+    <Property Name="concepto" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="bloqueado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tall_encabeza_orden">
+    <Key>
+      <PropertyRef Name="numero" />
+      <PropertyRef Name="bodega" />
+    </Key>
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="serie" Type="varchar" MaxLength="20" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="entrada" Type="datetime" />
+    <Property Name="vendedor" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="promesa_entrega" Type="datetime" />
+    <Property Name="estado" Type="char" MaxLength="10" />
+    <Property Name="aseguradora" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="poliza" Type="varchar" MaxLength="50" />
+    <Property Name="siniestro" Type="varchar" MaxLength="50" />
+    <Property Name="deducible" Type="decimal" Precision="16" Scale="13" />
+    <Property Name="minimo" Type="money" />
+    <Property Name="entrega" Type="datetime" />
+    <Property Name="notas" Type="varchar" MaxLength="250" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" />
+    <Property Name="kilometraje" Type="int" />
+    <Property Name="horas_uso" Type="int" />
+    <Property Name="bodega" Type="smallint" Nullable="false" />
+    <Property Name="entrego" Type="varchar" MaxLength="50" />
+    <Property Name="facturada" Type="bit" Nullable="false" />
+    <Property Name="rombo" Type="varchar" MaxLength="20" />
+    <Property Name="facturo_deducible" Type="bit" Nullable="false" />
+    <Property Name="ocupada_por" Type="varchar" MaxLength="20" />
+    <Property Name="horas" Type="smallint" />
+    <Property Name="anulada" Type="bit" Nullable="false" />
+    <Property Name="pc" Type="varchar" MaxLength="20" />
+    <Property Name="usuario" Type="varchar" MaxLength="10" />
+    <Property Name="ultima_modificacion" Type="datetime" />
+    <Property Name="condicion_pago" Type="varchar" MaxLength="4" />
+    <Property Name="rombo_usado" Type="varchar" MaxLength="20" />
+    <Property Name="ubicacion" Type="varchar" MaxLength="5" />
+    <Property Name="tipo_deducible" Type="varchar" MaxLength="4" />
+    <Property Name="numero_deducible" Type="int" />
+    <Property Name="fecha_hora_entrega_real" Type="datetime" />
+    <Property Name="usuario_entrega_real" Type="varchar" MaxLength="10" />
+    <Property Name="pc_entrega_real" Type="varchar" MaxLength="20" />
+    <Property Name="numero_entrega" Type="int" />
+    <Property Name="tipo_orden" Type="char" MaxLength="1" />
+    <Property Name="bloqueada" Type="char" MaxLength="1" />
+    <Property Name="codigo_direccion" Type="smallint" />
+    <Property Name="spid" Type="smallint" />
+    <Property Name="login_time" Type="datetime" />
+    <Property Name="km_anterior" Type="int" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero_orden_anulada" Type="int" />
+    <Property Name="cotizacion" Type="int" />
+    <Property Name="asesor_aseguradora" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="notas2" Type="varchar" MaxLength="250" />
+    <Property Name="usuario_autoriza" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_hora_autoriza" Type="datetime" />
+    <Property Name="razon" Type="smallint" />
+    <Property Name="Recepcion_Interactiva" Type="smallint" />
+    <Property Name="procesadaPlano" Type="char" MaxLength="1" />
+    <Property Name="horas_uso_anterior" Type="int" />
+    <Property Name="es_ppc" Type="char" MaxLength="1" />
+    <Property Name="porce_apoyo_1" Type="real" />
+    <Property Name="porce_apoyo_2" Type="real" />
+    <Property Name="porce_apoyo_3" Type="real" />
+    <Property Name="fecha_cierre_final" Type="datetime" />
+    <Property Name="perdida_total" Type="char" MaxLength="1" />
+    <Property Name="notas3" Type="varchar" MaxLength="250" />
+    <Property Name="cita" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tall_operarios">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="escalafon" Type="char" MaxLength="1" />
+    <Property Name="actividad" Type="varchar" MaxLength="2" />
+    <Property Name="bodega" Type="smallint" />
+    <Property Name="contratista" Type="bit" Nullable="false" />
+    <Property Name="patio" Type="varchar" MaxLength="5" />
+    <Property Name="codigo_op" Type="varchar" MaxLength="10" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="digito" Type="tinyint" />
+    <Property Name="nombres" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="60" />
+    <Property Name="ciudad" Type="varchar" MaxLength="20" />
+    <Property Name="telefono_1" Type="varchar" MaxLength="15" />
+    <Property Name="telefono_2" Type="varchar" MaxLength="15" />
+    <Property Name="fax" Type="varchar" MaxLength="15" />
+    <Property Name="apartado_aereo" Type="varchar" MaxLength="10" />
+    <Property Name="tipo_identificacion" Type="char" MaxLength="1" />
+    <Property Name="pais" Type="varchar" MaxLength="20" />
+    <Property Name="gran_contribuyente" Type="bit" Nullable="false" />
+    <Property Name="autoretenedor" Type="bit" Nullable="false" />
+    <Property Name="bloqueo" Type="tinyint" />
+    <Property Name="notas" Type="varchar" MaxLength="250" />
+    <Property Name="lista" Type="tinyint" />
+    <Property Name="concepto_1" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_2" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_3" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_4" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_5" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_6" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_7" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_8" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_9" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_10" Type="varchar" MaxLength="5" />
+    <Property Name="mail" Type="varchar" MaxLength="40" />
+    <Property Name="pos_num" Type="tinyint" Nullable="false" />
+    <Property Name="regimen" Type="char" MaxLength="1" />
+    <Property Name="cupo_credito" Type="money" />
+    <Property Name="nit_real" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="condicion" Type="varchar" MaxLength="4" />
+    <Property Name="vendedor" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fletes" Type="real" />
+    <Property Name="es_excento_iva" Type="varchar" MaxLength="1" />
+    <Property Name="contacto_1" Type="varchar" MaxLength="50" />
+    <Property Name="contacto_2" Type="varchar" MaxLength="50" />
+    <Property Name="formato_factura" Type="varchar" MaxLength="10" />
+    <Property Name="fecha_creacion" Type="datetime" />
+    <Property Name="formato_copias" Type="tinyint" />
+    <Property Name="tipo_factura" Type="varchar" MaxLength="4" />
+    <Property Name="dias_gracia" Type="smallint" />
+    <Property Name="solo_contado" Type="varchar" MaxLength="1" />
+    <Property Name="descuento_fijo" Type="real" />
+    <Property Name="excluir_tabla_desc" Type="char" MaxLength="1" />
+    <Property Name="centro_fijo" Type="int" />
+    <Property Name="exportado" Type="char" MaxLength="1" />
+    <Property Name="factor_o_lista" Type="char" MaxLength="1" />
+    <Property Name="codigo_ica" Type="int" />
+    <Property Name="descuento_fijo2" Type="real" />
+    <Property Name="y_dpto" Type="varchar" MaxLength="5" />
+    <Property Name="y_ciudad" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_11" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_12" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_13" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_14" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_15" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_16" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_17" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_18" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_19" Type="varchar" MaxLength="5" />
+    <Property Name="concepto_20" Type="varchar" MaxLength="5" />
+    <Property Name="descuento_fijo_prov" Type="real" />
+    <Property Name="solo_contado_compra" Type="varchar" MaxLength="1" />
+    <Property Name="celular" Type="varchar" MaxLength="15" />
+    <Property Name="fecha_cambio_razon" Type="smalldatetime" />
+    <Property Name="razon_comercial" Type="varchar" MaxLength="60" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="minimo_ret_vtas" Type="money" />
+    <Property Name="y_pais" Type="varchar" MaxLength="5" />
+    <Property Name="ext_1" Type="varchar" MaxLength="5" />
+    <Property Name="codigo_alterno" Type="varchar" MaxLength="20" />
+    <Property Name="tipo_devolucion" Type="varchar" MaxLength="4" />
+    <Property Name="Usuario" Type="varchar" MaxLength="20" />
+    <Property Name="tipo_direccion" Type="smallint" />
+    <Property Name="id_definicion_tributaria_tipo" Type="int" />
+    <Property Name="Separa_Iva" Type="bit" />
+    <Property Name="Separa_Negocio" Type="bit" />
+    <Property Name="Solo_Remision" Type="bit" />
+    <Property Name="Devolver_Prod" Type="bit" />
+    <Property Name="departamento" Type="varchar" MaxLength="7" />
+    <Property Name="ciudad2" Type="varchar" MaxLength="7" />
+    <Property Name="dias_recibo_caja" Type="smallint" />
+    <Property Name="Runt" Type="varchar" MaxLength="40" />
+    <Property Name="Fecha_Runt" Type="smalldatetime" />
+    <Property Name="estado_civil" Type="nvarchar" MaxLength="1" />
+    <Property Name="cupo_credito_vh" Type="money" />
+    <Property Name="estrato" Type="char" MaxLength="1" />
+    <Property Name="paginaweb" Type="varchar" MaxLength="80" />
+    <Property Name="area_labora" Type="varchar" MaxLength="50" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" />
+    <Property Name="ext2" Type="varchar" MaxLength="20" />
+    <Property Name="celular2" Type="varchar" MaxLength="20" />
+    <Property Name="email2" Type="varchar" MaxLength="50" />
+    <Property Name="otro_descuento" Type="real" />
+    <Property Name="no_regulados" Type="char" MaxLength="1" />
+    <Property Name="descuento_financiero" Type="real" />
+    <Property Name="actividad_cree" Type="varchar" MaxLength="4" />
+    <Property Name="es_excento_cree_ventas" Type="char" MaxLength="1" />
+    <Property Name="sincronizado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="codigoPostal" Type="nvarchar" MaxLength="9" />
+    <Property Name="mail_adicional" Type="varchar" MaxLength="250" />
+    <Property Name="ean" Type="varchar" MaxLength="20" />
+    <Property Name="sexo" Type="char" MaxLength="1" />
+    <Property Name="fecha_cumple_ter" Type="datetime" />
+    <Property Name="tieneRUT" Type="nvarchar" MaxLength="1" />
+    <Property Name="codigoActividadEconomica" Type="varchar" MaxLength="4" />
+    <Property Name="ftoCopia_factura" Type="varchar" MaxLength="10" />
+    <Property Name="formatoRemision" Type="varchar" MaxLength="20" />
+    <Property Name="es_extranet" Type="char" MaxLength="1" />
+    <Property Name="copiaRemision" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="vh_clase">
+    <Key>
+      <PropertyRef Name="clase" />
+    </Key>
+    <Property Name="clase" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="vh_eventos">
+    <Key>
+      <PropertyRef Name="evento" />
+    </Key>
+    <Property Name="evento" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="35" />
+    <Property Name="editable" Type="bit" Nullable="false" />
+    <Property Name="automatico" Type="bit" Nullable="false" />
+    <Property Name="usa_tercero" Type="bit" />
+    <Property Name="usa_ubica" Type="bit" />
+  </EntityType>
+  <EntityType Name="vh_familias">
+    <Key>
+      <PropertyRef Name="familia" />
+    </Key>
+    <Property Name="familia" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vh_marcas">
+    <Key>
+      <PropertyRef Name="marca" />
+    </Key>
+    <Property Name="marca" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vh_modelo">
+    <Key>
+      <PropertyRef Name="modelo" />
+    </Key>
+    <Property Name="modelo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="grupo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="clase" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="contable" Type="tinyint" Nullable="false" />
+    <Property Name="capacidad" Type="real" Nullable="false" />
+    <Property Name="und_capacidad" Type="varchar" MaxLength="1" />
+    <Property Name="cilindraje" Type="real" />
+    <Property Name="servicio" Type="varchar" MaxLength="1" />
+    <Property Name="combustible" Type="varchar" MaxLength="50" />
+    <Property Name="origen" Type="varchar" MaxLength="2" />
+    <Property Name="descontinuado" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modelo_taller" Type="varchar" MaxLength="10" />
+    <Property Name="foto_modelo" Type="image" />
+    <Property Name="homologacion" Type="varchar" MaxLength="16" />
+    <Property Name="adicional" Type="varchar" MaxLength="80" />
+    <Property Name="Tipo_Auto" Type="varchar" MaxLength="1" />
+    <Property Name="familia" Type="varchar" MaxLength="5" />
+    <Property Name="GrupoICE" Type="nvarchar" MaxLength="10" />
+    <Property Name="familiaVComercial" Type="varchar" MaxLength="5" />
+    <Property Name="Modelo_Sofasa" Type="bit" />
+  </EntityType>
+  <EntityType Name="vh_modelo_ano">
+    <Key>
+      <PropertyRef Name="id_modano" />
+    </Key>
+    <Property Name="id_modano" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="modelo" Type="varchar" MaxLength="20" />
+    <Property Name="ano" Type="int" Nullable="false" />
+    <Property Name="precio_lista" Type="money" Nullable="false" />
+    <Property Name="precio_anterior" Type="money" />
+    <Property Name="ultimo_cambio_precio" Type="smalldatetime" />
+    <Property Name="maximo_vl_dcto" Type="money" />
+    <Property Name="maximo_porc_dcto" Type="real" />
+    <Property Name="codigo_iva" Type="smallint" Nullable="false" />
+    <Property Name="codigo_iva_compra" Type="smallint" Nullable="false" />
+    <Property Name="valor_seguro" Type="money" />
+    <Property Name="costo_unitario" Type="numeric" Precision="28" Scale="16" />
+    <Property Name="costo_anterior" Type="numeric" Precision="28" Scale="16" />
+    <Property Name="alto" Type="real" />
+    <Property Name="ancho" Type="real" />
+    <Property Name="peso" Type="real" />
+    <Property Name="margen" Type="money" />
+    <Property Name="porc_margen" Type="real" />
+    <Property Name="porc_concesionario" Type="real" />
+    <Property Name="comision" Type="money" />
+    <Property Name="porc_comision" Type="real" />
+    <Property Name="largo" Type="real" />
+    <Property Name="tex1" Type="varchar" MaxLength="200" />
+    <Property Name="tex2" Type="varchar" MaxLength="200" />
+    <Property Name="tex3" Type="varchar" MaxLength="200" />
+    <Property Name="nuevo" Type="bit" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="km_dia" Type="decimal" Precision="12" Scale="8" />
+    <Property Name="soat" Type="money" />
+    <Property Name="descontinuado" Type="varchar" MaxLength="1" />
+    <Property Name="precio_final_impoconsumo" Type="money" />
+    <Property Name="matricula" Type="money" />
+  </EntityType>
+  <EntityType Name="vh_modelo_taller">
+    <Key>
+      <PropertyRef Name="modelo_taller" />
+    </Key>
+    <Property Name="modelo_taller" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="30" />
+    <Property Name="marca" Type="nvarchar" MaxLength="10" />
+    <Property Name="grupo" Type="nvarchar" MaxLength="10" />
+    <Property Name="familia" Type="nvarchar" MaxLength="10" />
+    <Property Name="familiaVersionComercial" Type="nvarchar" MaxLength="10" />
+    <Property Name="esModeloSofasa" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="vh_terceros">
+    <Key>
+      <PropertyRef Name="nit" />
+    </Key>
+    <Property Name="nit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="60" />
+    <Property Name="direccion" Type="varchar" MaxLength="60" />
+    <Property Name="telefono_1" Type="varchar" MaxLength="15" />
+    <Property Name="telefono_2" Type="varchar" MaxLength="15" />
+    <Property Name="celular" Type="varchar" MaxLength="15" />
+    <Property Name="usuario_creo" Type="varchar" MaxLength="10" />
+    <Property Name="notas" Type="varchar" MaxLength="200" />
+    <Property Name="mail" Type="varchar" MaxLength="45" />
+    <Property Name="y_dpto" Type="varchar" MaxLength="5" />
+    <Property Name="y_ciudad" Type="varchar" MaxLength="5" />
+    <Property Name="fecha_creacion" Type="smalldatetime" />
+    <Property Name="tipo_identificacion" Type="varchar" MaxLength="1" />
+    <Property Name="tipo" Type="varchar" MaxLength="5" />
+    <Property Name="fecha_cotizacion" Type="smalldatetime" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vh_tipo_carroceria">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="tinyint" Nullable="false" />
+    <Property Name="codigo_runt" Type="varchar" MaxLength="5" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="vh_tipo_flotas">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="vh_tipo_modelo">
+    <Key>
+      <PropertyRef Name="tipo" />
+    </Key>
+    <Property Name="tipo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VH_tipo_pintura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_ciudades">
+    <Key>
+      <PropertyRef Name="ciudad" />
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="ciudad" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="40" />
+    <Property Name="departamento" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="pais" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_departamentos">
+    <Key>
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="departamento" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="32" />
+    <Property Name="pais" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="y_paises">
+    <Key>
+      <PropertyRef Name="pais" />
+    </Key>
+    <Property Name="pais" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_modano_modelo">
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="0..1" />
+    <End Role="vh_modelo_ano" Type="Self.vh_modelo_ano" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_modelo">
+        <PropertyRef Name="modelo" />
+      </Principal>
+      <Dependent Role="vh_modelo_ano">
+        <PropertyRef Name="modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_clase">
+    <End Role="vh_clase" Type="Self.vh_clase" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_clase">
+        <PropertyRef Name="clase" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="clase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_marcas">
+    <End Role="vh_marcas" Type="Self.vh_marcas" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_marcas">
+        <PropertyRef Name="marca" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_tipo">
+    <End Role="vh_tipo_modelo" Type="Self.vh_tipo_modelo" Multiplicity="1" />
+    <End Role="vh_modelo" Type="Self.vh_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_tipo_modelo">
+        <PropertyRef Name="tipo" />
+      </Principal>
+      <Dependent Role="vh_modelo">
+        <PropertyRef Name="tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_referencias_imp_modelo_ano">
+    <End Role="vh_modelo_ano" Type="Self.vh_modelo_ano" Multiplicity="0..1" />
+    <End Role="referencias_imp" Type="Self.referencias_imp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vh_modelo_ano">
+        <PropertyRef Name="id_modano" />
+      </Principal>
+      <Dependent Role="referencias_imp">
+        <PropertyRef Name="id_modano" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_referencias_IMP_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="1" />
+    <End Role="referencias_imp" Type="Self.referencias_imp" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="referencias_imp">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_citas_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="0..1" />
+    <End Role="tall_citas" Type="Self.tall_citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tall_citas">
+        <PropertyRef Name="codigo_veh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_citas_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="0..1" />
+    <End Role="tall_citas" Type="Self.tall_citas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="tall_citas">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_encabeza_orden_referencias">
+    <End Role="referencias" Type="Self.referencias" Multiplicity="0..1" />
+    <End Role="tall_encabeza_orden" Type="Self.tall_encabeza_orden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="referencias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tall_encabeza_orden">
+        <PropertyRef Name="serie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tall_operarios_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="1" />
+    <End Role="tall_operarios" Type="Self.tall_operarios" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="tall_operarios">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="refer_terceros">
+    <End Role="terceros" Type="Self.terceros" Multiplicity="1" />
+    <End Role="referencias" Type="Self.referencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terceros">
+        <PropertyRef Name="nit" />
+      </Principal>
+      <Dependent Role="referencias">
+        <PropertyRef Name="nit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DmsV1ModelStoreContainer">
+    <EntitySet Name="abc_terceros" EntityType="Self.abc_terceros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bodegas" EntityType="Self.bodegas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotificationSystime" EntityType="Self.NotificationSystime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="referencias" EntityType="Self.referencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="referencias_imp" EntityType="Self.referencias_imp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tall_citas" EntityType="Self.tall_citas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tall_conceptos_operaciones" EntityType="Self.tall_conceptos_operaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tall_encabeza_orden" EntityType="Self.tall_encabeza_orden" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tall_operarios" EntityType="Self.tall_operarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="terceros" EntityType="Self.terceros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_clase" EntityType="Self.vh_clase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_eventos" EntityType="Self.vh_eventos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_familias" EntityType="Self.vh_familias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_marcas" EntityType="Self.vh_marcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_modelo" EntityType="Self.vh_modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_modelo_ano" EntityType="Self.vh_modelo_ano" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_modelo_taller" EntityType="Self.vh_modelo_taller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_terceros" EntityType="Self.vh_terceros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_tipo_carroceria" EntityType="Self.vh_tipo_carroceria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_tipo_flotas" EntityType="Self.vh_tipo_flotas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vh_tipo_modelo" EntityType="Self.vh_tipo_modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VH_tipo_pintura" EntityType="Self.VH_tipo_pintura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="y_ciudades" EntityType="Self.y_ciudades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="y_departamentos" EntityType="Self.y_departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="y_paises" EntityType="Self.y_paises" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_modano_modelo" Association="Self.FK_modano_modelo">
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+      <End Role="vh_modelo_ano" EntitySet="vh_modelo_ano" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_clase" Association="Self.FK_modelo_clase">
+      <End Role="vh_clase" EntitySet="vh_clase" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_marcas" Association="Self.FK_modelo_marcas">
+      <End Role="vh_marcas" EntitySet="vh_marcas" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_tipo" Association="Self.FK_modelo_tipo">
+      <End Role="vh_tipo_modelo" EntitySet="vh_tipo_modelo" />
+      <End Role="vh_modelo" EntitySet="vh_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_referencias_imp_modelo_ano" Association="Self.FK_referencias_imp_modelo_ano">
+      <End Role="vh_modelo_ano" EntitySet="vh_modelo_ano" />
+      <End Role="referencias_imp" EntitySet="referencias_imp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_referencias_IMP_referencias" Association="Self.FK_referencias_IMP_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="referencias_imp" EntitySet="referencias_imp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_citas_referencias" Association="Self.FK_tall_citas_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="tall_citas" EntitySet="tall_citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_citas_terceros" Association="Self.FK_tall_citas_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="tall_citas" EntitySet="tall_citas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_encabeza_orden_referencias" Association="Self.FK_tall_encabeza_orden_referencias">
+      <End Role="referencias" EntitySet="referencias" />
+      <End Role="tall_encabeza_orden" EntitySet="tall_encabeza_orden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tall_operarios_terceros" Association="Self.FK_tall_operarios_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="tall_operarios" EntitySet="tall_operarios" />
+    </AssociationSet>
+    <AssociationSet Name="refer_terceros" Association="Self.refer_terceros">
+      <End Role="terceros" EntitySet="terceros" />
+      <End Role="referencias" EntitySet="referencias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

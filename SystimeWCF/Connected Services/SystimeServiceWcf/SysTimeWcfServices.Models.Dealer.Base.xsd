@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Angle" type="xs:double" />
+      <xs:element minOccurs="0" name="Coordinates_X" type="xs:double" />
+      <xs:element minOccurs="0" name="Coordinates_Y" type="xs:double" />
+      <xs:element minOccurs="0" name="Coordinates_Z" type="xs:double" />
+      <xs:element minOccurs="0" name="IdWorkStation" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="Worker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignedHours" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPendingTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdDealerShop" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdJobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPhysicalTag" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdWorker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Progress" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkedHours" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Worker" nillable="true" type="tns:Worker" />
+  <xs:complexType name="WorkOrder">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AuthorizedAt" nillable="true" type="q1:ArrayOfNullableOfdateTime" />
+      <xs:element minOccurs="0" name="CustomerDocumentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="EnteredAt" nillable="true" type="q2:ArrayOfNullableOfdateTime" />
+      <xs:element minOccurs="0" name="FeedBack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasTotalLoss" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IdCurrentOperation" nillable="true" type="q3:ArrayOfNullableOfint" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdCurrentWorker" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IdCustomer" type="xs:long" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdDealerShop" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="IdErpQuote" nillable="true" type="q6:ArrayOfNullableOfint" />
+      <xs:element minOccurs="0" name="IdInsuranceCompany" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPhysicalTag" nillable="true" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdSalesRepresentative" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IdVinNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdWorkOrder" nillable="true" type="q8:ArrayOflong" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="InvoicedAt" nillable="true" type="q9:ArrayOfNullableOfdateTime" />
+      <xs:element minOccurs="0" name="IsInsured" type="xs:boolean" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Note" nillable="true" type="q10:ArrayOfstring" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OpenOtAt" nillable="true" type="q11:ArrayOfNullableOfdateTime" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PartCompletedAt" nillable="true" type="q12:ArrayOfNullableOfdateTime" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PickedUpAt" nillable="true" type="q13:ArrayOfNullableOfdateTime" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PromisedAt" nillable="true" type="q14:ArrayOfNullableOfdateTime" />
+      <xs:element minOccurs="0" name="RatingDealer" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="RatingInsuranceCompany" nillable="true" type="xs:short" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ReadyToPickUpAt" nillable="true" type="q15:ArrayOfNullableOfdateTime" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkOrderNumber" nillable="true" type="q16:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrder" nillable="true" type="tns:WorkOrder" />
+  <xs:complexType name="Vehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerDocumentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealerCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealerVehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErpCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdCity" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCustomerOwner" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IdInsuranceCompany" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVehicleModel" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVehicleServiceType" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVehicleType" type="xs:int" />
+      <xs:element minOccurs="0" name="IdVinNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastMileage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleServiceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vehicle" nillable="true" type="tns:Vehicle" />
+  <xs:complexType name="ArrayOfOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="tns:Operation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperation" nillable="true" type="tns:ArrayOfOperation" />
+  <xs:complexType name="Operation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultPercentage" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Effort" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IdDefaultWorker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNextOperationByDealer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOperation" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAssignable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="ArrayOfSubOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubOperation" nillable="true" type="tns:SubOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubOperation" nillable="true" type="tns:ArrayOfSubOperation" />
+  <xs:complexType name="SubOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultPercentage" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Effort" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IdDefaultWorker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNextSubOperationByDealer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOperationByDealer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubOperation" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAssignable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsExternalJob" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubOperation" nillable="true" type="tns:SubOperation" />
+  <xs:complexType name="InsuranceCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdInsuranceCompany" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuranceCompany" nillable="true" type="tns:InsuranceCompany" />
+  <xs:complexType name="ArrayOfInsuranceCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceCompany" nillable="true" type="tns:InsuranceCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsuranceCompany" nillable="true" type="tns:ArrayOfInsuranceCompany" />
+  <xs:complexType name="DealerShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdDealerShop" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DealerShop" nillable="true" type="tns:DealerShop" />
+  <xs:complexType name="ArrayOfDealerShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DealerShop" nillable="true" type="tns:DealerShop" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealerShop" nillable="true" type="tns:ArrayOfDealerShop" />
+  <xs:complexType name="ArrayOfOperationByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationByWorkOrder" nillable="true" type="tns:OperationByWorkOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationByWorkOrder" nillable="true" type="tns:ArrayOfOperationByWorkOrder" />
+  <xs:complexType name="OperationByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedTime" type="xs:double" />
+      <xs:element minOccurs="0" name="IdOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOperationByWorkOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IdWorkOrder" type="xs:long" />
+      <xs:element minOccurs="0" name="MaterialCost" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkForceCost" type="xs:double" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkedTime" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationByWorkOrder" nillable="true" type="tns:OperationByWorkOrder" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCity" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCustomer" type="xs:long" />
+      <xs:element minOccurs="0" name="Movile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfSubOperationByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubOperationByWorkOrder" nillable="true" type="tns:SubOperationByWorkOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubOperationByWorkOrder" nillable="true" type="tns:ArrayOfSubOperationByWorkOrder" />
+  <xs:complexType name="SubOperationByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AssignedById" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompletedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdOperationByWorkOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSubOperationByWorkOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="OperationTimePercentage" type="xs:double" />
+      <xs:element minOccurs="0" name="SubOperationTime" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WorkedTime" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubOperationByWorkOrder" nillable="true" type="tns:SubOperationByWorkOrder" />
+  <xs:complexType name="TrackingByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedById" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdCurrentWorker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSubOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IdWorkOrder" type="xs:long" />
+      <xs:element minOccurs="0" name="IdWorkOrderTracking" type="xs:long" />
+      <xs:element minOccurs="0" name="IdWorkOrderTrackingDetail" type="xs:long" />
+      <xs:element minOccurs="0" name="IdWorker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsWaiting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrackingByWorkOrder" nillable="true" type="tns:TrackingByWorkOrder" />
+  <xs:complexType name="ArrayOfTrackingByWorkOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrackingByWorkOrder" nillable="true" type="tns:TrackingByWorkOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrackingByWorkOrder" nillable="true" type="tns:ArrayOfTrackingByWorkOrder" />
+  <xs:complexType name="ArrayOfExternalWork">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExternalWork" nillable="true" type="tns:ExternalWork" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternalWork" nillable="true" type="tns:ArrayOfExternalWork" />
+  <xs:complexType name="ExternalWork">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompletedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedById" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedTime" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="IdAction" type="xs:int" />
+      <xs:element minOccurs="0" name="IdExternalJobByDealer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdJobByWorkOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPart" type="xs:int" />
+      <xs:element minOccurs="0" name="IdWorkOrder" type="xs:long" />
+      <xs:element minOccurs="0" name="PartName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdatedById" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternalWork" nillable="true" type="tns:ExternalWork" />
+  <xs:complexType name="ArrayOfJobTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobTitle" nillable="true" type="tns:JobTitle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobTitle" nillable="true" type="tns:ArrayOfJobTitle" />
+  <xs:complexType name="JobTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdJObTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSubOperationByDealer" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAssignable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobTitle" nillable="true" type="tns:JobTitle" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="City">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CytiCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CytiName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCity" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdState" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeZoneName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="ArrayOfVehicleBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleBrand" nillable="true" type="tns:VehicleBrand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleBrand" nillable="true" type="tns:ArrayOfVehicleBrand" />
+  <xs:complexType name="VehicleBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdVehicleBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleBrandName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleBrand" nillable="true" type="tns:VehicleBrand" />
+  <xs:complexType name="ArrayOfVehicleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleModel" nillable="true" type="tns:VehicleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleModel" nillable="true" type="tns:ArrayOfVehicleModel" />
+  <xs:complexType name="VehicleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdVehicleBrand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdVehicleModel" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleModelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleModel" nillable="true" type="tns:VehicleModel" />
+</xs:schema>

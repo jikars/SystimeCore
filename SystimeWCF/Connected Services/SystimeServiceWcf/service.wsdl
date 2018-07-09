@@ -1,0 +1,1127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SysTimeService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="SysTime_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.Dealer.Base" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Model.UtilityModels" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SysTimeWcfServices.Models.UtilityModels" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISysTimeService_GetAllObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllObjects" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetAllObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_Ack_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ack" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_Ack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_RegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_RegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_RegisterClient_StringFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q1:string" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_UnRegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_UnRegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_UnRegisterClient_StringFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q2:string" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetActiveWorkersByShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveWorkersByShop" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetActiveWorkersByShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveWorkersByShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOpenedWorkOrdersByShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenedWorkOrdersByShop" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOpenedWorkOrdersByShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenedWorkOrdersByShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOpenedWorkOrdersByShop_old_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenedWorkOrdersByShop_old" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOpenedWorkOrdersByShop_old_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenedWorkOrdersByShop_oldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetRolUsingValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolUsingValidation" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetRolUsingValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolUsingValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleById" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkerById" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkOrderById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderById" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkOrderById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_WorkOrderByNumberAndDealer_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkOrderByNumberAndDealer" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_WorkOrderByNumberAndDealer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkOrderByNumberAndDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetInsuranceCompanyById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompanyById" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetInsuranceCompanyById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompanyByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetInsuranceCompanyCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompanyCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetInsuranceCompanyCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompanyCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetShopById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopById" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetShopById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetShopCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetShopCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShopCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetCustomerByDocumentNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByDocumentNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetCustomerByDocumentNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByDocumentNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsByIdOperationByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsByIdOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsByIdOperationByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsByIdOperationByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetDateToUpdateInWorkOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDateToUpdateInWorkOrders" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetDateToUpdateInWorkOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDateToUpdateInWorkOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetNewNoteToWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetNewNoteToWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetNewNoteToWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNewNoteToWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetTrackingByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTrackingByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetTrackingByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTrackingByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetLastNTrackingsByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastNTrackingsByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetLastNTrackingsByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastNTrackingsByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkOrderByIsVinNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderByIsVinNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetWorkOrderByIsVinNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderByIsVinNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetFilesOrPaths_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesOrPaths" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetFilesOrPaths_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesOrPathsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetFileFromPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileFromPath" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetFileFromPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileFromPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SavePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePhoto" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SavePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SavePhotoPreview_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePhotoPreview" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SavePhotoPreview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePhotoPreviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetAllWorkStationPolygons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWorkStationPolygons" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetAllWorkStationPolygons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWorkStationPolygonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetWorkOrderPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkOrderPosition" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetWorkOrderPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetWorkOrderPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetExternalJobCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalJobCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetExternalJobCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalJobCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetJobTitleByDealerCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobTitleByDealerCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetJobTitleByDealerCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobTitleByDealerCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetAllLastTrackings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLastTrackings" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetAllLastTrackings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLastTrackingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetExternalJobsByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalJobsByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetExternalJobsByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalJobsByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetExternalJobByIdWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetExternalJobByIdWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetExternalJobByIdWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetExternalJobByIdWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetJobTitleCatalogByIdDealerShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobTitleCatalogByIdDealerShop" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetJobTitleCatalogByIdDealerShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobTitleCatalogByIdDealerShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsCatalogByIdDealerShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsCatalogByIdDealerShops" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetOperationsCatalogByIdDealerShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsCatalogByIdDealerShopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsCatalogByIdDealerShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsCatalogByIdDealerShops" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetSubOperationsCatalogByIdDealerShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubOperationsCatalogByIdDealerShopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetCitiesCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetCitiesCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleBrandsCatalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleBrandsCatalog" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleBrandsCatalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleBrandsCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleModelsCatalogController_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleModelsCatalogController" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetVehicleModelsCatalogController_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleModelsCatalogControllerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_CreateOrUpdateWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyTableChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyTableChanged" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyTableChanged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyTableChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_InsertOperationByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_InsertOperationByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOperationByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetOperationByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetOperationByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOperationByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_InsertSubOperationByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_InsertSubOperationByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubOperationByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetSubOperationByWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSubOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_SetSubOperationByWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSubOperationByWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetViewPortObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewPortObjects" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_GetViewPortObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViewPortObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_AckBackResult_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:AckBackResult" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyNewTracking_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyNewTracking" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyNewWorkOrderPosition_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyNewWorkOrderPosition" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyNewSubOperationByWorkOrder_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyNewSubOperationByWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyCustomerCreatedOrUpdated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyCustomerCreatedOrUpdated" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyVehicleCreatedOrUpdated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyVehicleCreatedOrUpdated" />
+  </wsdl:message>
+  <wsdl:message name="ISysTimeService_NotifyWorkOrderCreatedOrUpdated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyWorkOrderCreatedOrUpdated" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="ISysTimeService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetAllObjects" message="tns:ISysTimeService_GetAllObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetAllObjectsResponse" message="tns:ISysTimeService_GetAllObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Ack">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/Ack" message="tns:ISysTimeService_Ack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/AckResponse" message="tns:ISysTimeService_Ack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RegisterClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/RegisterClient" message="tns:ISysTimeService_RegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/RegisterClientResponse" message="tns:ISysTimeService_RegisterClient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISysTimeService/RegisterClientStringFault" name="StringFault" message="tns:ISysTimeService_RegisterClient_StringFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UnRegisterClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/UnRegisterClient" message="tns:ISysTimeService_UnRegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/UnRegisterClientResponse" message="tns:ISysTimeService_UnRegisterClient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISysTimeService/UnRegisterClientStringFault" name="StringFault" message="tns:ISysTimeService_UnRegisterClient_StringFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetActiveWorkersByShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetActiveWorkersByShop" message="tns:ISysTimeService_GetActiveWorkersByShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetActiveWorkersByShopResponse" message="tns:ISysTimeService_GetActiveWorkersByShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOpenedWorkOrdersByShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShop" message="tns:ISysTimeService_GetOpenedWorkOrdersByShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShopResponse" message="tns:ISysTimeService_GetOpenedWorkOrdersByShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOpenedWorkOrdersByShop_old">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShop_old" message="tns:ISysTimeService_GetOpenedWorkOrdersByShop_old_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShop_oldResponse" message="tns:ISysTimeService_GetOpenedWorkOrdersByShop_old_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRolUsingValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetRolUsingValidation" message="tns:ISysTimeService_GetRolUsingValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetRolUsingValidationResponse" message="tns:ISysTimeService_GetRolUsingValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetVehicleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleById" message="tns:ISysTimeService_GetVehicleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleByIdResponse" message="tns:ISysTimeService_GetVehicleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOperationsCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsCatalog" message="tns:ISysTimeService_GetOperationsCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsCatalogResponse" message="tns:ISysTimeService_GetOperationsCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSubOperationsCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsCatalog" message="tns:ISysTimeService_GetSubOperationsCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsCatalogResponse" message="tns:ISysTimeService_GetSubOperationsCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetWorkerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkerById" message="tns:ISysTimeService_GetWorkerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkerByIdResponse" message="tns:ISysTimeService_GetWorkerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetWorkOrderById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkOrderById" message="tns:ISysTimeService_GetWorkOrderById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkOrderByIdResponse" message="tns:ISysTimeService_GetWorkOrderById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="WorkOrderByNumberAndDealer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/WorkOrderByNumberAndDealer" message="tns:ISysTimeService_WorkOrderByNumberAndDealer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/WorkOrderByNumberAndDealerResponse" message="tns:ISysTimeService_WorkOrderByNumberAndDealer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetInsuranceCompanyById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetInsuranceCompanyById" message="tns:ISysTimeService_GetInsuranceCompanyById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetInsuranceCompanyByIdResponse" message="tns:ISysTimeService_GetInsuranceCompanyById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetInsuranceCompanyCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetInsuranceCompanyCatalog" message="tns:ISysTimeService_GetInsuranceCompanyCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetInsuranceCompanyCatalogResponse" message="tns:ISysTimeService_GetInsuranceCompanyCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetShopById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetShopById" message="tns:ISysTimeService_GetShopById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetShopByIdResponse" message="tns:ISysTimeService_GetShopById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetShopCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetShopCatalog" message="tns:ISysTimeService_GetShopCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetShopCatalogResponse" message="tns:ISysTimeService_GetShopCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOperationsByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsByWorkOrder" message="tns:ISysTimeService_GetOperationsByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsByWorkOrderResponse" message="tns:ISysTimeService_GetOperationsByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCustomerByDocumentNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetCustomerByDocumentNumber" message="tns:ISysTimeService_GetCustomerByDocumentNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetCustomerByDocumentNumberResponse" message="tns:ISysTimeService_GetCustomerByDocumentNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSubOperationsByIdOperationByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsByIdOperationByWorkOrder" message="tns:ISysTimeService_GetSubOperationsByIdOperationByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsByIdOperationByWorkOrderResponse" message="tns:ISysTimeService_GetSubOperationsByIdOperationByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetDateToUpdateInWorkOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetDateToUpdateInWorkOrders" message="tns:ISysTimeService_SetDateToUpdateInWorkOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetDateToUpdateInWorkOrdersResponse" message="tns:ISysTimeService_SetDateToUpdateInWorkOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetNewNoteToWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetNewNoteToWorkOrder" message="tns:ISysTimeService_SetNewNoteToWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetNewNoteToWorkOrderResponse" message="tns:ISysTimeService_SetNewNoteToWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetTrackingByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetTrackingByWorkOrder" message="tns:ISysTimeService_SetTrackingByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetTrackingByWorkOrderResponse" message="tns:ISysTimeService_SetTrackingByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetLastNTrackingsByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetLastNTrackingsByWorkOrder" message="tns:ISysTimeService_GetLastNTrackingsByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetLastNTrackingsByWorkOrderResponse" message="tns:ISysTimeService_GetLastNTrackingsByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetWorkOrderByIsVinNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkOrderByIsVinNumber" message="tns:ISysTimeService_GetWorkOrderByIsVinNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetWorkOrderByIsVinNumberResponse" message="tns:ISysTimeService_GetWorkOrderByIsVinNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFilesOrPaths">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetFilesOrPaths" message="tns:ISysTimeService_GetFilesOrPaths_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetFilesOrPathsResponse" message="tns:ISysTimeService_GetFilesOrPaths_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFileFromPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetFileFromPath" message="tns:ISysTimeService_GetFileFromPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetFileFromPathResponse" message="tns:ISysTimeService_GetFileFromPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SavePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SavePhoto" message="tns:ISysTimeService_SavePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SavePhotoResponse" message="tns:ISysTimeService_SavePhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SavePhotoPreview">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SavePhotoPreview" message="tns:ISysTimeService_SavePhotoPreview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SavePhotoPreviewResponse" message="tns:ISysTimeService_SavePhotoPreview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllWorkStationPolygons">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetAllWorkStationPolygons" message="tns:ISysTimeService_GetAllWorkStationPolygons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetAllWorkStationPolygonsResponse" message="tns:ISysTimeService_GetAllWorkStationPolygons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetWorkOrderPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetWorkOrderPosition" message="tns:ISysTimeService_SetWorkOrderPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetWorkOrderPositionResponse" message="tns:ISysTimeService_SetWorkOrderPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetExternalJobCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetExternalJobCatalog" message="tns:ISysTimeService_GetExternalJobCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetExternalJobCatalogResponse" message="tns:ISysTimeService_GetExternalJobCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetJobTitleByDealerCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetJobTitleByDealerCatalog" message="tns:ISysTimeService_GetJobTitleByDealerCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetJobTitleByDealerCatalogResponse" message="tns:ISysTimeService_GetJobTitleByDealerCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetAllLastTrackings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetAllLastTrackings" message="tns:ISysTimeService_GetAllLastTrackings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetAllLastTrackingsResponse" message="tns:ISysTimeService_GetAllLastTrackings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetExternalJobsByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetExternalJobsByWorkOrder" message="tns:ISysTimeService_GetExternalJobsByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetExternalJobsByWorkOrderResponse" message="tns:ISysTimeService_GetExternalJobsByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetExternalJobByIdWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetExternalJobByIdWorkOrder" message="tns:ISysTimeService_SetExternalJobByIdWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetExternalJobByIdWorkOrderResponse" message="tns:ISysTimeService_SetExternalJobByIdWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetJobTitleCatalogByIdDealerShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetJobTitleCatalogByIdDealerShop" message="tns:ISysTimeService_GetJobTitleCatalogByIdDealerShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetJobTitleCatalogByIdDealerShopResponse" message="tns:ISysTimeService_GetJobTitleCatalogByIdDealerShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetOperationsCatalogByIdDealerShops">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsCatalogByIdDealerShops" message="tns:ISysTimeService_GetOperationsCatalogByIdDealerShops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetOperationsCatalogByIdDealerShopsResponse" message="tns:ISysTimeService_GetOperationsCatalogByIdDealerShops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetSubOperationsCatalogByIdDealerShops">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsCatalogByIdDealerShops" message="tns:ISysTimeService_GetSubOperationsCatalogByIdDealerShops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetSubOperationsCatalogByIdDealerShopsResponse" message="tns:ISysTimeService_GetSubOperationsCatalogByIdDealerShops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetCitiesCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetCitiesCatalog" message="tns:ISysTimeService_GetCitiesCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetCitiesCatalogResponse" message="tns:ISysTimeService_GetCitiesCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetVehicleBrandsCatalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleBrandsCatalog" message="tns:ISysTimeService_GetVehicleBrandsCatalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleBrandsCatalogResponse" message="tns:ISysTimeService_GetVehicleBrandsCatalog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetVehicleModelsCatalogController">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleModelsCatalogController" message="tns:ISysTimeService_GetVehicleModelsCatalogController_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetVehicleModelsCatalogControllerResponse" message="tns:ISysTimeService_GetVehicleModelsCatalogController_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateOrUpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateCustomer" message="tns:ISysTimeService_CreateOrUpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateCustomerResponse" message="tns:ISysTimeService_CreateOrUpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateOrUpdateVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateVehicle" message="tns:ISysTimeService_CreateOrUpdateVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateVehicleResponse" message="tns:ISysTimeService_CreateOrUpdateVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateOrUpdateWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateWorkOrder" message="tns:ISysTimeService_CreateOrUpdateWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/CreateOrUpdateWorkOrderResponse" message="tns:ISysTimeService_CreateOrUpdateWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyTableChanged">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/NotifyTableChanged" message="tns:ISysTimeService_NotifyTableChanged_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyTableChangedResponse" message="tns:ISysTimeService_NotifyTableChanged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertOperationByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/InsertOperationByWorkOrder" message="tns:ISysTimeService_InsertOperationByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/InsertOperationByWorkOrderResponse" message="tns:ISysTimeService_InsertOperationByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetOperationByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetOperationByWorkOrder" message="tns:ISysTimeService_SetOperationByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetOperationByWorkOrderResponse" message="tns:ISysTimeService_SetOperationByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="InsertSubOperationByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/InsertSubOperationByWorkOrder" message="tns:ISysTimeService_InsertSubOperationByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/InsertSubOperationByWorkOrderResponse" message="tns:ISysTimeService_InsertSubOperationByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetSubOperationByWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/SetSubOperationByWorkOrder" message="tns:ISysTimeService_SetSubOperationByWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/SetSubOperationByWorkOrderResponse" message="tns:ISysTimeService_SetSubOperationByWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetViewPortObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISysTimeService/GetViewPortObjects" message="tns:ISysTimeService_GetViewPortObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/GetViewPortObjectsResponse" message="tns:ISysTimeService_GetViewPortObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AckBackResult">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/AckBackResult" message="tns:ISysTimeService_AckBackResult_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyNewTracking">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyNewTracking" message="tns:ISysTimeService_NotifyNewTracking_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyNewWorkOrderPosition">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyNewWorkOrderPosition" message="tns:ISysTimeService_NotifyNewWorkOrderPosition_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyNewSubOperationByWorkOrder">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyNewSubOperationByWorkOrder" message="tns:ISysTimeService_NotifyNewSubOperationByWorkOrder_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyCustomerCreatedOrUpdated">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyCustomerCreatedOrUpdated" message="tns:ISysTimeService_NotifyCustomerCreatedOrUpdated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyVehicleCreatedOrUpdated">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyVehicleCreatedOrUpdated" message="tns:ISysTimeService_NotifyVehicleCreatedOrUpdated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NotifyWorkOrderCreatedOrUpdated">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISysTimeService/NotifyWorkOrderCreatedOrUpdated" message="tns:ISysTimeService_NotifyWorkOrderCreatedOrUpdated_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SysTime" type="tns:ISysTimeService">
+    <wsp:PolicyReference URI="#SysTime_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAllObjects">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetAllObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ack">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/Ack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterClient">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/RegisterClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnRegisterClient">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/UnRegisterClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="StringFault">
+        <soap12:fault use="literal" name="StringFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveWorkersByShop">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetActiveWorkersByShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenedWorkOrdersByShop">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenedWorkOrdersByShop_old">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetOpenedWorkOrdersByShop_old" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolUsingValidation">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetRolUsingValidation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleById">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetVehicleById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetOperationsCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubOperationsCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetSubOperationsCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerById">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetWorkerById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderById">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetWorkOrderById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkOrderByNumberAndDealer">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/WorkOrderByNumberAndDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceCompanyById">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetInsuranceCompanyById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceCompanyCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetInsuranceCompanyCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopById">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetShopById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetShopCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetOperationsByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByDocumentNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetCustomerByDocumentNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubOperationsByIdOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetSubOperationsByIdOperationByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDateToUpdateInWorkOrders">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetDateToUpdateInWorkOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNewNoteToWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetNewNoteToWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTrackingByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetTrackingByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastNTrackingsByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetLastNTrackingsByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderByIsVinNumber">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetWorkOrderByIsVinNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesOrPaths">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetFilesOrPaths" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileFromPath">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetFileFromPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePhoto">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SavePhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePhotoPreview">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SavePhotoPreview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWorkStationPolygons">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetAllWorkStationPolygons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetWorkOrderPosition">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetWorkOrderPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalJobCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetExternalJobCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobTitleByDealerCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetJobTitleByDealerCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLastTrackings">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetAllLastTrackings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalJobsByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetExternalJobsByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExternalJobByIdWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetExternalJobByIdWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobTitleCatalogByIdDealerShop">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetJobTitleCatalogByIdDealerShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsCatalogByIdDealerShops">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetOperationsCatalogByIdDealerShops" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubOperationsCatalogByIdDealerShops">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetSubOperationsCatalogByIdDealerShops" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetCitiesCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleBrandsCatalog">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetVehicleBrandsCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleModelsCatalogController">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetVehicleModelsCatalogController" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateCustomer">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/CreateOrUpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateVehicle">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/CreateOrUpdateVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/CreateOrUpdateWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyTableChanged">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyTableChanged" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/InsertOperationByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetOperationByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/InsertSubOperationByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSubOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/SetSubOperationByWorkOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViewPortObjects">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/GetViewPortObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AckBackResult">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/AckBackResult" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewTracking">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyNewTracking" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewWorkOrderPosition">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyNewWorkOrderPosition" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyNewSubOperationByWorkOrder">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyNewSubOperationByWorkOrder" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyCustomerCreatedOrUpdated">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyCustomerCreatedOrUpdated" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyVehicleCreatedOrUpdated">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyVehicleCreatedOrUpdated" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyWorkOrderCreatedOrUpdated">
+      <soap12:operation soapAction="http://tempuri.org/ISysTimeService/NotifyWorkOrderCreatedOrUpdated" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SysTimeService">
+    <wsdl:port name="SysTime" binding="tns:SysTime">
+      <soap12:address location="net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/Callback" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.99.1:8999/SysTimeWcfServices/SysTimeService/Callback</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
