@@ -195,3 +195,4 @@ D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServi
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.exe
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.pdb
+D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\JsonSubTypes.dll

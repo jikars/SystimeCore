@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Notifications.Notifications.Config
 {
-    public  class SmsConfig
+    public  class SmsConfig : ConfigNotification
     {
         public String Title { get; set; }
-        public String Message { get; set; }
     }
 }

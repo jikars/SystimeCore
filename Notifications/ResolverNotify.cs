@@ -1,5 +1,6 @@
 ﻿using Notifications.Contract;
 using Notifications.Notifications;
+using Notifications.Notifications.Config;
 using Notifications.Notifications.SMS;
 using Notifications.Notifications.Whatsapp;
 using System;
@@ -37,26 +38,26 @@ namespace Notifications
             return default(T);
         }
 
-        public bool Send(string destinatiion, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
+        public bool Send(string destinatiion, ConfigNotification messageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
         {
             errorMessage = "not Send";
-            return ResolveTypeNotification<INotification>(typeNotification)?.Send(destinatiion, jsonMessageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
+            return ResolveTypeNotification<INotification>(typeNotification)?.Send(destinatiion, messageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
         }
 
-        public bool SendAll(string[] destinatiions, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
+        public bool SendAll(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
         {
             errorMessage = "not Send";
-            return ResolveTypeNotification<INotification>(typeNotification)?.SendAll(destinatiions, jsonMessageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
+            return ResolveTypeNotification<INotification>(typeNotification)?.SendAll(destinatiions, messageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
         }
 
-        public async Task<bool> SendAsync(string destinatiion, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
+        public async Task<bool> SendAsync(string destinatiion, ConfigNotification messageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
         {
-            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAsync(destinatiion, jsonMessageConfig, jsonProviderConfig, provaider);
+            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAsync(destinatiion, messageConfig, jsonProviderConfig, provaider);
         }
 
-        public async Task<bool> SendAllAsync(string[] destinatiions, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
+        public async Task<bool> SendAllAsync(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
         {
-            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAllAsync(destinatiions, jsonMessageConfig, jsonProviderConfig, provaider);
+            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAllAsync(destinatiions, messageConfig, jsonProviderConfig, provaider);
         }
     }
 }

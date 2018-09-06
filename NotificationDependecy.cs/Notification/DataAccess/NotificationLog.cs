@@ -14,24 +14,15 @@ namespace NotificationDependecy.Notification.DataAccess
         public int IdNotificationLog { get; set; }
         public String Destination { get; set; }
         public String TypeNotification { get; set; }
-
         public String NotificationName { get; set; }
-
         public String FillterRecipenttype { get; set; }
         public String NameRecipientsType { get; set; }
-
-
         public String Provaider { get; set; }
-
         public String MessageSend { get; set; }
-
         public String TitleMessage { get; set; }
-
         public String MessageErrorProvaider { get; set; }
-
         public bool? IsSend { get; set; }
         public DateTime? CreatedAt { get; set; }
-
         public String CreatedById { get; set; }
     }
 }

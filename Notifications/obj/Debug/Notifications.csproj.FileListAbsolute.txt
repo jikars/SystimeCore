@@ -31,3 +31,4 @@ D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Debug\Notifications.csproj.C
 D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Debug\Notifications.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Debug\Notifications.dll
 D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Debug\Notifications.pdb
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Debug\JsonSubTypes.dll

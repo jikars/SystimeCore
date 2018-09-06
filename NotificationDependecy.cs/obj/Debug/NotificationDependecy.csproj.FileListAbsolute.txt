@@ -118,3 +118,4 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\Notificatio
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.pdb
+D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\JsonSubTypes.dll

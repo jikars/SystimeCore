@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Notifications.Notifications.Config
 {
-    public class WhatsAppConfig
+    public class WhatsAppConfig : ConfigNotification
     {
-        public String Message { get; set; }
         public String UrlFile { get; set; }
         public TypeSend TypeSend { get; set; }
     }

@@ -25,13 +25,12 @@ namespace NotificationDependecy.Notification
         private List<RecipientType> RecipientsType { get; set; }
         private SqlConnection Connection { get; set; }
 
-        private String MessageBase { get; set; }
-        private String TitleMessage { get; set; }
-
         private SqlCommand Command { get; set; }
 
         private DataTable DataTable { get; set; }
+
         private SqlDataAdapter DataAdapter { get; set; }
+
         private Match MachtExpression { get; set; }
 
         private String JsonRow { get; set; }
@@ -64,6 +63,7 @@ namespace NotificationDependecy.Notification
         {
             RecipientsType.ForEach(item =>
             {
+              
                 item.FilttersRecipient.ForEach(r =>
                 {
                     QueryReturn = "";
@@ -71,6 +71,7 @@ namespace NotificationDependecy.Notification
                         QueryReturn = r.Filtter.Replace(d.IdParam, d.ValueParam); 
                     });
 
+                    String messageBase = "";
 
                     using (Connection = new SqlConnection(ConectionString))
                     {
@@ -79,51 +80,49 @@ namespace NotificationDependecy.Notification
                         using (Command = new SqlCommand(QueryReturn, Connection))
 #pragma warning restore S3649 // User-provided values should be sanitized before use in SQL statements
                         {
-                            MessageBase = item.Message.Message;
-                            TitleMessage = item.Message.TitleMessage;
-                            DataAdapter = new SqlDataAdapter(Command);
-                            DataTable = new DataTable();
-                            DataAdapter.Fill(DataTable);
-                            String table = QueryReturn.ToUpper();
-                            if(table.Contains("FROM"))
-                                table = table.Substring(table.LastIndexOf("FROM"));
-                            if (table.Contains("WHERE"))
-                                table = table.Substring(0,table.LastIndexOf("WHERE"));
+                            item.Messages.ForEach(mss => {
 
-                            table = table.Replace("FROM","").Replace("WHERE","");
-                            String[] items;
-                            if (table.Contains(","))
-                            {
-                                items = table.Split(',');
-                                table = items[0].Trim();
-                            }
-                            else
-                                table = table.Trim();
+                                messageBase = mss.Message.Message;
+                                DataAdapter = new SqlDataAdapter(Command);
+                                DataTable = new DataTable();
+                                DataAdapter.Fill(DataTable);
+                                String table = QueryReturn.ToUpper();
+                                if (table.Contains("FROM"))
+                                    table = table.Substring(table.LastIndexOf("FROM"));
+                                if (table.Contains("WHERE"))
+                                    table = table.Substring(0, table.LastIndexOf("WHERE"));
 
-
-
-                            if (table.Contains(" "))
-                            {                
-                                int index = QueryReturn.IndexOf(" ");
-                                table = table.Substring(0,index+1);
-                            }
-
-                            String valueReplace = "";
-                            foreach (DataRow dtRow in DataTable.Rows)
-                            {
-                                IdTables = SchemaTables.GetColumKeys(ConectionString, Connection.Database, table);
-                                JsonRow = JsonConvert.SerializeObject(dtRow.Table).Replace("[","").Replace("]","");
-                                ObjectJson = (JObject)JsonConvert.DeserializeObject(JsonRow);
-                                IdTables.ForEach(i => { ObjectJson.Property(i)?.Remove(); });
-                                JsonRow = ObjectJson.ToString();
-                               
-                                item.Message.ConfigMessage.ForEach(c =>
+                                table = table.Replace("FROM", "").Replace("WHERE", "");
+                                String[] items;
+                                if (table.Contains(","))
                                 {
+                                    items = table.Split(',');
+                                    table = items[0].Trim();
+                                }
+                                else
+                                    table = table.Trim();
+
+
+
+                                if (table.Contains(" "))
+                                {
+                                    int index = QueryReturn.IndexOf(" ");
+                                    table = table.Substring(0, index + 1);
+                                }
+
+                                String valueReplace = "";
+                                foreach (DataRow dtRow in DataTable.Rows)
+                                {
+                                    IdTables = SchemaTables.GetColumKeys(ConectionString, Connection.Database, table);
+                                    JsonRow = JsonConvert.SerializeObject(dtRow.Table).Replace("[", "").Replace("]", "");
+                                    ObjectJson = (JObject)JsonConvert.DeserializeObject(JsonRow);
+                                    IdTables.ForEach(i => { ObjectJson.Property(i)?.Remove(); });
+                                    JsonRow = ObjectJson.ToString();
 
                                     valueReplace = "";
-                                    if (String.IsNullOrEmpty(c.DefinitiveValue))
+                                    if (String.IsNullOrEmpty(mss.ConfigMessage.DefinitiveValue))
                                     {
-                                        c.NameColum.ForEach(d =>
+                                        mss.ConfigMessage.NameColum.ForEach(d =>
                                         {
 
                                             foreach (var prop in ObjectJson)
@@ -138,7 +137,7 @@ namespace NotificationDependecy.Notification
                                         });
                                         if (String.IsNullOrEmpty(valueReplace))
                                         {
-                                            c.ExpressionRegular.ForEach(f =>
+                                            mss.ConfigMessage.ExpressionRegular.ForEach(f =>
                                             {
                                                 Regex = new Regex(f);
                                                 MachtExpression = Regex.Match(JsonRow);
@@ -150,53 +149,55 @@ namespace NotificationDependecy.Notification
                                         }
                                     }
                                     else
-                                        valueReplace = c.DefinitiveValue;
+                                        valueReplace = mss.ConfigMessage.DefinitiveValue;
 
                                     if (!String.IsNullOrEmpty(valueReplace))
-                                        MessageBase = MessageBase.Replace(c.DinamycParam, valueReplace);
+                                        messageBase = messageBase.Replace(valueReplace = mss.ConfigMessage.DinamycParam, valueReplace);
 
-                                });
-                                r.TypeNotification.ForEach(t => {
-                                    string errorMessage = "Type Notification not support";
+
+                                    mss.ConfigMessage.ExpressionRegular.ForEach(t =>
+                                    {
+                                        Regex = new Regex(t);
+                                        MachtExpression = Regex.Match(JsonRow);
+                                    });
+
+                                    string destination = "3502365335";
+
                                     bool sendNotification = false;
-                                    Regex = new Regex(t.ExpressionRegularMach);
-                                    MachtExpression = Regex.Match(JsonRow);
+                                    string errorMessage = "not send message";
+                                    mss.Message.Message = messageBase;
 
+                                    if(MachtExpression.Length == 10  && mss.Type == "WHATSAPP")
+                                    {
+                                        destination = "57" + destination;
+                                    }
 
-
-
-                                    if (Enum.TryParse(t.TypeNotification, out TypeNotification typeNotification) &&  !String.IsNullOrEmpty(MachtExpression.Value))
-                                        sendNotification = Notification.Send(MachtExpression.Value, TitleMessage, MessageBase, t.JsonNotificationConfig, typeNotification, t.Provaider, out errorMessage);
+                                    if (Enum.TryParse(mss.Type, out TypeNotification typeNotification) && !String.IsNullOrEmpty(destination) && !String.IsNullOrEmpty(mss.JsonConfig) && !String.IsNullOrEmpty(mss.Provider))
+                                        sendNotification = Notification.Send(destination, mss.Message, mss.JsonConfig, typeNotification, mss.Provider, out errorMessage);
 
                                     if (sendNotification)
                                         errorMessage = "message send";
-                                    else if(String.IsNullOrEmpty(MachtExpression.Value))
+                                    else if (String.IsNullOrEmpty(MachtExpression.Value))
                                         errorMessage = "no se encontro en la consulta un destinatario";
-
-
 
                                     Connection.Insert(new NotificationLog()
                                     {
                                         Destination = MachtExpression.Groups[0].Value,
                                         MessageErrorProvaider = errorMessage,
                                         CreatedById = "NotifyDll",
-                                        MessageSend = MessageBase,
+                                        MessageSend = messageBase,
                                         NotificationName = NotficationName,
                                         NameRecipientsType = item.RecipientName,
-                                        FillterRecipenttype =QueryReturn,
-                                        Provaider = t.Provaider,
-                                        TypeNotification = t.TypeNotification,
-                                        TitleMessage = TitleMessage,
+                                        FillterRecipenttype = QueryReturn,
+                                        Provaider = mss.Provider,
+                                        TypeNotification = mss.Type,
+                                        TitleMessage = mss.TitleNotify,
                                         CreatedAt = DateTime.Now,
                                         IsSend = sendNotification
                                     });
-                                    //debe enviarse a grabar a la base de datos esta informacion 
-
-                                });
-                            }                      
-                            MessageBase = null;
-                            TitleMessage = null;
-
+                                }
+                            });
+                            messageBase = null;
                         }
                     }
                 });

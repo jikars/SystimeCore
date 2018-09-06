@@ -1,7 +1,10 @@
 ﻿using Newtonsoft.Json;
 using NotificationChangesErp.Contract;
 using NotificationChangesErp.ResolveConection;
+using NotificationDependecy.Models;
+using Notifications.Notifications.Config;
 using Notifications.Notifications.SMS.Provaider;
+using Notifications.Notifications.Whatsapp.Provider;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -27,18 +30,18 @@ namespace SystimeCoreServices
             this.OnStart(null);
         }
 
-        
+
 
         public SystimeCore()
         {
             InitializeComponent();
             StartServiceNoitificationDynamic = ConfigurationManager.AppSettings["EnabledNoficiaionDynamic"] == "1";
-            StartServiceSyncErpToSystime = ConfigurationManager.AppSettings["EnabledSyncErpToSystime"] == "1";
-            StartServiceSyncSystimeToErp = ConfigurationManager.AppSettings["EnabledSyncSystimeToErp"] == "1";
+           // StartServiceSyncErpToSystime = ConfigurationManager.AppSettings["EnabledSyncErpToSystime"] == "1";
+           // StartServiceSyncSystimeToErp = ConfigurationManager.AppSettings["EnabledSyncSystimeToErp"] == "1";
         }
 
         protected override void OnStart(string[] args)
-        {     
+        {
             //debe hacer lecturas de la configuracion
             if (StartServiceSyncErpToSystime)
                 SyncDatabase();
@@ -48,7 +51,7 @@ namespace SystimeCoreServices
                 StartNotificationErp();
         }
 
-        private   void SyncDatabase()
+        private void SyncDatabase()
         {
             Task.Factory.StartNew(() =>
             {
@@ -56,7 +59,8 @@ namespace SystimeCoreServices
                 RequestSql.MigrateErpToSystimeSql(TableName.WORK_ORDERS.ToString(), "2016", Program.GetInstanceConfig());
             });
 
-            Task.Factory.StartNew(  ()  => {
+            Task.Factory.StartNew(() =>
+            {
                 Task.Delay(TIMEOUTINSTALL).Wait();
                 INotificationErpToSystime systimeNotification = new NotificationErprSystime();
                 while (true)
@@ -82,11 +86,11 @@ namespace SystimeCoreServices
 
         private static void StartNotificationErp()
         {
-            Task.Factory.StartNew( () =>
-            {
-                Task.Delay(TIMEOUTINSTALL).Wait();
-                NoficiationChangeErp.UpdateWorkOrderAutorizateAtAndObservationsStart(ConnectionString, Program.GetInstanceConfig().DealerInfo.ConectionStringErp, Program.GetInstanceConfig().DealerInfo.DllType, Program.GetInstanceConfig().DealerInfo.IdShopsErpArray, Program.GetInstanceConfig().DealerInfo.LanguageDb);
-            });
+            Task.Factory.StartNew(() =>
+           {
+               Task.Delay(TIMEOUTINSTALL).Wait();
+               NoficiationChangeErp.UpdateWorkOrderAutorizateAtAndObservationsStart(ConnectionString, Program.GetInstanceConfig().DealerInfo.ConectionStringErp, Program.GetInstanceConfig().DealerInfo.DllType, Program.GetInstanceConfig().DealerInfo.IdShopsErpArray, Program.GetInstanceConfig().DealerInfo.LanguageDb);
+           });
         }
 
 
@@ -126,50 +130,52 @@ namespace SystimeCoreServices
                                         {
                                             Filtter = "Select Customers.Phone,Customers.FullName,Vehicles.Plate,Customers.Email,Customers.Mobile from Customers,WorkOrders,Vehicles,WorkOrderTracking" +
                                             " where IdWorkOrderTracking = @IdWorkOrderTracking  AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder" +
-                                            " AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdCustomer =Customers.IdCustomer",
-
-                                            TypeNotification = new List<NotificationDependecy.Models.NotifycatioType>()
-                                            {
-                                                {
-                                                    new NotificationDependecy.Models.NotifycatioType()
-                                                    {
-                                                        JsonNotificationConfig =  JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
-                                                        ExpressionRegularMach = @"\d{10}",
-                                                        TypeNotification = "SMS",
-                                                        Provaider = "Contacto"
-                                                    }
-
-                                                }
-                                            }
+                                            " AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdCustomer =Customers.IdCustomer"
                                         }
 
 
                                     }
                                 },
-                                Message = new NotificationDependecy.Models.MessageSend()
-                                {
-                                    Message = "SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura",
-                                    ConfigMessage = new List<NotificationDependecy.Models.MessageConfig>()
+                                Messages = new List<MessageSend>(){
+                                    new NotificationDependecy.Models.MessageSend()
                                     {
-                                        {
-                                            new NotificationDependecy.Models.MessageConfig()
-                                            {
-                                                DinamycParam = "@plate",
-                                                NameColum = new List<string>(){
-                                                    "Plate"
+                                        Message = new SmsConfig() { Message ="SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura" , Title = "En Alistamiento" },
+                                        ConfigMessage =  new NotificationDependecy.Models.MessageConfig()
+                                               {
+                                                               DinamycParam = "@plate",
+                                                                NameColum = new List<string>(){
+                                                                    "Plate"
+                                                                },
+                                                                ExpressionRegular = new List<String>(){
+                                                                       { @"\d{10}" }
+                                             }
+                                         },
+                                                    TitleNotify = "En Alistamiento",
+                                                    JsonConfig = JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
+                                                    Type = "SMS",
+                                                    Provider = "Contacto"
                                                 },
-                                                ExpressionRegular = new List<String>(){
-                                                       { @"\d{10}" }
+                                    new NotificationDependecy.Models.MessageSend()
+                                    {
+                                        Message = new WhatsAppConfig() { Message ="SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura" , TypeSend = TypeSend.Text },
+                                        ConfigMessage =  new NotificationDependecy.Models.MessageConfig()
+                                               {
+                                                               DinamycParam = "@plate",
+                                                                NameColum = new List<string>(){
+                                                                    "Plate"
+                                                                },
+                                                                ExpressionRegular = new List<String>(){
+                                                                       { @"\d{10}" }
+                                             }
+                                         },
+                                                    TitleNotify = "En Alistamiento",
+                                                    JsonConfig = JsonConvert.SerializeObject(new ConfigWahtsAppFromWabBox() { Key = "598da6b0579da2b1624d024cb3e0595c5b9147c19af76", Phone = "573174354217", PathBase = "https://www.waboxapp.com" }),
+                                                    Type = "WHATSAPP",
+                                                    Provider = "Waboxapp"
                                                 }
-                                            }
-                                        }
-                                    },
-                                    TitleMessage = "En Alistamiento"
-
                                 },
                                 RecipientName = "Customer"
                             }
-
                         },
 
                         //nuevo envio pero para los asesores 
@@ -182,33 +188,17 @@ namespace SystimeCoreServices
                                         {
                                             Filtter = "Select Workers.Phone,Workers.FullName,Vehicles.Plate,Workers.Email,Workers.Mobile from Workers,WorkOrders,Vehicles,WorkOrderTracking" +
                                             " where IdWorkOrderTracking =  @IdWorkOrderTracking AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder " +
-                                            "AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdSalesRepresentative =Workers.IdWorker",
-
-                                            TypeNotification = new List<NotificationDependecy.Models.NotifycatioType>()
-                                            {
-                                                {
-                                                    new NotificationDependecy.Models.NotifycatioType()
-                                                    {
-                                                        JsonNotificationConfig =  JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
-                                                        ExpressionRegularMach = @"\d{10}",
-                                                        TypeNotification = "SMS",
-                                                        Provaider = "Contacto"
-                                                    }
-
-                                                }
-                                            }
+                                            "AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdSalesRepresentative =Workers.IdWorker"
                                         }
 
 
                                     }
                                 },
-                                Message = new NotificationDependecy.Models.MessageSend()
-                                {
-                                    Message = "SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento.",
-                                    ConfigMessage = new List<NotificationDependecy.Models.MessageConfig>()
-                                    {
-                                        {
-                                            new NotificationDependecy.Models.MessageConfig()
+                                Messages  = new List<MessageSend>(){
+
+                                    new NotificationDependecy.Models.MessageSend(){
+                                    Message = new SmsConfig() { Message ="SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento." , Title = "En Alistamiento" },
+                                    ConfigMessage  =  new NotificationDependecy.Models.MessageConfig()
                                             {
                                                 DinamycParam = "@plate",
                                                 NameColum = new List<string>(){
@@ -217,11 +207,30 @@ namespace SystimeCoreServices
                                                 ExpressionRegular = new List<String>(){
                                                        { @"\d{10}" }
                                                 }
-                                            }
-                                        }
-                                    },
-                                    TitleMessage = "En Alistamiento"
+                                            },
+                                    TitleNotify = "En Alistamiento",
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
+                                    Type = "SMS",
+                                    Provider = "Contacto"
 
+                                    },
+                                    new NotificationDependecy.Models.MessageSend(){
+                                    Message = new WhatsAppConfig() { Message ="SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento." , TypeSend = TypeSend.Text},
+                                    ConfigMessage  =  new NotificationDependecy.Models.MessageConfig()
+                                            {
+                                                DinamycParam = "@plate",
+                                                NameColum = new List<string>(){
+                                                    "Plate"
+                                                },
+                                                ExpressionRegular = new List<String>(){
+                                                       { @"\d{12}" }
+                                                }
+                                            },
+                                    TitleNotify = "En Alistamiento",
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigWahtsAppFromWabBox() { Key = "598da6b0579da2b1624d024cb3e0595c5b9147c19af76", Phone = "573174354217", PathBase = "https://www.waboxapp.com" }),
+                                    Type = "WHATSAPP",
+                                    Provider = "Waboxapp"
+                                }
                                 },
                                 RecipientName = "Workers AS"
                             }
@@ -270,33 +279,18 @@ namespace SystimeCoreServices
                                         new NotificationDependecy.Models.RecipientSend()
                                         {
                                             Filtter = "select Customers.FullName,Customers.Mobile,Customers.Email,Vehicles.Plate from Customers,OperationByWorkOrder,WorkOrders,Vehicles where OperationByWorkOrder.IdOperationByWorkOrder = @IdOperationByWorkOrder AND OperationByWorkOrder.IdWorkOrder = WorkOrders.IdWorkOrder " +
-                                            " and Vehicles.IdVinNumber =  WorkOrders.IdVinNumber and Customers.IdCustomer =WorkOrders.IdCustomer",
-
-                                            TypeNotification = new List<NotificationDependecy.Models.NotifycatioType>()
-                                            {
-                                                {
-                                                    new NotificationDependecy.Models.NotifycatioType()
-                                                    {
-                                                        JsonNotificationConfig =  JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
-                                                        ExpressionRegularMach = @"\d{10}",
-                                                        TypeNotification = "SMS",
-                                                        Provaider = "Contacto"
-                                                    }
-
-                                                }
-                                            }
+                                            " and Vehicles.IdVinNumber =  WorkOrders.IdVinNumber and Customers.IdCustomer =WorkOrders.IdCustomer"
                                         }
 
 
                                     }
                                 },
-                                Message = new NotificationDependecy.Models.MessageSend()
+                                Messages =  new List<MessageSend>(){
+                                    new NotificationDependecy.Models.MessageSend()
                                 {
-                                    Message = "SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme.",
-                                    ConfigMessage = new List<NotificationDependecy.Models.MessageConfig>()
-                                    {
-                                        {
-                                            new NotificationDependecy.Models.MessageConfig()
+
+                                    Message = new SmsConfig() { Message ="SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme." , Title = "Comienzo reparacion" },
+                                    ConfigMessage = new NotificationDependecy.Models.MessageConfig()
                                             {
                                                 DinamycParam = "@plate",
                                                 NameColum = new List<string>(){
@@ -305,10 +299,31 @@ namespace SystimeCoreServices
                                                 ExpressionRegular = new List<String>(){
                                                        { @"\d{10}" }
                                                 }
-                                            }
-                                        }
-                                    },
-                                    TitleMessage = "Comienzo reparacion"
+                                            },
+                                    TitleNotify = "Comienzo reparacion",
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
+                                    Type = "SMS",
+                                    Provider = "Contacto"
+                                },
+                                    new NotificationDependecy.Models.MessageSend()
+                                {
+
+                                    Message = new WhatsAppConfig() { Message ="SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme." , TypeSend = TypeSend.Text},
+                                    ConfigMessage = new NotificationDependecy.Models.MessageConfig()
+                                            {
+                                                DinamycParam = "@plate",
+                                                NameColum = new List<string>(){
+                                                    "Plate"
+                                                },
+                                                ExpressionRegular = new List<String>(){
+                                                       { @"\d{10}" }
+                                                }
+                                            },
+                                    TitleNotify = "Comienzo reparacion",
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigWahtsAppFromWabBox() { Key = "598da6b0579da2b1624d024cb3e0595c5b9147c19af76", Phone = "573174354217", PathBase = "https://www.waboxapp.com" }),
+                                    Type = "WHATSAPP",
+                                    Provider = "Waboxapp"
+                                }
 
                                 },
                                 RecipientName = "Customers"
@@ -346,8 +361,7 @@ namespace SystimeCoreServices
                     RecipientsType = new List<NotificationDependecy.Models.RecipientType>()
                     {
                         {
-                            new NotificationDependecy.Models.RecipientType(){
-                                FilttersRecipient = new List<NotificationDependecy.Models.RecipientSend>()
+                            new NotificationDependecy.Models.RecipientType(){FilttersRecipient = new List<NotificationDependecy.Models.RecipientSend>()
                                 {
                                     {
                                         new NotificationDependecy.Models.RecipientSend()
@@ -355,32 +369,15 @@ namespace SystimeCoreServices
                                             Filtter = "select CatalogProviders.Mobile, CatalogProviders.Phone, CatalogProviders.Email,Vehicles.Plate from CatalogProviders,JobsByWorkOrder,Vehicles,WorkOrders " +
                                             "where CatalogProviders.IdProvider = JobsByWorkOrder.IdProvaider and WorkOrders.IdWorkOrder = JobsByWorkOrder.IdWorkOrder " +
                                             "and WorkOrders.IdVinNumber = Vehicles.IdVinNumber and JobsByWorkOrder.IdJobByWorkOrder = @IdJobByWorkOrder ",
-
-                                            TypeNotification = new List<NotificationDependecy.Models.NotifycatioType>()
-                                            {
-                                                {
-                                                    new NotificationDependecy.Models.NotifycatioType()
-                                                    {
-                                                        JsonNotificationConfig =  JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
-                                                        ExpressionRegularMach = @"\d{10}",
-                                                        TypeNotification = "SMS",
-                                                        Provaider = "Contacto"
-                                                    }
-
-                                                }
-                                            }
                                         }
-
 
                                     }
                                 },
-                                Message = new NotificationDependecy.Models.MessageSend()
+                                Messages  = new List<MessageSend> {
+                                 new NotificationDependecy.Models.MessageSend()
                                 {
-                                    Message = "SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias.",
-                                    ConfigMessage = new List<NotificationDependecy.Models.MessageConfig>()
-                                    {
-                                        {
-                                            new NotificationDependecy.Models.MessageConfig()
+                                    Message = new SmsConfig() { Message ="SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias." , Title = "Asingacion TOT" },
+                                    ConfigMessage =  new NotificationDependecy.Models.MessageConfig()
                                             {
                                                 DinamycParam = "@plate",
                                                 NameColum = new List<string>(){
@@ -389,12 +386,35 @@ namespace SystimeCoreServices
                                                 ExpressionRegular = new List<String>(){
                                                        { @"\d{10}" }
                                                 }
-                                            }
-                                        }
-                                    },
-                                    TitleMessage = "Asingacion TOT"
+
+                                            },
+                                    Type = "SMS",
+                                    Provider = "Contacto",
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" }),
+                                    TitleNotify = "Asingacion TOT"
 
                                 },
+                                new NotificationDependecy.Models.MessageSend()
+                                {
+                                    Message = new WhatsAppConfig() { Message ="SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias." , TypeSend = TypeSend.Text },
+                                    ConfigMessage =  new NotificationDependecy.Models.MessageConfig()
+                                            {
+                                                DinamycParam = "@plate",
+                                                NameColum = new List<string>(){
+                                                    "Plate"
+                                                },
+                                                ExpressionRegular = new List<String>(){
+                                                       { @"\d{10}" }
+                                                }
+
+                                            },
+                                    JsonConfig = JsonConvert.SerializeObject(new ConfigWahtsAppFromWabBox() { Key = "598da6b0579da2b1624d024cb3e0595c5b9147c19af76", Phone = "573174354217", PathBase = "https://www.waboxapp.com" }),
+                                    Type = "WHATSAPP",
+                                    Provider = "Waboxapp",
+                                    TitleNotify = "Asingacion TOT"
+                                }
+                                },
+
                                 RecipientName = "Provaider TOT"
                             }
 

@@ -23,45 +23,41 @@ namespace Notifications.Notifications.SMS
             Contacto
         }
 
-        public bool Send(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
+        public bool Send(string destinatiion, ConfigNotification messageConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is SmsConfig)
             {
-                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
-                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSms(destinatiion, config, jsonProviderConfig, out errorMessage);
+                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSms(destinatiion, messageConfig as SmsConfig, jsonProviderConfig, out errorMessage);
             }
             return false;
         }
 
-        public bool SendAll(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
+        public bool SendAll(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is SmsConfig)
             {
-                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
-                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAll(destinatiions, config, jsonProviderConfig, out errorMessage);
+                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAll(destinatiions, messageConfig as SmsConfig, jsonProviderConfig, out errorMessage);
             }
             return false;
         }
 
-        public async Task<bool> SendAsync(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider)
+        public async Task<bool> SendAsync(string destinatiion, ConfigNotification messageConfig, string jsonProviderConfig, string provaider)
         {
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) &&  messageConfig is SmsConfig)
             {
-                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
-                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAsync(destinatiion, config, jsonProviderConfig);
+                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAsync(destinatiion, messageConfig as SmsConfig, jsonProviderConfig);
             }
             return false;
         }
 
-        public async Task<bool> SendAllAsync(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider)
+        public async Task<bool> SendAllAsync(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, string provaider)
         {
 
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is SmsConfig)
             {
-                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
-                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAllAsync(destinatiions, config, jsonProviderConfig);
+                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAllAsync(destinatiions, messageConfig as SmsConfig, jsonProviderConfig);
             }
             return false;
         }

@@ -20,9 +20,9 @@ namespace TestSystimeCore
         public void SendNotificationSms()
         {
             String jsonConfig =  JsonConvert.SerializeObject(new ConfigMsMFromContacto() { Password = "3sF3R4c0", User = "SMSESFERAC", PthBase = "http://www.appcontacto.com.co", ResourceBase = "wsurl" });
-            String MessageConfig = JsonConvert.SerializeObject(new SmsConfig() { Title = "titulo", Message = "esto es el modulo de pruebass para sms" });
+            SmsConfig MessageConfig = new SmsConfig() { Title = "titulo", Message = "esto es el modulo de pruebass para sms" };
             INotify notify = new ResolverNotify();
-            Assert.IsTrue(notify.Send("3174354217", MessageConfig, jsonConfig, TypeNotification.SMS, "Contacto", out String error));
+            Assert.IsTrue(notify.Send("3107695759", MessageConfig, jsonConfig, TypeNotification.SMS, "Contacto", out String error));
         }
 
 
@@ -30,9 +30,9 @@ namespace TestSystimeCore
         public void SendNotificationWhatsApp()
         {
             String jsonConfig = JsonConvert.SerializeObject(new ConfigWahtsAppFromWabBox() { Key = "598da6b0579da2b1624d024cb3e0595c5b9147c19af76", Phone = "573174354217", PathBase = "https://www.waboxapp.com" });
-            String MessageConfig = JsonConvert.SerializeObject(new WhatsAppConfig() { Message = "esto es un mensaje de prueba con imagen" ,TypeSend = TypeSend.TextImage, UrlFile = "https://androidzone.org/wp-content/uploads/2012/11/logo-android2-720x540.jpg" });
+            WhatsAppConfig MessageConfig = new WhatsAppConfig() { Message = "esto es un mensaje de prueba con imagen", TypeSend = TypeSend.TextImage, UrlFile = "https://androidzone.org/wp-content/uploads/2012/11/logo-android2-720x540.jpg" };
             INotify notify = new ResolverNotify();
-            Assert.IsTrue(notify.Send("573154479779", MessageConfig, jsonConfig, TypeNotification.WHATSAPP, "Waboxapp", out String error));
+            Assert.IsTrue(notify.Send("573107695759", MessageConfig, jsonConfig, TypeNotification.WHATSAPP, "Waboxapp", out String error));
         }
     }
 }

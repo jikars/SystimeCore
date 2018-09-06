@@ -23,44 +23,40 @@ namespace Notifications.Notifications.Whatsapp
             Waboxapp
         }
 
-        public bool Send(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
+        public bool Send(string destinatiion, ConfigNotification messageConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is WhatsAppConfig)
             {
-                WhatsAppConfig config = JsonConvert.DeserializeObject<WhatsAppConfig>(notifySendConfig);
-                return (Boolean)ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendWhatsApp(destinatiion, config, jsonProviderConfig, out errorMessage);
+                return (Boolean)ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendWhatsApp(destinatiion, messageConfig as WhatsAppConfig, jsonProviderConfig, out errorMessage);
             }
             return false;
         }
 
-        public bool SendAll(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
+        public bool SendAll(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is WhatsAppConfig)
             {
-                WhatsAppConfig config = JsonConvert.DeserializeObject<WhatsAppConfig>(notifySendConfig);
-                return (Boolean)ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAll(destinatiions, config, jsonProviderConfig, out errorMessage);
+                return (Boolean)ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAll(destinatiions, messageConfig as WhatsAppConfig, jsonProviderConfig, out errorMessage);
             }
             return false;
         }
 
-        public async Task<bool> SendAllAsync(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider)
+        public async Task<bool> SendAllAsync(string[] destinatiions, ConfigNotification messageConfig, string jsonProviderConfig, string provaider)
         {
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is WhatsAppConfig)
             {
-                WhatsAppConfig config = JsonConvert.DeserializeObject<WhatsAppConfig>(notifySendConfig);
-                return await ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAllAsync(destinatiions, config, jsonProviderConfig);
+                return await ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAllAsync(destinatiions, messageConfig as WhatsAppConfig, jsonProviderConfig);
             }
             return false;
         }
 
-        public async Task<bool> SendAsync(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider)
+        public async Task<bool> SendAsync(string destinatiion,ConfigNotification messageConfig, string jsonProviderConfig, string provaider)
         {
-            if (Enum.TryParse(provaider, out Provaiders provaiderout))
+            if (Enum.TryParse(provaider, out Provaiders provaiderout) && messageConfig is WhatsAppConfig)
             {
-                WhatsAppConfig config = JsonConvert.DeserializeObject<WhatsAppConfig>(notifySendConfig);
-                return await ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAsync(destinatiion, config, jsonProviderConfig);
+                return await ResolverIntanceProvaider<IWhatsappProvider>(provaiderout)?.SendAsync(destinatiion, messageConfig as WhatsAppConfig, jsonProviderConfig);
             }
             return false;
         }

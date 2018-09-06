@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notifications.Notifications.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,7 @@ namespace NotificationDependecy.Models
         public String RecipientName { get; set; }
 
 
-        public MessageSend Message { get; set; }
+        public List<MessageSend> Messages { get; set; }
 
         public List<RecipientSend> FilttersRecipient { get; set; }
     }
@@ -53,8 +54,6 @@ namespace NotificationDependecy.Models
     public class RecipientSend
     {
         public String Filtter { get; set; }
-
-        public List<NotifycatioType> TypeNotification { get; set; }
     }
 
     public class DynamicQueryParam
@@ -66,17 +65,22 @@ namespace NotificationDependecy.Models
 
     public class MessageSend
     {
-        public String TitleMessage { get; set; }
+        public String Type { get; set; }
 
-        public String Message { get; set; }
+        public NotifycatioType TypeNotification { get; set; }
 
-        public List<MessageConfig> ConfigMessage { get; set; }
-       
+        public ConfigNotification Message { get; set; }
+
+        public String TitleNotify { get; set; }
+
+        public MessageConfig ConfigMessage { get; set; }
+
+        public String JsonConfig { get; set; }
+        public string Provider { get; set; }
     }
 
     public class NotifycatioType
     {
-        public String TypeNotification { get; set; }
         public String Provaider { get; set; }
         public String JsonNotificationConfig { get; set; }
         public String ExpressionRegularMach { get; set; }
@@ -86,7 +90,6 @@ namespace NotificationDependecy.Models
     public class MessageConfig
     {
         public String DinamycParam { get; set; }
-
         public String DefinitiveValue { get; set; }
         public List<String> NameColum { get; set; }
         public List<String> ExpressionRegular { get; set; }

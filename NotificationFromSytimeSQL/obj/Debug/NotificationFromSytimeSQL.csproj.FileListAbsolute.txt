@@ -52,3 +52,4 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\Notificati
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.pdb
+D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\JsonSubTypes.dll
