@@ -16,7 +16,7 @@ namespace Notifications
         private static Dictionary<TypeNotification, Type> LisProvaiderNotify = new Dictionary<TypeNotification, Type>
             {
                 { TypeNotification.SMS, typeof(Sms) },
-                { TypeNotification.SMS, typeof(Whatsapp) }
+                { TypeNotification.WHATSAPP, typeof(Whatsapp) }
             };
 
 

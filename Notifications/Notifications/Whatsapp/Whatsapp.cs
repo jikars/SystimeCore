@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Notifications.Notifications.Whatsapp
 {
-    class Whatsapp : INotification
+    public class Whatsapp : INotification
     {
 
         private static Dictionary<Provaiders, Type> LisProvaiderWhatsApp = new Dictionary<Provaiders, Type>

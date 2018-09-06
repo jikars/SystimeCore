@@ -60,10 +60,9 @@ namespace Notifications.Notifications.Whatsapp.Provider
             errorMessage = "Not operation WabappBox provaider";
             List<Tuple<String, String>> parameters = new List<Tuple<String, String>>
              {
-                 new Tuple<string, string>("key", jsonConfig.Key),
+                 new Tuple<string, string>("token", jsonConfig.Key),
                  new Tuple<string, string>("uid", jsonConfig.Phone),
                  new Tuple<string, string>("to", destinatiion),
-                 new Tuple<string, string>("custom_uid", DateTime.Now.ToFileTime().ToString()),
              };
 
             switch (config.TypeSend)
@@ -84,6 +83,7 @@ namespace Notifications.Notifications.Whatsapp.Provider
         private Boolean SendText(String pathBase, List<Tuple<String, String>> parameters, WhatsAppConfig message)
         {
             if(Dictionary.TryGetValue(TypeSend.Text,out String reource)){
+                parameters.Add(new Tuple<string, string>("custom_uid", DateTime.Now.ToFileTime().ToString()));
                 parameters.Add(new Tuple<string, string>("text", message.Message));
                 ResponseServiceRequest responseService =  ServiceRequestHttp.Post(pathBase, reource, parameters, null, null, EnumsServiceRequestHttp.ContentTypeBody.FormUrlencoded);
                 if (responseService.HttpStatusCode.HasValue && responseService.HttpStatusCode == HttpStatusCode.OK)
@@ -99,6 +99,7 @@ namespace Notifications.Notifications.Whatsapp.Provider
         {
             if (Dictionary.TryGetValue(TypeSend.Image, out String reource))
             {
+                parameters.Add(new Tuple<string, string>("custom_uid", DateTime.Now.ToFileTime().ToString()));
                 parameters.Add(new Tuple<string, string>("url", message.UrlFile));
                 ResponseServiceRequest responseService = ServiceRequestHttp.Post(pathBase, reource, parameters, null, null, EnumsServiceRequestHttp.ContentTypeBody.FormUrlencoded);
                 if (responseService.HttpStatusCode.HasValue && responseService.HttpStatusCode == HttpStatusCode.OK)
@@ -115,7 +116,11 @@ namespace Notifications.Notifications.Whatsapp.Provider
             if (!String.IsNullOrEmpty(message.Message))
             {
                 result = SendText(pathBase, parameters, message);
+                parameters.Remove(parameters.FirstOrDefault(v =>  v.Item1 == "text"));
+                parameters.Remove(parameters.FirstOrDefault(v => v.Item1 == "custom_uid"));
             }
+
+
 
             if (!String.IsNullOrEmpty(message.UrlFile))
             {
@@ -128,6 +133,7 @@ namespace Notifications.Notifications.Whatsapp.Provider
         {
             if (Dictionary.TryGetValue(TypeSend.Media, out String reource))
             {
+                parameters.Add(new Tuple<string, string>("custom_uid", DateTime.Now.ToFileTime().ToString()));
                 parameters.Add(new Tuple<string, string>("url", message.UrlFile));
                 ResponseServiceRequest responseService = ServiceRequestHttp.Post(pathBase, reource, parameters, null, null, EnumsServiceRequestHttp.ContentTypeBody.FormUrlencoded);
                 if (responseService.HttpStatusCode.HasValue && responseService.HttpStatusCode == HttpStatusCode.OK)
