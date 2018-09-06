@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Notifications.Notifications.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,9 @@ namespace Notifications.Notifications.SMS
 {
     interface IProvaiderSms
     {
-        Boolean SendSms(string destinatiion, string message, string title, string jsonConfig, out string errorMessage);
-        Boolean SendSmsAll(String[] destinatiion, string message, string title, string jsonConfig, out string errorMessage);
-
-        Task<Boolean> SendSmsAsync(string destinatiion, string message, string title, string jsonConfig);
-        Task<Boolean> SendSmsAllAsync(String[] destinatiion, string message, string title, string jsonConfig);
-
+        Boolean SendSms(string destinatiion, SmsConfig config , string jsonProviderConfig, out string errorMessage);
+        Boolean SendAll(String[] destinatiions, SmsConfig config, string jsonProviderConfig, out string errorMessage);
+        Task<Boolean> SendAsync(string destinatiion, SmsConfig config, string jsonProviderConfig);
+        Task<Boolean> SendAllAsync(String[] destinatiions, SmsConfig config, string jsonProviderConfig);
     }
 }

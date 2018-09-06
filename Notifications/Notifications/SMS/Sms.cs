@@ -1,4 +1,6 @@
-﻿using Notifications.Notifications.SMS.Provaider;
+﻿using Newtonsoft.Json;
+using Notifications.Notifications.Config;
+using Notifications.Notifications.SMS.Provaider;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,36 +23,49 @@ namespace Notifications.Notifications.SMS
             Contacto
         }
 
-        public Boolean Send(string destinatiion, string title, string message, string jsonConfig, string provaider, out string errorMessage)
+        public bool Send(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
             if (Enum.TryParse(provaider, out Provaiders provaiderout))
-               return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSms(destinatiion,message,title,jsonConfig, out errorMessage);
+            {
+                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
+                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSms(destinatiion, config, jsonProviderConfig, out errorMessage);
+            }
             return false;
         }
 
-        public bool SendAll(string[] destinatiions, string title, string message, string jsonConfig, string provaider, out string errorMessage)
+        public bool SendAll(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider, out string errorMessage)
         {
             errorMessage = "ProvaiderNotSupport";
             if (Enum.TryParse(provaider, out Provaiders provaiderout))
-                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSmsAll(destinatiions, message, title, jsonConfig, out errorMessage);
+            {
+                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
+                return (Boolean)ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAll(destinatiions, config, jsonProviderConfig, out errorMessage);
+            }
             return false;
         }
 
-
-        public async Task<Boolean> SendAsync(string destinatiion, string title, string message, string jsonConfig, string provaider)
+        public async Task<bool> SendAsync(string destinatiion, string notifySendConfig, string jsonProviderConfig, string provaider)
         {
             if (Enum.TryParse(provaider, out Provaiders provaiderout))
-                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSmsAsync(destinatiion, message, title, jsonConfig);
+            {
+                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
+                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAsync(destinatiion, config, jsonProviderConfig);
+            }
             return false;
         }
 
-        public async Task<bool> SendAllAsync(string[] destinatiions, string title, string message, string jsonConfig, string provaider)
+        public async Task<bool> SendAllAsync(string[] destinatiions, string notifySendConfig, string jsonProviderConfig, string provaider)
         {
+
             if (Enum.TryParse(provaider, out Provaiders provaiderout))
-                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendSmsAllAsync(destinatiions, message, title, jsonConfig);
+            {
+                SmsConfig config = JsonConvert.DeserializeObject<SmsConfig>(notifySendConfig);
+                return await ResolverIntanceProvaider<IProvaiderSms>(provaiderout)?.SendAllAsync(destinatiions, config, jsonProviderConfig);
+            }
             return false;
         }
+
 
         private static T ResolverIntanceProvaider<T>(Provaiders provaider)
         {
@@ -61,13 +76,7 @@ namespace Notifications.Notifications.SMS
                 if (Obj is T)
                     return (T)Obj;
             }
-
             return default(T);
         }
-
-       
     }
-
-
-   
 }

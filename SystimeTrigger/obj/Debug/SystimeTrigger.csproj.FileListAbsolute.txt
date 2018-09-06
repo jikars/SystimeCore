@@ -4,3 +4,9 @@ D:\WorkSpace\Systime\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.csprojA
 D:\WorkSpace\Systime\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.csproj.CoreCompileInputs.cache
 D:\WorkSpace\Systime\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.dll
 D:\WorkSpace\Systime\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.pdb
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\bin\Debug\SystimeTrigger.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\bin\Debug\SystimeTrigger.pdb
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.csprojResolveAssemblyReference.cache
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Debug\SystimeTrigger.pdb

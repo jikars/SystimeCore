@@ -1,6 +1,7 @@
 ﻿using Notifications.Contract;
 using Notifications.Notifications;
 using Notifications.Notifications.SMS;
+using Notifications.Notifications.Whatsapp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,37 +15,14 @@ namespace Notifications
 
         private static Dictionary<TypeNotification, Type> LisProvaiderNotify = new Dictionary<TypeNotification, Type>
             {
-                { TypeNotification.SMS, typeof(Sms) }
-
+                { TypeNotification.SMS, typeof(Sms) },
+                { TypeNotification.SMS, typeof(Whatsapp) }
             };
 
 
         public ResolverNotify()
         {
         }
-
-        public bool Send(string destinatiion, string title, string message, string jsonConfig, TypeNotification typeNotification, string provaider, out string  errorMessage)
-        {
-            errorMessage = "not Send";
-            return ResolveTypeNotification<INotification>(typeNotification)?.Send(destinatiion, title, message, jsonConfig, provaider,out errorMessage) ?? false;
-        }
-
-        public bool SendAll(string[] destinatiions, string title, string message, string jsonConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
-        {
-            errorMessage = "not Send";
-            return ResolveTypeNotification<INotification>(typeNotification)?.SendAll(destinatiions, title, message, jsonConfig, provaider, out errorMessage) ?? false;
-        }
-
-        public async Task<Boolean> SendAllAsync(string[] destinatiions, string title, string message, string jsonConfig, TypeNotification typeNotification, string provaider)
-        {
-            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAllAsync(destinatiions, title, message, jsonConfig, provaider);
-        }
-
-        public async Task<Boolean> SendAsync(string destinatiion, string title, string message, string jsonConfig, TypeNotification typeNotification, string provaider)
-        {
-            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAsync(destinatiion, title, message, jsonConfig, provaider);
-        }
-
 
         private static  T ResolveTypeNotification<T>(TypeNotification typeNotification)
         {
@@ -57,6 +35,28 @@ namespace Notifications
             }
 
             return default(T);
+        }
+
+        public bool Send(string destinatiion, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
+        {
+            errorMessage = "not Send";
+            return ResolveTypeNotification<INotification>(typeNotification)?.Send(destinatiion, jsonMessageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
+        }
+
+        public bool SendAll(string[] destinatiions, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider, out string errorMessage)
+        {
+            errorMessage = "not Send";
+            return ResolveTypeNotification<INotification>(typeNotification)?.SendAll(destinatiions, jsonMessageConfig, jsonProviderConfig, provaider, out errorMessage) ?? false;
+        }
+
+        public async Task<bool> SendAsync(string destinatiion, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
+        {
+            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAsync(destinatiion, jsonMessageConfig, jsonProviderConfig, provaider);
+        }
+
+        public async Task<bool> SendAllAsync(string[] destinatiions, string jsonMessageConfig, string jsonProviderConfig, TypeNotification typeNotification, string provaider)
+        {
+            return await ResolveTypeNotification<INotification>(typeNotification)?.SendAllAsync(destinatiions, jsonMessageConfig, jsonProviderConfig, provaider);
         }
     }
 }

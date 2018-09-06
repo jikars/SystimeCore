@@ -16,8 +16,9 @@ namespace Utils.Contract.ServiceAccess.Http
         public enum ContentTypeBody
         {
             [Description("application/json; charset=utf-8")]
-            Json
-
+            Json,
+            [Description("application/x-www-form-urlencoded")]
+            FormUrlencoded
         }
     }
 }

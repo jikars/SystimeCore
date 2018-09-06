@@ -18,3 +18,22 @@ D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Debug\EN-US\GlobalResou
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Debug\ES-CO\GlobalResources.resources.dll
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Debug\GlobalResources.dll
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Debug\GlobalResources.pdb
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Debug\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Debug\GlobalResources.pdb
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Debug\EN-US\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Debug\ES-CO\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ErrorResources.MessageError.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ModelResources.DataAnotations.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ViewsResources.ViewsResources.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ErrorResources.MessageError.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ErrorResources.MessageError.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ModelResources.DataAnotations.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ModelResources.DataAnotations.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ViewsResources.ViewResources.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.ViewsResources.ViewsResources.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.csproj.GenerateResource.cache
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\EN-US\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\ES-CO\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Debug\GlobalResources.pdb

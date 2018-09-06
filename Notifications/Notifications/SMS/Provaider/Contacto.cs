@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Notifications.Notifications.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,37 +20,44 @@ namespace Notifications.Notifications.SMS.Provaider
             ServiceRequestHttp = new ServiceRequestHttp();
         }
 
-        public bool SendSms(string destinatiion, string message, string title, string jsonConfig, out string errorMessage)
+        public bool SendSms(string destinatiion, SmsConfig config, string jsonProviderConfig, out string errorMessage)
         {
-            return Send(destinatiion, message, title, JsonConvert.DeserializeObject<ConfigMsMFromContacto>(jsonConfig), out errorMessage);
+            errorMessage = "Not object config sms";
+            if (config != null)
+            {
+                return Send(destinatiion, config, JsonConvert.DeserializeObject<ConfigMsMFromContacto>(jsonProviderConfig), out errorMessage);
+            }
+            return false;
         }
 
-        public bool SendSmsAll(string[] destinatiion, string message, string title, string jsonConfig, out string errorMessage)
-        {
-            throw new NotImplementedException();
-        }
-        public async  Task<bool> SendSmsAsync(string destinatiion, string message, string title, string jsonConfig)
-        {
-            return await SendAsync(destinatiion, message, title, JsonConvert.DeserializeObject<ConfigMsMFromContacto>(jsonConfig));
-        }
-
-        public Task<bool> SendSmsAllAsync(string[] destinatiion, string message, string title, string jsonConfig)
+        public bool SendAll(string[] destinatiions, SmsConfig config, string jsonProviderConfig, out string errorMessage)
         {
             throw new NotImplementedException();
         }
 
-        private Boolean Send(string destinatiion, string message, string title, ConfigMsMFromContacto jsonConfig, out string errorMessage)
+        public Task<bool> SendAsync(string destinatiion, SmsConfig config, string jsonProviderConfig)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> SendAllAsync(string[] destinatiions, SmsConfig config, string jsonProviderConfig)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private Boolean Send(string destinatiion, SmsConfig config, ConfigMsMFromContacto jsonConfig, out string errorMessage)
         {
 
             errorMessage = "Not operation contacto provaider";
             List<Tuple<String, String>> parameters = new List<Tuple<String, String>>
-            {
-                new Tuple<string, string>("usuario", jsonConfig.User),
-                new Tuple<string, string>("clave", jsonConfig.Password),
-                new Tuple<string, string>("numero", destinatiion),
-                new Tuple<string, string>("mensaje", message),
-                new Tuple<string, string>("nota", title)
-            };
+             {
+                 new Tuple<string, string>("usuario", jsonConfig.User),
+                 new Tuple<string, string>("clave", jsonConfig.Password),
+                 new Tuple<string, string>("numero", destinatiion),
+                 new Tuple<string, string>("mensaje", config.Message),
+                 new Tuple<string, string>("nota", config.Title)
+             };
 
             ResponseServiceRequest rsponseService = ServiceRequestHttp.Get(jsonConfig.PthBase, jsonConfig.ResourceBase, parameters, null);
             if (rsponseService.HttpStatusCode.HasValue && rsponseService.HttpStatusCode == HttpStatusCode.OK)
@@ -62,24 +70,23 @@ namespace Notifications.Notifications.SMS.Provaider
             return false;
         }
 
-        private async Task<Boolean> SendAsync(string destinatiion, string message, string title, ConfigMsMFromContacto jsonConfig)
+
+        private async Task<Boolean> SendAsync(string destinatiion, SmsConfig config, ConfigMsMFromContacto jsonConfig)
         {
             List<Tuple<String, String>> parameters = new List<Tuple<String, String>>
-            {
-                new Tuple<string, string>("usuario", jsonConfig.User),
-                new Tuple<string, string>("clave", jsonConfig.Password),
-                new Tuple<string, string>("numero", destinatiion),
-                new Tuple<string, string>("mensaje", message),
-                new Tuple<string, string>("nota", title)
-            };
+             {
+                 new Tuple<string, string>("usuario", jsonConfig.User),
+                 new Tuple<string, string>("clave", jsonConfig.Password),
+                 new Tuple<string, string>("numero", destinatiion),
+                 new Tuple<string, string>("mensaje", config.Message),
+                 new Tuple<string, string>("nota", config.Title)
+             };
             ResponseServiceRequest serviceRequest = await ServiceRequestHttp.GetAsync(jsonConfig.PthBase, jsonConfig.ResourceBase, parameters, null);
             if (serviceRequest != null && serviceRequest.HttpStatusCode.HasValue && serviceRequest.HttpStatusCode.Value == HttpStatusCode.OK)
                 return true;
 
             return false;
         }
-
-
     }
 
     public class ConfigMsMFromContacto

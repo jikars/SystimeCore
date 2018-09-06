@@ -86,14 +86,14 @@ namespace NotificationFromSytimeSQL.Logic
                 String jsonConfig = null;
                 String provaider = null;
                 String title = null;
-                String message = null;
+                String messageConfig = null;
                 String typeNotification = null;
                 NotificationLog notificationLogSave = null;
 
                     if (notification.NotificationMessageBase != null)
                     {
                         title = ResolveParamsMessageDinamyc(notification.NotificationMessageBase.TitleMessage, notification.NotificationMessageBase.TitleParams, notification.ParamsTitleBase);
-                        message = ResolveParamsMessageDinamyc(notification.NotificationMessageBase.MessageBase, notification.NotificationMessageBase.MessageParams, notification.ParamsMessageBase);
+                        messageConfig = ResolveParamsMessageDinamyc(notification.NotificationMessageBase.MessageBase, notification.NotificationMessageBase.MessageParams, notification.ParamsMessageBase);
                     }
 
                     typeNotification = notification.CatalogNotificationType.NotificationType;
@@ -101,7 +101,7 @@ namespace NotificationFromSytimeSQL.Logic
                     if (!String.IsNullOrEmpty(notification.TitleSpecifict))
                         title = notification.TitleSpecifict;
                     if (!String.IsNullOrEmpty(notification.MessageSpecifict))
-                        message = notification.MessageSpecifict;
+                        messageConfig = notification.MessageSpecifict;
 
                     jsonConfig = notification.CatalogNotificationType.NotificationConfig.JsonConfig;
                     provaider = notification.CatalogNotificationType.NotificationConfig.ProvaiderNotification;
@@ -117,12 +117,12 @@ namespace NotificationFromSytimeSQL.Logic
                             TableEvent = notification.NotificationConditions.NotificationEvents.TableName,
                             DateSend = DateTime.Now,
                             TitleMessage = title,
-                            Message = message,
+                            Message = messageConfig,
                             WasSend = false,
                             BaseSend = notification.BaseSend
                         });
 
-                        if (Enum.TryParse(typeNotification, out TypeNotification typeNotificationEnum) &&  Notify.Send(notification.BaseSend, title, message, jsonConfig, typeNotificationEnum, provaider,out String a))
+                        if (Enum.TryParse(typeNotification, out TypeNotification typeNotificationEnum) &&  Notify.Send(notification.BaseSend, messageConfig, jsonConfig, typeNotificationEnum, provaider,out String a))
                         {
                             notificationLogSave.WasSend = true;
                             NotificationLogs.SaveNotificationLogs(notificationLogSave);
