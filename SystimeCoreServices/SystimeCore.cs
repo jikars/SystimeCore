@@ -36,8 +36,8 @@ namespace SystimeCoreServices
         {
             InitializeComponent();
             StartServiceNoitificationDynamic = ConfigurationManager.AppSettings["EnabledNoficiaionDynamic"] == "1";
-           // StartServiceSyncErpToSystime = ConfigurationManager.AppSettings["EnabledSyncErpToSystime"] == "1";
-           // StartServiceSyncSystimeToErp = ConfigurationManager.AppSettings["EnabledSyncSystimeToErp"] == "1";
+            StartServiceSyncErpToSystime = ConfigurationManager.AppSettings["EnabledSyncErpToSystime"] == "1";
+            StartServiceSyncSystimeToErp = ConfigurationManager.AppSettings["EnabledSyncSystimeToErp"] == "1";
         }
 
         protected override void OnStart(string[] args)
@@ -97,7 +97,7 @@ namespace SystimeCoreServices
         private static void StarNotificationDynamic()
         {
 
-            List<NotificationDependecy.Models.Notification> notifications = new List<NotificationDependecy.Models.Notification>()
+        /*  List<NotificationDependecy.Models.Notification> notifications = new List<NotificationDependecy.Models.Notification>()
             {
                 {
                     new NotificationDependecy.Models.Notification(){
@@ -223,7 +223,7 @@ namespace SystimeCoreServices
                                                     "Plate"
                                                 },
                                                 ExpressionRegular = new List<String>(){
-                                                       { @"\d{12}" }
+                                                       { @"\d{10}" }
                                                 }
                                             },
                                     TitleNotify = "En Alistamiento",
@@ -427,7 +427,7 @@ namespace SystimeCoreServices
             };
 
 
-            String a = JsonConvert.SerializeObject(notifications);
+            String a = JsonConvert.SerializeObject(notifications);*/
             NotificationDependcy.StartSucriber(ConnectionString);
         }
 

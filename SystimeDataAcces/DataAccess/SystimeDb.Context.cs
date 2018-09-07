@@ -24,8 +24,8 @@ namespace SystimeDataAcces.DataAccess
             if (type == null)
                 throw new Exception("Do not remove, ensures static reference to System.Data.Entity.SqlServer");
         }
-
-
+    
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

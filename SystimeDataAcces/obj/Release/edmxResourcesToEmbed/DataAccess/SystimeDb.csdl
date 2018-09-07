@@ -331,6 +331,7 @@
     <NavigationProperty Name="CloudCatalogCountries" Relationship="Self.FK_Countrie" FromRole="CloudCatalogInsuranceCompanies" ToRole="CloudCatalogCountries" />
     <NavigationProperty Name="Vehicles" Relationship="Self.FK_Vehicles_CloudCatalogInsuranceCompanies" FromRole="CloudCatalogInsuranceCompanies" ToRole="Vehicles" />
     <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrders_CloudCatalogInsuranceCompanies" FromRole="CloudCatalogInsuranceCompanies" ToRole="WorkOrders" />
+    <Property Name="HourValue" Type="Double" />
   </EntityType>
   <EntityType Name="CloudCatalogLanguage">
     <Key>
@@ -1135,6 +1136,7 @@
     <Property Name="Deleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrderTracking_WorkOrders" FromRole="WorkOrderTracking" ToRole="WorkOrders" />
     <NavigationProperty Name="WorkOrderTrackingDetail" Relationship="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking" FromRole="WorkOrderTracking" ToRole="WorkOrderTrackingDetail" />
+    <Property Name="Progress" Type="Double" />
   </EntityType>
   <EntityType Name="WorkOrderTrackingDetail">
     <Key>

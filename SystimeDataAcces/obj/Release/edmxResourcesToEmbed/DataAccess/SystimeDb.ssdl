@@ -269,6 +269,7 @@
     <Property Name="IdInsuranceCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="InsuranceCompany" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="TIN" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HourValue" Type="float" />
     <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="IdCity" Type="int" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
@@ -1021,6 +1022,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
     <Property Name="IdWorkOrderTracking" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+    <Property Name="Progress" Type="float" />
     <Property Name="InitiatedAt" Type="datetime" Nullable="false" />
     <Property Name="CompletedAt" Type="datetime" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />

@@ -12,7 +12,6 @@ D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.dll
 D:\Systime\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.pdb
 D:\Esfera\SystimeCore\SystimeCore\Utils\bin\Debug\Utils.dll
 D:\Esfera\SystimeCore\SystimeCore\Utils\bin\Debug\Utils.pdb
-D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
 D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
 D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.dll
 D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Debug\Utils.pdb

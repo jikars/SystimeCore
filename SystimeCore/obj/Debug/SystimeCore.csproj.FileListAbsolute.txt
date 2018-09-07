@@ -88,6 +88,7 @@ D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\Notifications.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\TableDependency.SqlClient.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\TableDependency.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\ErpDataAccessFromSystime.pdb
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\ErpDataAccessFromSystime.dll.config
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\IntegrateErpToSystime.pdb
@@ -124,4 +125,3 @@ D:\Esfera\SystimeCore\SystimeCore\SystimeCore\obj\Debug\SystimeCore.csproj.CoreC
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\obj\Debug\SystimeCore.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\obj\Debug\SystimeCore.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCore\obj\Debug\SystimeCore.pdb
-D:\Esfera\SystimeCore\SystimeCore\SystimeCore\bin\Debug\JsonSubTypes.dll

@@ -3,3 +3,8 @@ D:\Systime\SystimeCore\SystimeCore\SystimeTrigger\bin\Release\SystimeTrigger.pdb
 D:\Systime\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.csproj.CoreCompileInputs.cache
 D:\Systime\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.dll
 D:\Systime\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.pdb
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\bin\Release\SystimeTrigger.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\bin\Release\SystimeTrigger.pdb
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeTrigger\obj\Release\SystimeTrigger.pdb

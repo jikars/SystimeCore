@@ -8,3 +8,15 @@ D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.cspro
 D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csproj.CopyComplete
 D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.dll
 D:\Systime\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.pdb
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Notifications.dll
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Notifications.pdb
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\JsonSubTypes.dll
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Newtonsoft.Json.dll
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Utils.pdb
+D:\Esfera\SystimeCore\SystimeCore\Notifications\bin\Release\Newtonsoft.Json.xml
+D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csprojResolveAssemblyReference.cache
+D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.csproj.CopyComplete
+D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.dll
+D:\Esfera\SystimeCore\SystimeCore\Notifications\obj\Release\Notifications.pdb

@@ -115,6 +115,7 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\Unity.ServiceLocat
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\Notifications.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\Newtonsoft.Json.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\NotificationFromSytimeSQL.pdb
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\NotificationFromSytimeSQL.dll.config
 D:\Esfera\SystimeCore\SystimeCore\NotificationAdmin\bin\Debug\CommonServiceLocator.pdb

@@ -75,6 +75,7 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\TableDepend
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\TableDependency.SqlClient.Where.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\Utils.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\EntityFramework.dll
+D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\SystimeWCF.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\Unity.Abstractions.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\IntegrateErpToSystime.dll
@@ -118,4 +119,3 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\Notificatio
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\obj\Debug\NotificationDependecy.pdb
-D:\Esfera\SystimeCore\SystimeCore\NotificationDependecy.cs\bin\Debug\JsonSubTypes.dll

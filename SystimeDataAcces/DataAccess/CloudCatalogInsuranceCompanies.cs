@@ -36,6 +36,7 @@ namespace SystimeDataAcces.DataAccess
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public byte[] Version { get; set; }
         public bool Deleted { get; set; }
+        public Nullable<double> HourValue { get; set; }
     
         public virtual CloudCatalogCities CloudCatalogCities { get; set; }
         public virtual CloudCatalogCountries CloudCatalogCountries { get; set; }

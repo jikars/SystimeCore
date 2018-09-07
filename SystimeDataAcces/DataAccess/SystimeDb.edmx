@@ -274,6 +274,7 @@
           <Property Name="IdInsuranceCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InsuranceCompany" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="TIN" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HourValue" Type="float" />
           <Property Name="IdCountry" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="IdCity" Type="int" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
@@ -1026,6 +1027,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
           <Property Name="IdWorkOrderTracking" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdWorkOrder" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="IdSubOperationByDealer" Type="int" Nullable="false" />
+          <Property Name="Progress" Type="float" />
           <Property Name="InitiatedAt" Type="datetime" Nullable="false" />
           <Property Name="CompletedAt" Type="datetime" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -2588,6 +2590,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
           <NavigationProperty Name="CloudCatalogCountries" Relationship="Self.FK_Countrie" FromRole="CloudCatalogInsuranceCompanies" ToRole="CloudCatalogCountries" />
           <NavigationProperty Name="Vehicles" Relationship="Self.FK_Vehicles_CloudCatalogInsuranceCompanies" FromRole="CloudCatalogInsuranceCompanies" ToRole="Vehicles" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrders_CloudCatalogInsuranceCompanies" FromRole="CloudCatalogInsuranceCompanies" ToRole="WorkOrders" />
+          <Property Name="HourValue" Type="Double" />
         </EntityType>
         <EntityType Name="CloudCatalogLanguage">
           <Key>
@@ -3392,6 +3395,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
           <Property Name="Deleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="WorkOrders" Relationship="Self.FK_WorkOrderTracking_WorkOrders" FromRole="WorkOrderTracking" ToRole="WorkOrders" />
           <NavigationProperty Name="WorkOrderTrackingDetail" Relationship="Self.FK_WorkOrderTrackingDetail_WorkOrderTraking" FromRole="WorkOrderTracking" ToRole="WorkOrderTrackingDetail" />
+          <Property Name="Progress" Type="Double" />
         </EntityType>
         <EntityType Name="WorkOrderTrackingDetail">
           <Key>
@@ -4923,6 +4927,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
           <EntitySetMapping Name="CloudCatalogInsuranceCompanies">
             <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogInsuranceCompanies">
               <MappingFragment StoreEntitySet="CloudCatalogInsuranceCompanies">
+                <ScalarProperty Name="HourValue" ColumnName="HourValue" />
                 <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
                 <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
                 <ScalarProperty Name="TIN" ColumnName="TIN" />
@@ -5688,6 +5693,7 @@ advertencia 6002: La tabla o vista 'Systimedb.dbo.Users' no tiene definida ningu
           <EntitySetMapping Name="WorkOrderTracking">
             <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTracking">
               <MappingFragment StoreEntitySet="WorkOrderTracking">
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
                 <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
                 <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
                 <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />

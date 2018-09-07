@@ -18,3 +18,23 @@ D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Release\Models.csproj.CoreCompil
 D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Release\Models.csproj.CopyComplete
 D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Release\Models.dll
 D:\WorkSpace\3 Cloud\UbicarCloudCore\Models\obj\Release\Models.pdb
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\Models.dll.config
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\Models.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\Models.pdb
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\Microsoft.CSharp.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.ComponentModel.DataAnnotations.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.Data.DataSetExtensions.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.Data.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.Net.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.Xml.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\System.Xml.Linq.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\GlobalResources.pdb
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\EN-US\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\bin\Release\ES-CO\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+D:\Esfera\SystimeCore\SystimeCore\Models\obj\Release\Models.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\Models\obj\Release\Models.csproj.CopyComplete
+D:\Esfera\SystimeCore\SystimeCore\Models\obj\Release\Models.dll
+D:\Esfera\SystimeCore\SystimeCore\Models\obj\Release\Models.pdb

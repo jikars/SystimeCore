@@ -80,6 +80,7 @@ D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\GlobalResource
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\Notifications.dll
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\TableDependency.SqlClient.dll
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\TableDependency.dll
+D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\ErpDataAccessFromSystime.pdb
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\ErpDataAccessFromSystime.dll.config
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\Models.pdb
@@ -112,4 +113,3 @@ D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\obj\Debug\IntegrateErpTo
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\obj\Debug\IntegrateErpToSystime.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\obj\Debug\IntegrateErpToSystime.dll
 D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\obj\Debug\IntegrateErpToSystime.pdb
-D:\Esfera\SystimeCore\SystimeCore\IntegrateErpToSystime\bin\Debug\JsonSubTypes.dll

@@ -72,7 +72,7 @@ namespace NotificationDependecy.Notification
                     });
 
                     String messageBase = "";
-
+                    String valueBase = "";
                     using (Connection = new SqlConnection(ConectionString))
                     {
                         Connection.Open();
@@ -83,6 +83,7 @@ namespace NotificationDependecy.Notification
                             item.Messages.ForEach(mss => {
 
                                 messageBase = mss.Message.Message;
+                                valueBase = mss.Message.Message;
                                 DataAdapter = new SqlDataAdapter(Command);
                                 DataTable = new DataTable();
                                 DataAdapter.Fill(DataTable);
@@ -130,6 +131,8 @@ namespace NotificationDependecy.Notification
                                                 if (prop.Key.ToUpper().Contains(d.ToUpper()))
                                                 {
                                                     valueReplace = prop.Value?.ToString();
+                                                    messageBase = messageBase.Replace("@" + prop.Key, valueReplace).Replace("@" + prop.Key.ToUpper(), valueReplace)
+                                                    .Replace("@" + prop.Key.ToLower(), valueReplace).Replace("@" + prop.Key.ToLowerInvariant(), valueReplace).Replace("@" + prop.Key.ToUpperInvariant(), valueReplace);
                                                     break;
                                                 }
                                             }
@@ -161,7 +164,7 @@ namespace NotificationDependecy.Notification
                                         MachtExpression = Regex.Match(JsonRow);
                                     });
 
-                                    string destination = "3502365335";
+                                    string destination = MachtExpression.Value;
 
                                     bool sendNotification = false;
                                     string errorMessage = "not send message";
@@ -174,6 +177,8 @@ namespace NotificationDependecy.Notification
 
                                     if (Enum.TryParse(mss.Type, out TypeNotification typeNotification) && !String.IsNullOrEmpty(destination) && !String.IsNullOrEmpty(mss.JsonConfig) && !String.IsNullOrEmpty(mss.Provider))
                                         sendNotification = Notification.Send(destination, mss.Message, mss.JsonConfig, typeNotification, mss.Provider, out errorMessage);
+
+                                    mss.Message.Message = valueBase;
 
                                     if (sendNotification)
                                         errorMessage = "message send";
@@ -195,9 +200,10 @@ namespace NotificationDependecy.Notification
                                         CreatedAt = DateTime.Now,
                                         IsSend = sendNotification
                                     });
+                                    messageBase = null;
+
                                 }
                             });
-                            messageBase = null;
                         }
                     }
                 });

@@ -17,3 +17,22 @@ D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Release\EN-US\GlobalRes
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Release\ES-CO\GlobalResources.resources.dll
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Release\GlobalResources.dll
 D:\WorkSpace\3 Cloud\UbicarCloudCore\GlobalResources\obj\Release\GlobalResources.pdb
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Release\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Release\GlobalResources.pdb
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Release\EN-US\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\bin\Release\ES-CO\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ErrorResources.MessageError.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ModelResources.DataAnotations.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ViewsResources.ViewsResources.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ErrorResources.MessageError.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ErrorResources.MessageError.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ModelResources.DataAnotations.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ModelResources.DataAnotations.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ViewsResources.ViewResources.EN-US.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.ViewsResources.ViewsResources.ES-CO.resources
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.csproj.GenerateResource.cache
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\EN-US\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\ES-CO\GlobalResources.resources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.dll
+D:\Esfera\SystimeCore\SystimeCore\GlobalResources\obj\Release\GlobalResources.pdb

@@ -1,79 +1,121 @@
-[  
-   {  
+[
+   {
       "NotificationName":"Notification Alistamiento",
       "TableName":"WorkOrderTracking",
-      "ColumNotify":[  
+      "ColumNotify":[
          "IdWorkOrderTracking,IdSubOperationByDealer,IdWorkOrder,IdSubOperationByDealer,InitiatedAt,CompletedAt,CreatedById"
       ],
-      "EventDatabase":[  
-         {  
+      "EventDatabase":[
+         {
             "EventName":"SubOperation alistamenito",
             "EventDatabse":0,
             "FillterDatabsase":"IdSubOperationByDealer = 16"
          }
       ],
-      "RecipientsType":[  
-         {  
+      "RecipientsType":[
+         {
             "RecipientName":"Customer",
-            "Message":{  
-               "TitleMessage":"En Alistamiento",
-               "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura",
-               "ConfigMessage":[  
-                  {  
+            "Messages":[
+               {
+                  "Type":"SMS",
+                  "TypeNotification":null,
+                  "Message":{
+                     "Title":"En Alistamiento",
+                     "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura"
+                  },
+                  "TitleNotify":"En Alistamiento",
+                  "ConfigMessage":{
                      "DinamycParam":"@plate",
                      "DefinitiveValue":null,
-                     "NameColum":[  
+                     "NameColum":[
                         "Plate"
                      ],
-                     "ExpressionRegular":[  
+                     "ExpressionRegular":[
                         "\\d{10}"
                      ]
-                  }
-               ]
-            },
-            "FilttersRecipient":[  
-               {  
-                  "Filtter":"Select Customers.Phone,Customers.FullName,Vehicles.Plate,Customers.Email,Customers.Mobile from Customers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking = @IdWorkOrderTracking  AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdCustomer =Customers.IdCustomer",
-                  "TypeNotification":[  
-                     {  
-                        "TypeNotification":"SMS",
-                        "Provaider":"Contacto",
-                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
-                        "ExpressionRegularMach":"\\d{10}"
-                     }
-                  ]
+                  },
+                  "JsonConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                  "Provider":"Contacto"
+               },
+               {
+                  "Type":"WHATSAPP",
+                  "TypeNotification":null,
+                  "Message":{
+                     "UrlFile":null,
+                     "TypeSend":0,
+                     "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que su vehiculo @plate se encuentra en proceso de alistamiento de pintura"
+                  },
+                  "TitleNotify":"En Alistamiento",
+                  "ConfigMessage":{
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[
+                        "\\d{10}"
+                     ]
+                  },
+                  "JsonConfig":"{\"Phone\":\"573174354217\",\"Key\":\"598da6b0579da2b1624d024cb3e0595c5b9147c19af76\",\"PathBase\":\"https://www.waboxapp.com\"}",
+                  "Provider":"Waboxapp"
+               }
+            ],
+            "FilttersRecipient":[
+               {
+                  "Filtter":"Select Customers.Phone,Customers.FullName,Vehicles.Plate,Customers.Email,Customers.Mobile from Customers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking = @IdWorkOrderTracking  AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdCustomer =Customers.IdCustomer"
                }
             ]
          },
-         {  
+         {
             "RecipientName":"Workers AS",
-            "Message":{  
-               "TitleMessage":"En Alistamiento",
-               "Message":"SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento.",
-               "ConfigMessage":[  
-                  {  
+            "Messages":[
+               {
+                  "Type":"SMS",
+                  "TypeNotification":null,
+                  "Message":{
+                     "Title":"En Alistamiento",
+                     "Message":"SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento."
+                  },
+                  "TitleNotify":"En Alistamiento",
+                  "ConfigMessage":{
                      "DinamycParam":"@plate",
                      "DefinitiveValue":null,
-                     "NameColum":[  
+                     "NameColum":[
                         "Plate"
                      ],
-                     "ExpressionRegular":[  
+                     "ExpressionRegular":[
                         "\\d{10}"
                      ]
-                  }
-               ]
-            },
-            "FilttersRecipient":[  
-               {  
-                  "Filtter":"Select Workers.Phone,Workers.FullName,Vehicles.Plate,Workers.Email,Workers.Mobile from Workers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking =  @IdWorkOrderTracking AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdSalesRepresentative =Workers.IdWorker",
-                  "TypeNotification":[  
-                     {  
-                        "TypeNotification":"SMS",
-                        "Provaider":"Contacto",
-                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
-                        "ExpressionRegularMach":"\\d{10}"
-                     }
-                  ]
+                  },
+                  "JsonConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                  "Provider":"Contacto"
+               },
+               {
+                  "Type":"WHATSAPP",
+                  "TypeNotification":null,
+                  "Message":{
+                     "UrlFile":null,
+                     "TypeSend":0,
+                     "Message":"SMS AUTOSTOK : Senor Asesor, se notifico al cliente que el vehiculo @plate se encuentra en proceso de alistamiento."
+                  },
+                  "TitleNotify":"En Alistamiento",
+                  "ConfigMessage":{
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[
+                        "\\d{10}"
+                     ]
+                  },
+                  "JsonConfig":"{\"Phone\":\"573174354217\",\"Key\":\"598da6b0579da2b1624d024cb3e0595c5b9147c19af76\",\"PathBase\":\"https://www.waboxapp.com\"}",
+                  "Provider":"Waboxapp"
+               }
+            ],
+            "FilttersRecipient":[
+               {
+                  "Filtter":"Select Workers.Phone,Workers.FullName,Vehicles.Plate,Workers.Email,Workers.Mobile from Workers,WorkOrders,Vehicles,WorkOrderTracking where IdWorkOrderTracking =  @IdWorkOrderTracking AND WorkOrders.IdWorkOrder = WorkOrderTracking.IdWorkOrder AND WorkOrders.IdVinNumber = Vehicles.IdVinNumber ANd WorkOrders.IdSalesRepresentative =Workers.IdWorker"
                }
             ]
          }
@@ -83,49 +125,70 @@
       "NotificationModuleTable":false,
       "QueryPostEvent":null
    },
-   {  
+   {
       "NotificationName":"Notificacion comienza el trabajo",
       "TableName":"OperationByWorkOrder",
-      "ColumNotify":[  
+      "ColumNotify":[
          "IdOperationByWorkOrder,IdWorkOrder,IdOperationByDealer"
       ],
-      "EventDatabase":[  
-         {  
+      "EventDatabase":[
+         {
             "EventName":"Primera vez que se asigne una operacion a la ot a la orden de trabajo",
             "EventDatabse":0,
             "FillterDatabsase":""
          }
       ],
-      "RecipientsType":[  
-         {  
+      "RecipientsType":[
+         {
             "RecipientName":"Customers",
-            "Message":{  
-               "TitleMessage":"Comienzo reparacion",
-               "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme.",
-               "ConfigMessage":[  
-                  {  
+            "Messages":[
+               {
+                  "Type":"SMS",
+                  "TypeNotification":null,
+                  "Message":{
+                     "Title":"Comienzo reparacion",
+                     "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme."
+                  },
+                  "TitleNotify":"Comienzo reparacion",
+                  "ConfigMessage":{
                      "DinamycParam":"@plate",
                      "DefinitiveValue":null,
-                     "NameColum":[  
+                     "NameColum":[
                         "Plate"
                      ],
-                     "ExpressionRegular":[  
+                     "ExpressionRegular":[
                         "\\d{10}"
                      ]
-                  }
-               ]
-            },
-            "FilttersRecipient":[  
-               {  
-                  "Filtter":"select Customers.FullName,Customers.Mobile,Customers.Email,Vehicles.Plate from Customers,OperationByWorkOrder,WorkOrders,Vehicles where OperationByWorkOrder.IdOperationByWorkOrder = @IdOperationByWorkOrder AND OperationByWorkOrder.IdWorkOrder = WorkOrders.IdWorkOrder  and Vehicles.IdVinNumber =  WorkOrders.IdVinNumber and Customers.IdCustomer =WorkOrders.IdCustomer",
-                  "TypeNotification":[  
-                     {  
-                        "TypeNotification":"SMS",
-                        "Provaider":"Contacto",
-                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
-                        "ExpressionRegularMach":"\\d{10}"
-                     }
-                  ]
+                  },
+                  "JsonConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                  "Provider":"Contacto"
+               },
+               {
+                  "Type":"WHATSAPP",
+                  "TypeNotification":null,
+                  "Message":{
+                     "UrlFile":null,
+                     "TypeSend":0,
+                     "Message":"SMS AUTOSTOK : Apreciado Cliente, le informamos que que la reparacion de su vehiculo @plate ha sido autorizada. Iniciaremos el proceso de desarme."
+                  },
+                  "TitleNotify":"Comienzo reparacion",
+                  "ConfigMessage":{
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[
+                        "\\d{10}"
+                     ]
+                  },
+                  "JsonConfig":"{\"Phone\":\"573174354217\",\"Key\":\"598da6b0579da2b1624d024cb3e0595c5b9147c19af76\",\"PathBase\":\"https://www.waboxapp.com\"}",
+                  "Provider":"Waboxapp"
+               }
+            ],
+            "FilttersRecipient":[
+               {
+                  "Filtter":"select Customers.FullName,Customers.Mobile,Customers.Email,Vehicles.Plate from Customers,OperationByWorkOrder,WorkOrders,Vehicles where OperationByWorkOrder.IdOperationByWorkOrder = @IdOperationByWorkOrder AND OperationByWorkOrder.IdWorkOrder = WorkOrders.IdWorkOrder  and Vehicles.IdVinNumber =  WorkOrders.IdVinNumber and Customers.IdCustomer =WorkOrders.IdCustomer"
                }
             ]
          }
@@ -135,49 +198,70 @@
       "NotificationModuleTable":true,
       "QueryPostEvent":"exec InsertNewTracking @IdWorkOrder,9,'SystimeCore','SystimeCore',1,0,'seguimiento automatico','SystimeCore'"
    },
-   {  
+   {
       "NotificationName":"Notificacion para TOT",
       "TableName":"JobsByWorkOrder",
-      "ColumNotify":[  
+      "ColumNotify":[
          "IdJobByWorkOrder"
       ],
-      "EventDatabase":[  
-         {  
+      "EventDatabase":[
+         {
             "EventName":"Cada vez que se asinge una tot ",
             "EventDatabse":0,
             "FillterDatabsase":""
          }
       ],
-      "RecipientsType":[  
-         {  
+      "RecipientsType":[
+         {
             "RecipientName":"Provaider TOT",
-            "Message":{  
-               "TitleMessage":"Asingacion TOT",
-               "Message":"SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias.",
-               "ConfigMessage":[  
-                  {  
+            "Messages":[
+               {
+                  "Type":"SMS",
+                  "TypeNotification":null,
+                  "Message":{
+                     "Title":"Asingacion TOT",
+                     "Message":"SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias."
+                  },
+                  "TitleNotify":"Asingacion TOT",
+                  "ConfigMessage":{
                      "DinamycParam":"@plate",
                      "DefinitiveValue":null,
-                     "NameColum":[  
+                     "NameColum":[
                         "Plate"
                      ],
-                     "ExpressionRegular":[  
+                     "ExpressionRegular":[
                         "\\d{10}"
                      ]
-                  }
-               ]
-            },
-            "FilttersRecipient":[  
-               {  
-                  "Filtter":"select CatalogProviders.Mobile, CatalogProviders.Phone, CatalogProviders.Email,Vehicles.Plate from CatalogProviders,JobsByWorkOrder,Vehicles,WorkOrders where CatalogProviders.IdProvider = JobsByWorkOrder.IdProvaider and WorkOrders.IdWorkOrder = JobsByWorkOrder.IdWorkOrder and WorkOrders.IdVinNumber = Vehicles.IdVinNumber and JobsByWorkOrder.IdJobByWorkOrder = @IdJobByWorkOrder ",
-                  "TypeNotification":[  
-                     {  
-                        "TypeNotification":"SMS",
-                        "Provaider":"Contacto",
-                        "JsonNotificationConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
-                        "ExpressionRegularMach":"\\d{10}"
-                     }
-                  ]
+                  },
+                  "JsonConfig":"{\"User\":\"SMSESFERAC\",\"Password\":\"3sF3R4c0\",\"PthBase\":\"http://www.appcontacto.com.co\",\"ResourceBase\":\"wsurl\"}",
+                  "Provider":"Contacto"
+               },
+               {
+                  "Type":"WHATSAPP",
+                  "TypeNotification":null,
+                  "Message":{
+                     "UrlFile":null,
+                     "TypeSend":0,
+                     "Message":"SMS AUTOSTOK: Sr. Proveedor, el vehiculo @plate tiene un TOT asignado en el taller de Morato. recojalo en 2 dias."
+                  },
+                  "TitleNotify":"Asingacion TOT",
+                  "ConfigMessage":{
+                     "DinamycParam":"@plate",
+                     "DefinitiveValue":null,
+                     "NameColum":[
+                        "Plate"
+                     ],
+                     "ExpressionRegular":[
+                        "\\d{10}"
+                     ]
+                  },
+                  "JsonConfig":"{\"Phone\":\"573174354217\",\"Key\":\"598da6b0579da2b1624d024cb3e0595c5b9147c19af76\",\"PathBase\":\"https://www.waboxapp.com\"}",
+                  "Provider":"Waboxapp"
+               }
+            ],
+            "FilttersRecipient":[
+               {
+                  "Filtter":"select CatalogProviders.Mobile, CatalogProviders.Phone, CatalogProviders.Email,Vehicles.Plate from CatalogProviders,JobsByWorkOrder,Vehicles,WorkOrders where CatalogProviders.IdProvider = JobsByWorkOrder.IdProvaider and WorkOrders.IdWorkOrder = JobsByWorkOrder.IdWorkOrder and WorkOrders.IdVinNumber = Vehicles.IdVinNumber and JobsByWorkOrder.IdJobByWorkOrder = @IdJobByWorkOrder "
                }
             ]
          }

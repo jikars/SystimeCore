@@ -3,3 +3,9 @@ D:\WorkSpace\Systime\SystimeCore\Utils\bin\Release\Utils.pdb
 D:\WorkSpace\Systime\SystimeCore\Utils\obj\Release\Utils.csproj.CoreCompileInputs.cache
 D:\WorkSpace\Systime\SystimeCore\Utils\obj\Release\Utils.dll
 D:\WorkSpace\Systime\SystimeCore\Utils\obj\Release\Utils.pdb
+D:\Esfera\SystimeCore\SystimeCore\Utils\bin\Release\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\Utils\bin\Release\Utils.pdb
+D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
+D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Release\Utils.csproj.CoreCompileInputs.cache
+D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Release\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\Utils\obj\Release\Utils.pdb

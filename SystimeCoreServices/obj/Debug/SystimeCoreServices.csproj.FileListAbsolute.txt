@@ -146,6 +146,7 @@ D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\Dapper.Contrib.d
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\NotificationFromSytimeSQL.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\SystimeDataAcces.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\SystimeWCF.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\Unity.Abstractions.dll
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\IntegrateErpToSystime.dll
@@ -195,4 +196,3 @@ D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServi
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.exe
 D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\obj\Debug\SystimeCoreServices.pdb
-D:\Esfera\SystimeCore\SystimeCore\SystimeCoreServices\bin\Debug\JsonSubTypes.dll

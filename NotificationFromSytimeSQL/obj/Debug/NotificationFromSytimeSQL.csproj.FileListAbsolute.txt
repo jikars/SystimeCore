@@ -42,6 +42,7 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\EntityFram
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\Newtonsoft.Json.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\Notifications.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\Utils.dll
+D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\Notifications.pdb
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\EntityFramework.xml
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\EntityFramework.SqlServer.xml
@@ -52,4 +53,3 @@ D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\Notificati
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.csproj.CopyComplete
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.dll
 D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\obj\Debug\NotificationFromSytimeSQL.pdb
-D:\Esfera\SystimeCore\SystimeCore\NotificationFromSytimeSQL\bin\Debug\JsonSubTypes.dll

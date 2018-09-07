@@ -91,6 +91,7 @@ D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\Unity.Abstractions.d
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\Models.dll
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\ServicesAccessUbicar.cs.dll
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\Unity.Container.dll
+D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\JsonSubTypes.dll
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\NotificationFromSytimeSQL.dll
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\TableDependency.SqlClient.dll
 D:\Esfera\SystimeCore\SystimeCore\TestSystimeCore\bin\Debug\TableDependency.dll

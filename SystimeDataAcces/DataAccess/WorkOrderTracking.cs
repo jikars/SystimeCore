@@ -31,6 +31,7 @@ namespace SystimeDataAcces.DataAccess
         public string UpdatedById { get; set; }
         public byte[] Version { get; set; }
         public bool Deleted { get; set; }
+        public Nullable<double> Progress { get; set; }
     
         public virtual WorkOrders WorkOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -282,6 +282,7 @@
     <EntitySetMapping Name="CloudCatalogInsuranceCompanies">
       <EntityTypeMapping TypeName="SystimedbModel.CloudCatalogInsuranceCompanies">
         <MappingFragment StoreEntitySet="CloudCatalogInsuranceCompanies">
+          <ScalarProperty Name="HourValue" ColumnName="HourValue" />
           <ScalarProperty Name="IdInsuranceCompany" ColumnName="IdInsuranceCompany" />
           <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
           <ScalarProperty Name="TIN" ColumnName="TIN" />
@@ -1047,6 +1048,7 @@
     <EntitySetMapping Name="WorkOrderTracking">
       <EntityTypeMapping TypeName="SystimedbModel.WorkOrderTracking">
         <MappingFragment StoreEntitySet="WorkOrderTracking">
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
           <ScalarProperty Name="IdWorkOrderTracking" ColumnName="IdWorkOrderTracking" />
           <ScalarProperty Name="IdWorkOrder" ColumnName="IdWorkOrder" />
           <ScalarProperty Name="IdSubOperationByDealer" ColumnName="IdSubOperationByDealer" />
